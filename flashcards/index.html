@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flashcards</title>
+    <style>
+    body {
+        background-color: #eee;
+        text-align: center;
+    }
+    * {
+        font-size: 20px;
+        font-family: "Helvetica", sans-serif;
+        font-weight: 300;
+    	color: black;
+    	text-decoration: none;
+    }
+    #test {
+        width: 60vw;
+        min-width: 200px;
+        padding: 1em;
+        font-size: 1.5rem;
+        background: white;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        text-align: center;
+        display: inline-block;
+    }
+    button {
+        outline: none;
+        border: 1px solid gray;
+        border-radius: 2px;
+        padding: 0.5em;
+        background: white;
+    }
+    textarea {
+        padding: 0.5em;
+        min-height: 4em;
+        height: 50vh;
+        margin: 1em;
+        width: 60vw;
+        min-width: 200px;
+        outline: none;
+        resize: vertical;
+    }
+    .spacer {
+    	height: 10vh;
+    }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.js"></script>
+</head>
+<body>
+    <div class="spacer"></div>
+    <div id="input">
+        Enter terms, separated by new lines.<br>
+        <textarea id="terms"></textarea><br>
+        <button id="go">Test</button>
+    </div>
+    <span id="test"></span>
+    <script src="main.js"></script>
+</body>
+</html>

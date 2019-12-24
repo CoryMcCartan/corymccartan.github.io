@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('futura-bold.ttf'); 
+}
+
+body {
+    background: #f4f4f0;
+    font-family: "Charter", "Bookman Old Style", "Bookman", serif;
+    color: #111100;
+    display: flex;
+    justify-content: center
+}
+
+main {
+    max-width: 720px;
+    width: 100vw;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Futura", "Helvetica", "Arial";
+    font-weight: normal;
+    margin: 0.5rem 0;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+th, td {
+    padding-bottom: 2px;
+}
+
+td:first-child {
+    width: 25%;
+}
+
+
+.hr {
+    height: 3px;
+    background: #111100;
+    margin-bottom: -1em;
+}
+
+#time {
+    margin-top: 1em;
+    font-style: italic;
+}
+
+.home {
+    font-weight: bold
+}
+
+@media screen and (max-width: 440px) {
+    td:last-child, td:nth-last-child(2),
+    th:last-child, th:nth-last-child(2) {
+        display: none;
+    }
+}
