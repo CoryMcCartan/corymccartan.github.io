@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>2018 U.S. House Predictions • Cory McCartan</title>
+    
+    <link rel="icon" href="/images/logo-64.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,700&display=sawp" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://corymccartan.github.io/sass/main.min.css">
+    
+    
+    <link rel="stylesheet" href="/css/us-house-2018.css">
+    
+
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+</head>
+<body>
+    <header>
+    <div class="center flex-row">
+        <a href="/">
+            <img src="/images/logo-128.png" id="logo">
+        </a>
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <span class="spacer"></span>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="center">
+        
+    
+    <h1 class="title">
+        <div class="text">2018 U.S. House Predictions</div>
+        <div class="triangle"></div>
+        <div class="spacer"></div>
+    </h1>
+    
+    <h2 class="subtitle">A statistical model for the midterm elections, using polling data, approval ratings, structural factors, and economic indicators.
+</h2>
+    
+    <section class="publishinfo">
+        <span class="date">June 1, 2018</span>
+    </section>
+    
+    <article class="main-content">
+        
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none",
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: {inlineMath: [['$','$']]}
+    });
+</script>
+
+<section>
+    <div id="overview" class="graphic">
+        <img class="dummy" src="/images/us-house-2018-dummy-wheel.svg">
+    </div>
+</section>
+
+<section class="banner">
+    <span class="text"></span>
+    <span class="updated"></span>
+</section>
+
+<section class="content-block">
+    <a class="anchor" id="history-link"></a>
+    <h2>How the odds have changed</h2>
+    <p>
+    The model is continuously updated with new polling data and
+    approval ratings. As new information comes in, the odds may shift
+    towards one party or another. Additionally, as we get closer to the
+    election, there is less uncertainty in the result, since there is
+    less time for a large shift in public opinion. This also changes
+    the odds over time.
+    </p>
+    <p>
+    The chart below plots the changing  odds of each party winning
+    control. The estimates are plotted on a log-odds scale, instead of a
+    traditional probability scale ranging from 0 to 100%. This is to 
+    better reflect changes in probability&mdash;a shift from a 90% to
+    95% chance is much more consequential than a change from 50 to 55%.
+    </p>
+    <div height="320" id="history" class="graphic"></div>
+</section>
+
+<section class="content-block">
+    <a class="anchor" id="hist"></a>
+    <h2>Distribution of outcomes</h2>
+    <p>
+    The model doesn't produce a single estimate of the number of seats
+    each party will win. Rather, it estimates a probability for each
+    possible arrangement of seats. The model's overall guess is the
+    median of the distribution of seats&mdash;where it is just as likely
+    that the Democrats will win more seats as fewer seats.
+    </p>
+    <p>
+    The table below summarizes the relative chances of each possible
+    distribution of seats. The current distribution and the median
+    outcome are highlighted. 218 seats are needed to control the House.
+    </p>
+    <table id="outcomes">
+        <thead>
+        <tr>
+            <th>Dem.<br>Seats</th>
+            <th>Rep.<br>Seats</th>
+            <th class="maj">Majority</th>
+            <th class="gain">Dem.<br>Gain</th>
+            <th>Cuml.<br>Likelihood*</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+    </table>
+    <small style="text-align: center; display: block; color: #777">
+        *The chances that the Democrats will earn at least this many seats.
+    </small>
+</section>
+
+<section class="content-block">
+    <a class="anchor" id="polling"></a>
+    <h2>National Polling</h2>
+    <p>
+    The basis of the model is the generic congressional ballot, which 
+    asks survey respondents which parties' candidate they plan on
+    supporting in their local House race. The model estimates the true
+    support for each party over time, and forecasts this estimate
+    forwards to Election Day.  The chart below plots these estimates,
+    along with an accompanying error bar indicating the uncertainty in
+    the estimates. Notice how the uncertainty increases dramatically
+    from today towards Election Day.
+    </p>
+    <div height="320" id="generic" class="graphic"></div>
+</section>
+
+<section>
+    <a class="anchor" id="model"></a>
+    <h2>Model</h2>
+    <p>
+    The model operates in two broad stages: first, it estimates
+    national voter intent on a weekly basis and forecasts this estimate
+    forwards to Election Day; second, it uses its voter intent estimate
+    to predict the number of seats won by each party, using past
+    elections as a guide. The models for each of these stages  are
+    described in more detail below.
+    </p>
+    <p>
+    Each model is fully Bayesian and is estimated using Hamiltonian
+    Monte Carlo (through the statistical package STAN). Weakly
+    informative priors are used on all parameters. The voter intent model
+    is re-estimated with each new set of polling data. The final
+    results model, in contrast, is fit once on past election data, and
+    the posterior samples are used to provide predictions for the 2018
+    elections.
+    </p>
+
+    <h3>Voter Intent Model</h3>
+    <p>
+    Voter intent is estimated from generic ballot polls conducted by 
+    various polling firms. These ask survey respondents which parties'
+    candidate they plan on supporting in their local House race. By
+    aggregating poll results we can arrive at an estimate of national
+    voter intent.
+    </p>
+    <p>
+    Voter intent is estimated on a weekly basis, from the first week of
+    polling through Election Day. It is measured on a log-odds scale
+    and is denoted $\mu_t$, where $t$ is the week in question. Intent
+    is assumed to evolve as an AR(1) process, or mean-reverting random
+    walk: $$
+        \mu_t \sim \mathrm{t}_{\nu}(\rho\cdot\mu_{t-1}, \sigma^2_w),
+    $$
+    where $\rho$ is a parameter representing the strength of the mean
+    reversion (restricted to be between 0 and 1),  $\sigma^2_w$ is the
+    variance of the random walk, and $\nu$ is the degrees of freedom of
+    the <i>t</i>-distribution. The heavier tails of the
+    <i>t</i>-distribution allow more extreme shifts in public opinion
+    to occur, which may happen after a significant political
+    development. While a more accurate generative model might be a 
+    finite mixture model in which public opinion is static most of the
+    time, but able to change dramatically after a major shock, the 
+    added complexity of such a model would be unlikely to provide a
+    commensurate increase in accuracy. The priors for the parameters
+    are: 
+    $$ \begin{align} 
+        \mu_0 &\sim \mathrm{t}_{\nu}(0, 10^2) \\ 
+        \nu &\sim \Gamma(2, 0.1) \\
+        \sigma_w &\sim \mathrm{Cauchy}^+(0, 10) \\
+        \rho &\sim \mathrm{Beta}(2, 1)
+    \end{align}$$
+    </p>
+    <p>
+    Polling results are derived from national voter intent. For each 
+    poll $i$ we record the sample size, $n_i$, the week it was conducted,
+    $t_i$, the polling firm which conducted it, $f_i$, the number of 
+    respondents picking either major party (as opposed to 
+    &ldquo;undecided&rdquo;), $n^s_i$, and the number picking the 
+    Democratic party, $n^d_i$. Both $n^s_i$ and $n^d_i$ are drawn from
+    a binomial distribution,
+    $$ \begin{align} 
+        n^s_i &\sim \mathrm{Binomial}(n_i, \pi_u) \\
+        n^d_i &\sim \mathrm{Binomial}(n^s_i, \pi_i) 
+    \end{align}$$
+    where $\pi_u$ is the proportion of undecided voters nationally, and
+    $\pi_i$ is the level of support for the Democrats in the given poll.
+    This differs from $\mu$, since polling firms sample differently and
+    have different methodologies. $\pi_i$ is modelled on a log-odds
+    scale as a linear function of national voter intent, polling firm
+    bias, and poll-specific (sampling) error:
+    $$
+        \mathrm{logit}(\pi_i) = \mu_{t_i} + \alpha_{f_i} + \epsilon_i,
+    $$
+    where $\alpha_{f_i}$ is the bias of the polling firm $f_i$ and 
+    $\epsilon_i$ is the poll-specific error. Both $\alpha_{f_i}$ and 
+    $\epsilon_i$ are assumed to be drawn from larger distributions of
+    all possible firm and poll errors:
+    $$ \begin{align} 
+        \alpha \sim \mathrm{t}_2(\mu_f, \sigma^2_f) \\
+        \epsilon \sim \mathrm{t}_2(0, \sigma^2_\epsilon)
+    \end{align}$$
+    The priors for the hyperparameters are
+    $$ \begin{align} 
+        \mu_f &\sim \mathcal{N}(0, 0.02) \\
+        \sigma_f &\sim \mathrm{t}^+_4(0, 1) \\
+        \sigma_\epsilon &\sim \mathrm{t}^+_4(0, 1) 
+    \end{align}$$
+    Polling firm errors are not fixed to have a mean of zero since in a
+    given election year, there will be an aggregate polling error by
+    all firms.  This is generally within two percentage points, thus the
+    prior or $\mu_f$.
+    </p>
+
+    $$ \begin{align} 
+    \end{align}$$
+
+    <h3>Final Results Model</h3>
+    <p>
+    The final results model is essentially a linear model regressing
+    the change in Democratic seats on national voter intent and several
+    other structural and economic covariates. Importantly, measurement
+    error in voter intent is explicitly modelled.
+    </p>
+    <p>
+    The model is fit using data from the 1974, 1982, 1994, 1998, 2000,
+    2002, 2004, 2006, 2008, 2010, 2012, and 2014 House elections, which
+    were all the years in which generic ballot polling data were
+    available.
+    </p>
+    <p>
+    The number of seats won by the Democratic party in election $j$ is
+    denoted $s_j$. Voter intent at Election Day, measured on a log-odds
+    scale, is denoted $\mu$, and all other covariates are included in a
+    vector $X$. Then the model specification is
+    $$
+    s_j-s_{j-1} \sim \mathcal{N}(\beta_0 + \beta_1\mu + X\vec\beta, \sigma),
+    $$
+    where $\sigma$ is the error. However, we cannot observe $\mu$ 
+    directly&mdash;we can only obtain an estimate of it, $\tilde\mu$, with
+    some uncertainty $\sigma^2_\mu$ (both of which are taken from the
+    posterior distribution of the voter intent model, which is very
+    close to normal): 
+    $$
+        \tilde\mu \sim \mathcal{N}(\mu, \sigma^2_\mu).
+    $$
+    The priors for the parameters are
+    $$ \begin{align} 
+        \mu &\sim \mathcal{N}(0, 1) \\
+        \beta_0 &\sim \mathrm{t}_3(0, 10) \\
+        \beta_1 &\sim \mathrm{t}_3(0, 10) \\
+        \vec\beta &\sim \mathrm{t}_3(0, 10) \\
+        \sigma &\sim \mathrm{Cauchy}^+(0, 20) 
+    \end{align}$$
+    </p>
+    <p>
+    The model forecasts the change in Democratic seats, which is highly
+    dependent on whether or not there is a Democratic president. 
+    Consequently, most of the terms in the model are interacted with an
+    indicator representing the incumbent party in the White House (1 if 
+    a Democrat, &ndash;1 if a Republican).
+    The full set of additional model covariates is described in the
+    following table:
+    <table>
+        <tr>
+            <th>Term</th><th>Expected effect this election</th><th>Notes</th>
+        </tr>
+        <tr>
+            <td>$midterm$</td>
+            <td>–7 seats</td>
+            <td>The midterm indicator takes on a value of 1 in midterm
+                elections and 0 otherwise. Regardless of the party in
+                power, Democrats generally underperform in midterm
+                elections due to low turnout.</td>
+        </tr>
+        <tr>
+            <td>$pres$</td>
+            <td>+1 seat</td>
+            <td>The White House control indicator.</td>
+        </tr>
+        <tr>
+            <td>$midterm\times pres$</td>
+            <td>+7 seats</td>
+            <td>This is one of the most important terms in the model, 
+                since it captures the tendency of midterm elections to
+                swing dramatically against the party of the incumbent
+                president.</td>
+        </tr>
+        <tr>
+            <td>$appr\times pres$</td>
+            <td>+0.3 seats</td>
+            <td><i>appr</i> is the incumbent president&rsquo;s approval
+                rating.  A popular president helps down-ballot
+                races.</td>
+        </tr>
+        <tr>
+            <td>$earn\times pres$</td>
+            <td>+0 seats</td>
+            <td><i>earn</i> is production and nonsupervisory hourly
+                earnings growth over the previous year. This term and
+                the next capture voters&rsquo; perception of the state
+                of the economy, which is important in judging the
+                president&rsquo;s party.</td>
+        </tr>
+        <tr>
+            <td>$unemp\times pres$</td>
+            <td>+0 seats</td>
+            <td><i>unemp</i> is the current unemployment rate.</td>
+        </tr>
+        <tr>
+            <td>$before - 218$</td>
+            <td>+1 seat</td>
+            <td><i>before</i> is the number of Democratic seats going
+                into the election, so $before - 218$ is the current
+                Democratic surplus or deficit of seats.</td>
+        </tr>
+        <tr>
+            <td>$midterm\times(before - 218)$</td>
+            <td>+17 seats</td>
+            <td></td>
+        </tr>
+    </table>
+    </p>
+</section>
+
+<br>
+<br>
+
+<a href="https://github.com/CoryMcCartan/us-house">Model data and code</a>
+
+<script src="/js/us-house-2018-graphics.js"></script>
+<script src="/js/us-house-2018-main.js"></script>
+
+    </article>
+
+    </main>
+    <footer>
+    <div class="center">
+        <small>
+            <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
+            <br />
+            <br />
+            &copy; 2019 Cory McCartan. All Rights Reserved.
+        </small>
+    </div>
+</footer>
+
+
+</body>
+</html>

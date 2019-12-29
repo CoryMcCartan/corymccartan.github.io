@@ -1,0 +1,336 @@
+.graphic {
+    width: 100%
+}
+.graphic .dummy {
+    width: 100%
+}
+.graphic svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible
+}
+svg * {
+    pointer-events: none
+}
+#overview .dummy {
+    max-height: 350px;
+    margin-bottom: -6px
+}
+text.prob {
+    font-weight: bold;
+    fill: white;
+    fill-opacity: 0.5;
+    text-anchor: middle
+}
+.axis text {
+    fill: #777;
+    font-size: 8pt
+}
+.axis .label {
+    font-weight: bold
+}
+.axis path,.axis line {
+    stroke: #aaa
+}
+.y.axis .tick line {
+    stroke-dasharray: 1,2
+}
+.y.axis .domain {
+    display: none
+}
+.line {
+    stroke-width: 3;
+    fill: none
+}
+#history .odds {
+    font-size: 24pt;
+    font-weight: bold;
+    text-anchor: middle
+}
+#history .tip-prob {
+    font-size: 14pt
+}
+#generic .err {
+    fill: black;
+    opacity: 0.3
+}
+#generic .line {
+    stroke: #555
+}
+#outcomes {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1;
+    font-size: 10pt;
+    border-collapse: collapse
+}
+#outcomes thead tr {
+    border-bottom: 1px solid #777
+}
+#outcomes tbody tr {
+    border-bottom: 1px solid #ddd
+}
+#outcomes td {
+    padding: 0.2em 1em 0;
+    white-space: nowrap
+}
+#outcomes tr.expected {
+    background-color: #f0f0f0
+}
+#outcomes tr.expected td {
+    font-weight: bold
+}
+#outcomes td.label {
+    font-size: 9pt;
+    font-weight: normal !important;
+    text-align: right;
+    padding: 0.2em 0 0.2em 0.2em;
+    color: #777
+}
+#outcomes td.hist {
+    width: 80%
+}
+#outcomes .hist-bar {
+    height: 0.9em;
+    margin-top: -0.2em
+}
+.tables {
+    display: flex;
+    flex-flow: row wrap
+}
+.tables h3 {
+    text-align: center;
+    font-size: 1.1rem;
+    height: 3em
+}
+.tables .table-container {
+    flex-basis: 128px;
+    flex-grow: 1;
+    margin: 0.5em
+}
+div#strong_dem {
+    order: -2
+}
+div#lean_dem {
+    order: -1
+}
+table.races {
+    border-collapse: collapse;
+    width: 100%
+}
+table.races thead tr {
+    border-bottom: 1px solid #777
+}
+table.races th {
+    color: #777;
+    font-size: 8pt;
+    text-transform: uppercase;
+    font-weight: normal
+}
+table.races tr {
+    border-bottom: 1px solid #ddd;
+    font-size: 9pt
+}
+table.races td {
+    padding: 0.25em
+}
+table.races .margin {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.25em 0 0.25em 0.5em
+}
+table.races .prob {
+    text-align: center;
+    min-width: 3em
+}
+table.races .d_pickup {
+    background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)
+}
+table.races .r_pickup {
+    background: repeating-linear-gradient(-45deg, transparent transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)
+}
+@media screen and (max-width:  910px) {
+    .table-container {
+        flex-basis: calc(33% - 2em) !important
+    }
+    div#strong_dem {
+        order: 0
+    }
+
+}
+@media screen and (max-width:  560px) {
+    .table-container {
+        flex-basis: 40% !important
+    }
+    div#tossup {
+        flex-basis: 80% !important
+    }
+    div#lean_dem {
+        order: 0
+    }
+    div#strong_dem,div#strong_gop {
+        display: none
+    }
+
+}
+@media screen and (max-width:  480px) {
+    .maj {
+        display: none
+    }
+
+}
+@media screen and (max-width:  360px) {
+    .gain {
+        display: none
+    }
+
+}
+@media print {
+    .graphic {
+        width: 95%;
+        page-break-inside: avoid
+    }
+    .tables {
+        display: block;
+        columns: 5;
+        column-gap: 0.1em
+    }
+    .tables h3 {
+        height: auto;
+        margin: 1.5em 0 1em;
+        column-span: all
+    }
+    tr {
+        font-size: 8pt
+    }
+    #outcomes tbody tr: nth-child(-n+10),#outcomes tbody tr: nth-last-child(-n+10) {
+        display: none
+    }
+    td.maj>span {
+        color: black !important
+    }
+    div#strong_dem {
+        order: 0
+    }
+    div#lean_dem {
+        order: 0
+    }
+
+}
+
+article section:first-of-type {
+    margin-top: -2em;
+    padding-top: 0;
+}
+article section {
+    padding-top: 1em;
+}
+.banner {
+    padding: 1em 0;
+    font-size: 2rem;
+    line-height: 1.25;
+    background: #ddd;
+    box-shadow: -50vw 0 #ddd,50vw 0 #ddd;
+    margin-bottom: 1em
+}
+.banner .updated {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0.6rem auto -0.4rem
+}
+footer {
+    padding: 1.5em 1em;
+    width: 100vw;
+    background-color: #555;
+    font-size: 10pt;
+    color: #aaa
+}
+footer div {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 840px
+}
+footer a {
+    color: #aaa
+}
+footer.print {
+    display: none
+}
+h1,h2,h3,h4 {
+    line-height: 1.15
+}
+.spacer {
+    flex-grow: 1;
+    flex-basis: 1em
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -5em;
+    visibility: hidden
+}
+b {
+    font-weight: bold
+}
+svg: empty {
+    background: #67f
+}
+.mjx-chtml {
+    outline: none
+}
+@media screen and (max-width:  639px) {
+    nav {
+        display: none
+    }
+    header .spacer {
+        display: none
+    }
+    .banner {
+        font-size: 1.5rem
+    }
+
+}
+@media screen and (max-width:  319px) {
+    header h1 {
+        font-size: 1.2rem
+    }
+    main {
+        width: calc(100vw - 1em)
+    }
+
+}
+@media print {
+    @page {
+        size: portrait
+    }
+    * {
+        -webkit-print-color-adjust: exact
+    }
+    header {
+        position: absolute
+    }
+    header .spacer,header nav {
+        display: none
+    }
+    .banner {
+        background: white;
+        text-align: center
+    }
+    section {
+        orphans: 5
+    }
+    .content-block {
+        page-break-inside: avoid
+    }
+    footer {
+        background: white;
+        color: #555;
+        text-align: center
+    }
+    footer a {
+        display: none
+    }
+
+}

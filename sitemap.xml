@@ -3,11 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://corymccartan.github.io/</loc>
+    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/</loc>
+    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/electability-2020/</loc>
+    <lastmod>2019-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/us-house-2018/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://corymccartan.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>https://corymccartan.github.io/</loc>
+    <loc>https://corymccartan.github.io/posts/</loc>
   </url>
   
   <url>

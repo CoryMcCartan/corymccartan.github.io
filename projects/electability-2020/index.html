@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Which Democratic candidates are most electable? • Cory McCartan</title>
+    
+    <link rel="icon" href="/images/logo-64.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,700&display=sawp" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://corymccartan.github.io/sass/main.min.css">
+    
+    
+    <link rel="stylesheet" href="/css/electability-2020.css">
+    
+
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+</head>
+<body>
+    <header>
+    <div class="center flex-row">
+        <a href="/">
+            <img src="/images/logo-128.png" id="logo">
+        </a>
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <span class="spacer"></span>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="center">
+        
+    
+    <h1 class="title">
+        <div class="text">Which Democratic candidates are most electable?</div>
+        <div class="triangle"></div>
+        <div class="spacer"></div>
+    </h1>
+    
+    <h2 class="subtitle">Using demographic information in head-to-head polls to evaluate candidates&#39; strengths in the electoral college.
+</h2>
+    
+    <section class="publishinfo">
+        <span class="date">October 23, 2019</span>
+    </section>
+    
+    <article class="main-content">
+        <p>The interactive below accompanies
+<a href="https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/">this article</a>
+I wrote for the Washington Post. The article has some other figures,
+explains the motivation, and provides a less-detailed overview of the
+methodology than that provided below.</p>
+<div class="interactive">
+<div id="controls">
+    <span>If the national popular vote were </span>
+    <span style="font-weight: bold" id="text_dem">50.0% Democratic</span>
+    <span>and</span>
+    <span style="font-weight: bold" id="text_gop">50.0% Republican</span>,
+    <span>we'd expect the candidates to win these states:</span>
+</div>
+<p><span id="hint">(Drag the vertical line)</span></p>
+<div id="plots">
+    <div id="line-chart"></div>
+    <div id="bar-chart"></div>
+</div>
+</div>
+<h2 id="methodology-summary">Methodology Summary</h2>
+<p>I did some matrix algebra to basically estimate the (linear model) coefficients
+on each demographic category (white, college-educated, gender, etc.) and their
+interactions from the poll crosstabs.  Ideally these would have been estimated
+using stratification from a multilevel Bayesian model.  Either way, the
+predictions from this model were used as starting points in the next step.</p>
+<p>I used exit poll and CPS microdata to build a synthetic electorate, with vote
+preferences by each cell (state×demographic) fit using iterative
+proportional fitting (and initialized to the model predictions above) so that
+the marginal totals matched state returns and national demographic crosstabs.
+Then I reweighted to account for 4 years of demographic change, to create a
+synthetic 2020 electorate.</p>
+<p>Then, for each candidate, I computed the difference between the candidate's
+support in each demographic group (on the logit scale) and the candidate's
+overall support (also on the logit scale).  These differences were then
+differenced again with the Clinton numbers from 2016.  Basically we get a
+number saying how much to shift each demographic group on the logit scale.
+These shifts are applied again through the iterative proportional fitting
+algorithm.  The national shift is applied in the same way.</p>
+<p>To account for error in the polls, I took the within-poll and across-poll error
+and simulated varying polling numbers by candidate, and then reran the
+analysis.</p>
+<br>
+<p><a href="https://github.com/CoryMcCartan/dem-primary-20">Model code and data</a></p>
+<script src="/js/electability-2020.js"></script>
+
+    </article>
+
+    </main>
+    <footer>
+    <div class="center">
+        <small>
+            <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
+            <br />
+            <br />
+            &copy; 2019 Cory McCartan. All Rights Reserved.
+        </small>
+    </div>
+</footer>
+
+
+</body>
+</html>

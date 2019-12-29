@@ -1,0 +1,54 @@
+#plots {
+    display: flex;
+    flex-direction: row;
+}
+
+#line-chart {
+    min-width: 450px;
+    margin-right: 1em;
+}
+#bar-chart {
+    flex-grow: 3;
+    min-width: 240px;
+    max-width: 720px;
+}
+
+@media (max-width: 960px) {
+    #line-chart {
+        min-width: 375px;
+    }
+}
+
+@media (max-width: 800px) {
+    #plots {
+        flex-direction: column;
+    }
+
+    #line-chart {
+        min-width: initial;
+        margin-right: initial;
+    }
+
+    #bar-chart {
+        max-width: initial;
+        min-width: initial;
+    }
+}
+
+
+#controls {
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+}
+
+svg .handle:hover {
+    cursor: ew-resize
+}
+
+svg text.facet.title {
+    font-size: 13pt;
+}
+svg text.ev.title {
+    font-size: 18pt;
+    font-weight: bold;
+}
