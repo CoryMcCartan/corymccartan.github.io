@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>Projects • Cory McCartan</title>
+    <title>The State of Our Unions • Cory McCartan</title>
     
     <link rel="icon" href="/images/logo-64.png">
 
@@ -16,6 +16,8 @@
     
     
 
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     
 </head>
 <body>
@@ -37,52 +39,39 @@
 
     <main class="center">
         
+    
     <h1 class="title">
-        <div class="text">Projects</div>
+        <div class="text">The State of Our Unions</div>
         <div class="triangle"></div>
         <div class="spacer"></div>
     </h1>
-    <section class="main-content">
     
+    <h2 class="subtitle">A closer look at the size, strength, and structure of American labor.</h2>
+    
+    <section class="publishinfo">
+        <span class="date">January 1, 2020</span>
     </section>
-    <section class="project-list">
-        
-        <div class="project">
-            <span class="date">2020</span>
-            <a href="/projects/unions-2019/">
-                <h2 class="project-title">The State of Our Unions</h2>
-                
-                <h3 class="subtitle">A closer look at the size, strength, and structure of American labor.</h3>
-                
-                
-            </a>
-        </div>
-        
-        <div class="project">
-            <span class="date">2019</span>
-            <a href="/projects/electability-2020/">
-                <h2 class="project-title">Which Democratic candidates are most electable?</h2>
-                
-                <h3 class="subtitle">Using demographic information in head-to-head polls to evaluate candidates&#39; strengths in the electoral college.
-</h3>
-                
-                
-            </a>
-        </div>
-        
-        <div class="project">
-            <span class="date">2018</span>
-            <a href="/projects/us-house-2018/">
-                <h2 class="project-title">2018 U.S. House Predictions</h2>
-                
-                <h3 class="subtitle">A statistical model for the midterm elections, using polling data, approval ratings, structural factors, and economic indicators.
-</h3>
-                
-                
-            </a>
-        </div>
-         
-    </section>
+    
+    <article class="main-content">
+        <figure class="w100">
+    <img src="/images/union-snow.jpg"
+         alt="Harvard graduate student workers on the picket lines, December 2019."/> <figcaption>
+            <p>Harvard graduate student workers on the picket lines, December 2019.</p>
+        </figcaption>
+</figure>
+
+<!--
+>how unions are on the decline but also resurging. actually poorly
+>understood from a structural persp.  good time to ask: what do unions
+>actually look like in 2019?
+
+<span style="text-transform: uppercase; font-size: 0.85rem">Like so much else in America,</span> 
+unions diverged from their 
+-->
+<div id="intl-chart"></div>
+<script src="/js/unions-2019.js"></script>
+
+    </article>
 
     </main>
     <footer>
