@@ -6,10 +6,20 @@
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 16:15:17 -0800</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One State, Two States, Low State, High State</title>
+      <link>https://corymccartan.github.io/2019/12/one-state-two-states-low-state-high-state/</link>
+      <pubDate>Sun, 29 Dec 2019 16:15:17 -0800</pubDate>
+      
+      <guid>https://corymccartan.github.io/2019/12/one-state-two-states-low-state-high-state/</guid>
+      <description>&lt;p&gt;The standard U.S. map shows states laid out in two dimensions, but doesn&#39;t
+convey any information about the crucial third dimension: altitude.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Which Democratic candidates are most electable?</title>
@@ -19,7 +29,7 @@
       <guid>https://corymccartan.github.io/projects/electability-2020/</guid>
       <description>The interactive below accompanies this article I wrote for the Washington Post. The article has some other figures, explains the motivation, and provides a less-detailed overview of the methodology than that provided below.
 If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states:  (Drag the vertical line)
-    Methodology Summary I did some matrix algebra to basically estimate the (linear model) coefficients on each demographic category (white, college-educated, gender, etc.</description>
+    Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
     </item>
     
     <item>
@@ -29,6 +39,29 @@ If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39
       
       <guid>https://corymccartan.github.io/projects/us-house-2018/</guid>
       <description>MathJax.Hub.Config({ messageStyle: &#34;none&#34;, CommonHTML: { linebreaks: { automatic: true } }, tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;]]} });         How the odds have changed  The model is continuously updated with new polling data and approval ratings. As new information comes in, the odds may shift towards one party or another. Additionally, as we get closer to the election, there is less uncertainty in the result, since there is less time for a large shift in public opinion.</description>
+    </item>
+    
+    <item>
+      <title>37 Supreme Court Justices on a Plane</title>
+      <link>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</guid>
+      <description>&lt;p&gt;The most common measure of Supreme Court justice ideology are the
+&lt;a href=&#34;https://mqscores.lsa.umich.edu/&#34;&gt;Martin&amp;ndash;Quinn scores&lt;/a&gt;, developed by the
+eponymous political scientists.  Since their &lt;a href=&#34;https://mqscores.lsa.umich.edu/media/pa02.pdf&#34;&gt;original publication in
+2002&lt;/a&gt;, the scores have been
+widely used, in political science and in the media, to place justices on
+a left&amp;ndash;right political spectrum.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Swirling Fractals</title>
+      <link>https://corymccartan.github.io/2015/04/swirling-fractals/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2015/04/swirling-fractals/</guid>
+      <description>Corresponding to each point in and around the Mandelbrot set is a Julia set. If we start with a point near the origin, and move it in a circle around the main bulb of the Mandelbrot set, the series of corresponding Julia sets morph beautifully into one another.</description>
     </item>
     
   </channel>

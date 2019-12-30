@@ -19,7 +19,7 @@
       <guid>https://corymccartan.github.io/projects/electability-2020/</guid>
       <description>The interactive below accompanies this article I wrote for the Washington Post. The article has some other figures, explains the motivation, and provides a less-detailed overview of the methodology than that provided below.
 If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states:  (Drag the vertical line)
-    Methodology Summary I did some matrix algebra to basically estimate the (linear model) coefficients on each demographic category (white, college-educated, gender, etc.</description>
+    Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
     </item>
     
     <item>

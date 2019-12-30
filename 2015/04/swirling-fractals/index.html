@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Swirling Fractals • Cory McCartan</title>
+    
+    <link rel="icon" href="/images/logo-64.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,700&display=sawp" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://corymccartan.github.io/sass/main.min.css">
+    
+    
+
+    
+</head>
+<body>
+    <header>
+    <div class="center flex-row">
+        <a href="/">
+            <img src="/images/logo-128.png" id="logo">
+        </a>
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <span class="spacer"></span>
+        <nav>
+            <ul>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="center">
+        
+    
+    <h1 class="title">
+        <div class="text">Swirling Fractals</div>
+        <div class="triangle"></div>
+        <div class="spacer"></div>
+    </h1>
+    
+    <h2 class="subtitle">An animated Julia-set journey</h2>
+    
+    <section class="publishinfo">
+        <span class="date">April 1, 2015</span>
+    </section>
+    
+    <article class="main-content">
+        <p>The <a href="https://en.wikipedia.org/wiki/Mandelbrot_set">Mandelbrot set</a>, generated
+by iterating the map <em>f(z)=z<sup>2</sup>+c</em>, looks somethign like this, when
+colored by the number of iterations to blowup:</p>
+<figure class="w100">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg"/> 
+</figure>
+
+<p>Corresponding to each point in and around the Mandelbrot set is a Julia set,
+created by a similar iteration. In fact, a point is in the Mandelbrot set if
+and only if its Julia set is connected. If we start with a point near the origin,
+and move it in a circle around the main bulb of the Mandelbrot set, the series
+of corresponding Julia sets morph beautifully into one another, slowly
+completing a counter-clockwise rotation.</p>
+<iframe src="https://corymccartan.github.io/animated-julia-sets/" 
+style="width: 100%; border: none" height=640>WebGL required!</iframe>
+
+    </article>
+
+    </main>
+    <footer>
+    <div class="center">
+        <small>
+            <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
+            <br />
+            <br />
+            &copy; 2019 Cory McCartan. All Rights Reserved.
+        </small>
+    </div>
+</footer>
+
+
+</body>
+</html>

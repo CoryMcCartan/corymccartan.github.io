@@ -6,9 +6,43 @@
     <description>Recent content in Posts on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 29 Dec 2019 16:15:17 -0800</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One State, Two States, Low State, High State</title>
+      <link>https://corymccartan.github.io/2019/12/one-state-two-states-low-state-high-state/</link>
+      <pubDate>Sun, 29 Dec 2019 16:15:17 -0800</pubDate>
+      
+      <guid>https://corymccartan.github.io/2019/12/one-state-two-states-low-state-high-state/</guid>
+      <description>&lt;p&gt;The standard U.S. map shows states laid out in two dimensions, but doesn&#39;t
+convey any information about the crucial third dimension: altitude.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>37 Supreme Court Justices on a Plane</title>
+      <link>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</link>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</guid>
+      <description>&lt;p&gt;The most common measure of Supreme Court justice ideology are the
+&lt;a href=&#34;https://mqscores.lsa.umich.edu/&#34;&gt;Martin&amp;ndash;Quinn scores&lt;/a&gt;, developed by the
+eponymous political scientists.  Since their &lt;a href=&#34;https://mqscores.lsa.umich.edu/media/pa02.pdf&#34;&gt;original publication in
+2002&lt;/a&gt;, the scores have been
+widely used, in political science and in the media, to place justices on
+a left&amp;ndash;right political spectrum.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Swirling Fractals</title>
+      <link>https://corymccartan.github.io/2015/04/swirling-fractals/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2015/04/swirling-fractals/</guid>
+      <description>Corresponding to each point in and around the Mandelbrot set is a Julia set. If we start with a point near the origin, and move it in a circle around the main bulb of the Mandelbrot set, the series of corresponding Julia sets morph beautifully into one another.</description>
+    </item>
     
   </channel>
 </rss>
