@@ -7,7 +7,7 @@ async function main() {
     await load_data();
 
     let intl_container = d3.select("#intl-chart");
-    window.w = d3.select("main").node().getBoundingClientRect().width;
+    window.w = d3.select("article").node().getBoundingClientRect().width;
     window.h = innerHeight - d3.select("header").node().getBoundingClientRect().height;
 
     //makeIntlBubbles(intl_container, "net_assets", 12, 16);
@@ -70,7 +70,7 @@ async function main() {
         new ScrollMagic.Scene({
             triggerElement: "#a1s40",
             triggerHook: 0.8,
-            duration: "200%",
+            duration: "100%",
         })
         .on("enter", () => {
             intl_chart.rescale("net_assets", 5, 15);
@@ -91,10 +91,17 @@ async function main() {
                 color: "#666", cx: w/2, cy: h/2, 
             });
             intl_chart.add(intl_chart.data, 0.05);
+            intl_chart.highlight(["UFCW"], true);
+            d3.selectAll("g.intl text")
+                .filter(d => d.abbr=="BRK")
+                .attr("y", d => d.radius*0.6)
+                .attr("x", d => d.radius*0.3)
+                .attr("font-size", d => d.radius/4.5)
         })
         .on("leave", () => {
             intl_chart.data.pop();
             intl_chart.add(intl_chart.data, 0.5);
+            intl_chart.highlight(["UFCW"], false);
         }),
     ]);
 
