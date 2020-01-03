@@ -65,7 +65,7 @@ async function main() {
     let a1s40_unions = ["UAW", "USW", "CJA", "IBEW"];
     let a2s20_unions = ["ATDA", "UAW", "NEA"];
     let a2s40_unions = ["AFT", "AFGE", "UAW", "CJA"];
-    let a2s45_unions = ["SEIU", "AFA", "AFSCME", "IAFF", "IBEW"];
+    let a2s45_unions = ["SEIU", "AFA", "AFSCME", "IAFF", "IBEW", "IUJAT"];
 
     // SCROLLING SCENES
     let controller = new ScrollMagic.Controller();
@@ -220,16 +220,6 @@ async function main() {
         .on("enter", () => {
             a2_chart.reorder(d => (d.represent + d.strike_benefits) / d.disbursements, 0.0, 
                              "Pct. representational", ".0%", true, false);
-        }),
-
-        new ScrollMagic.Scene({
-            triggerElement: "#a2s60",
-            triggerHook: 0.8,
-            duration: "100%",
-        })
-        .on("enter", () => {
-            a2_chart.reorder(d => d.grants / d.disbursements, 0.001, 
-                             "Pct. contributions", ".1%", true, true);
         }),
 
         new ScrollMagic.Scene({
