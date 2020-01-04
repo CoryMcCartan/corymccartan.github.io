@@ -199,7 +199,7 @@
     are: 
     $$ \begin{align} 
         \mu_0 &\sim \mathrm{t}_{\nu}(0, 10^2) \\ 
-        \nu &\sim \Gamma(2, 0.1) \\
+        \nu &\sim \mathrm{Gamma}(2, 0.1) \\
         \sigma_w &\sim \mathrm{Cauchy}^+(0, 10) \\
         \rho &\sim \mathrm{Beta}(2, 1)
     \end{align}$$
@@ -213,8 +213,8 @@
     Democratic party, $n^d_i$. Both $n^s_i$ and $n^d_i$ are drawn from
     a binomial distribution,
     $$ \begin{align} 
-        n^s_i &\sim \mathrm{Binomial}(n_i, \pi_u) \\
-        n^d_i &\sim \mathrm{Binomial}(n^s_i, \pi_i) 
+        n^s_i &\sim \mathrm{Binom}(n_i, \pi_u) \\
+        n^d_i &\sim \mathrm{Binom}(n^s_i, \pi_i) 
     \end{align}$$
     where $\pi_u$ is the proportion of undecided voters nationally, and
     $\pi_i$ is the level of support for the Democrats in the given poll.

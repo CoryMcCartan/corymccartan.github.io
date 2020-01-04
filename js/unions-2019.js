@@ -89,6 +89,8 @@ async function main() {
     let a2s20_unions = ["ATDA", "UAW", "NEA"];
     let a2s40_unions = ["AFT", "AFGE", "UAW", "CJA"];
     let a2s45_unions = ["SEIU", "AFA", "AFSCME", "IAFF", "NEA", "IUJAT"];
+    let a4s10_unions = ["IBU", "NEA", "MEBA", "IUJAT", "UAW", "USW"];
+    let a4s40_unions = ["SEIU", "HFIA", "ILA"];
 
     // SCROLLING SCENES
     let controller = new ScrollMagic.Controller();
@@ -262,7 +264,8 @@ async function main() {
         })
         .on("enter", () => {
             a2_chart.reorder(d => (d.represent + d.strike_benefits) / d.disbursements, 0.0, 
-                             "Pct. representational", ".0%", true, false);
+                             "Pct. representational", ".0%", true, false,
+                             "", "More representational spending");
         }),
 
         new ScrollMagic.Scene({
@@ -272,7 +275,9 @@ async function main() {
         })
         .on("enter", () => {
             a2_chart.reorder(d => d.political / d.disbursements, 0.002, 
-                             "Pct. political", ".1%", true, true);
+                             "Pct. political", ".1%", true, true,
+                             "", "More political spending");
+
         }),
 
         new ScrollMagic.Scene({
@@ -282,7 +287,8 @@ async function main() {
         })
         .on("enter", () => {
             a2_chart.reorder(d => (d.grants + d.benefits) / d.disbursements, 0.00, 
-                             "Pct. benefits", ".1%", true, false);
+                             "Pct. benefits", ".1%", true, false,
+                             "", "More benefits spending");
         }),
 
         new ScrollMagic.Scene({
@@ -293,7 +299,9 @@ async function main() {
         .on("enter", e => {
             if (e.scrollDirection != "FORWARD") return;
             a2_chart.reorder(d => (d.overhead + d.admin) / d.disbursements, 0.0, 
-                             "Pct. overhead", ".0%", true, false);
+                             "Pct. overhead", ".0%", true, false,
+                             "", "More overhead spending");
+
         }),
 
         // ACT THREE ===============================================
@@ -301,30 +309,74 @@ async function main() {
         // ACT FOUR ===============================================
         new ScrollMagic.Scene({
             triggerElement: a4_container.node(), 
+            triggerHook: 0.8,
+            duration: "80%",
+        })
+        .on("enter", () => a4_chart.highlight(a4s10_unions, true))
+        .on("leave", () => a4_chart.highlight(a4s10_unions, false)),
+
+        new ScrollMagic.Scene({
+            triggerElement: a4_container.node(), 
             triggerHook: 1,
             offset: h,
-            duration: "100%",
+            duration: "475%",
         })
         .setPin(a4_container.node(), { pushFollowers: false }),
 
         new ScrollMagic.Scene({
             triggerElement: "#a4s20",
             triggerHook: 0.8,
-            duration: "100%",
+            duration: "200%",
         })
-        .on("enter", () => {
+        .on("enter", e => {
+            a4_chart.highlight(["IUEC", "IBT"], true);
             a4_chart.reorder(d => d.staff_salary, 15e3, 
-                             "Avg. staff salary", "$,.3r", true, false, 
+                             "Median staff salary", "$,.3r", true, false, 
                              "", "Higher salaries");
-            a4_chart.highlight(a2s40_unions, true);
         })
         .on("leave", e => {
-            a4_chart.highlight(a2s40_unions, false);
+            a4_chart.highlight(["IUEC", "IBT"], false);
             if (e.scrollDirection != "REVERSE") return;
             a4_chart.reorder(d => d.members / (d.officers + d.staff), 0,
                              "Members / staff", ",.0f", true, false,
                              "More staff", "Fewer staff");
         }),
+
+        new ScrollMagic.Scene({
+            triggerElement: "#a4s30",
+            triggerHook: 0.8,
+            duration: "70%",
+        })
+        .on("enter", () => {
+            a4_container.select("svg")
+                .insert("line", ":first-child")
+                .attr("class", "comparison")
+                .attr("stroke-width", 3)
+                .attr("stroke-dasharray", [7, 7])
+                .attr("stroke", "#666")
+                .attr("x1", a4_chart.scales.x(54132))
+                .attr("x2", a4_chart.scales.x(54132))
+                .attr("y1", 0.25 * h)
+                .attr("y2", 0.75 * h);
+        })
+        .on("leave", () => {
+            a4_container.select("svg line.comparison")
+                .remove();
+        }),
+
+        new ScrollMagic.Scene({
+            triggerElement: "#a4s40",
+            triggerHook: 1.0,
+            duration: "100%",
+        })
+        .on("enter", e => {
+            a4_chart.highlight(a4s40_unions, true);
+            if (e.scrollDirection != "FORWARD") return;
+            a4_chart.reorder(d => d.members * d.pct_private / d.locals, 30, 
+                             "Avg. local size", ",.0f", true, true, 
+                             "", "Larger local unions");
+        })
+        .on("leave", () => a4_chart.highlight(a4s40_unions, false)),
     ]);
 
 }
@@ -614,8 +666,7 @@ function a2_bubbleChart(container, stat, stat_min=1, stat_label="",
     };
 
 
-    nodes.on("mouseover", d => { tooltip.show(); tooltip.html(boxText(d)); })
-        .on("mousemove", d => { 
+    nodes.on("mouseover", d => { tooltip.show(); tooltip.html(boxText(d)); }) .on("mousemove", d => { 
             tooltip.style("top", box_y(event.pageY) + "px")
                 .style("left", box_x(event.pageX)+ "px");
         })
@@ -735,6 +786,7 @@ function a3_triangleChart(container) {
         .attr("x2", d => d.x2)
         .attr("y2", d => d.y2)
         .attr("stroke", "#666")
+        .attr("stroke-linecap", "round")
         .attr("stroke-width", 2);
 
     svg.append("text")
