@@ -126,7 +126,7 @@ async function main() {
         })
         .on("enter", () => {
             a1_chart.data.push({
-                abbr: "UNAFF",
+                abbr: "Unaff.",
                 radius: a1_chart.scales.radius(760681), 
                 color: "#d11", cx: w/2, cy: h/2, 
             });
@@ -134,7 +134,7 @@ async function main() {
         })
         .on("leave", () => {
             let unaff_idx;
-            if ((unaff_idx = a1_chart.data.findIndex(d => d.abbr == "UNAFF")) >= 0)
+            if ((unaff_idx = a1_chart.data.findIndex(d => d.abbr == "Unaff.")) >= 0)
                 a1_chart.data.splice(unaff_idx, 1);
             a1_chart.add(a1_chart.data, 0.25);
         }),
@@ -189,9 +189,9 @@ async function main() {
             a1_chart.highlight(["UFCW"], true);
             a1_container.selectAll("g.intl text")
                 .filter(d => d.abbr=="BRK")
-                .attr("y", d => d.radius*0.6)
-                .attr("x", d => d.radius*0.3)
-                .attr("font-size", d => d.radius/4.5)
+                .attr("y", d => d.radius*0.45)
+                .attr("x", d => d.radius*0.45)
+                .attr("font-size", d => d.radius/5)
         })
         .on("leave", () => {
             a1_chart.data.pop();
@@ -470,7 +470,7 @@ function a1_bubbleChart(container, radius="members", r_scale=10, r_div=11) {
         .force("x", d3.forceX().x(d => d.cx).strength(0.12))
         .force("y", d3.forceY().y(d => d.cy).strength(0.16))
         .force("collision", d3.forceCollide().radius(d => d.radius+1))
-        .alpha(0.2)
+        .alpha(0.3)
         .alphaDecay(1 - Math.pow(0.001, 1 / 600)) 
         .on("tick", tick);
 
@@ -514,7 +514,7 @@ function a1_bubbleChart(container, radius="members", r_scale=10, r_div=11) {
             .attr("font-size", d => 3*d.radius / (d.abbr.length+2));
 
         sim.force("collision", d3.forceCollide().radius(d => d.radius+1))
-            .alpha(0.4)
+            .alpha(0.5)
             .alphaDecay(1 - Math.pow(0.001, 1 / 150)) 
             .restart();
     };
@@ -642,7 +642,7 @@ function a2_bubbleChart(container, stat, stat_min=1, stat_label="",
     let sim = d3.forceSimulation(data)
         .force("charge", d3.forceManyBody().strength(0.3))
         //.force("center", d3.forceCenter(w, h/2))
-        .force("x", d3.forceX().x(d => d.cx).strength(3.0))
+        .force("x", d3.forceX().x(d => d.cx).strength(4.0))
         .force("y", d3.forceY().y(d => d.cy).strength(0.1))
         .force("collision", d3.forceCollide().radius(d => d.radius+1))
         .alpha(0.5)
@@ -718,9 +718,9 @@ function a2_bubbleChart(container, stat, stat_min=1, stat_label="",
 
         add(newdata);
 
-        sim.force("x", d3.forceX().x(d => d.cx).strength(2.0))
+        sim.force("x", d3.forceX().x(d => d.cx).strength(4.0))
             .force("collision", d3.forceCollide().radius(d => d.radius+1))
-            .alpha(0.05)
+            .alpha(0.08)
             .alphaDecay(1 - Math.pow(0.001, 1 / 150)) 
             .restart();
     };
