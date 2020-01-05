@@ -515,7 +515,7 @@ function a1_bubbleChart(container, radius="members", r_scale=10, r_div=11) {
 
         sim.force("collision", d3.forceCollide().radius(d => d.radius+1))
             .alpha(0.4)
-            .alphaDecay(1 - Math.pow(0.001, 1 / 225)) 
+            .alphaDecay(1 - Math.pow(0.001, 1 / 150)) 
             .restart();
     };
 
