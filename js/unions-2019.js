@@ -181,16 +181,16 @@ async function main() {
         })
         .on("enter", () => {
             a1_chart.data.push({
-                abbr: "BRK",
-                radius: a1_chart.scales.radius(348.7e9), 
+                abbr: "Walmart",
+                radius: a1_chart.scales.radius(79.634e9), 
                 color: "#666", cx: w/2, cy: h/2, 
             });
             a1_chart.add(a1_chart.data, 0.05);
             a1_chart.highlight(["UFCW"], true);
             a1_container.selectAll("g.intl text")
-                .filter(d => d.abbr=="BRK")
-                .attr("y", d => d.radius*0.45)
-                .attr("x", d => d.radius*0.45)
+                .filter(d => d.abbr=="Walmart")
+                .attr("y", d => d.radius*0.3)
+                .attr("x", d => d.radius*0.3)
                 .attr("font-size", d => d.radius/5)
         })
         .on("leave", () => {
