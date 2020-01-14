@@ -107,7 +107,7 @@ async function main() {
             triggerElement: a1_container.node(),
             triggerHook: 1,
             offset: h,
-            duration: "650%",
+            duration: "666%",
         })
         .setPin(a1_container.node(), { pushFollowers: false }),
 
