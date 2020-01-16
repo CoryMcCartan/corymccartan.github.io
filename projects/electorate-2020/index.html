@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79274202-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-79274202-4');
+    </script>
+
+    
+    <meta property="og:title" content="The American Electorate" />
+<meta property="og:description" content="Much more diverse than you think" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://corymccartan.github.io/projects/electorate-2020/" />
+<meta property="article:published_time" content="2020-01-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-21T00:00:00+00:00" />
+
+
+    <title>The American Electorate • Cory McCartan</title>
+    
+    <link rel="icon" href="/images/logo-64.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,700&display=sawp" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://corymccartan.github.io/sass/main.min.css">
+    
+    
+    <link rel="stylesheet" href="/css/weepeople.css">
+    
+    <link rel="stylesheet" href="/css/electorate.css">
+    
+
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <script src="/js/doT.min.js"></script>
+    
+</head>
+<body>
+    <header>
+    <div class="center flex-row">
+        <a href="/">
+            <img src="/images/logo-128.png" id="logo">
+        </a>
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <span class="spacer"></span>
+        <nav>
+            <ul>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="center">
+        
+    
+    <h1 class="title">
+        <div class="text">The American Electorate</div>
+        <div class="triangle"></div>
+        <div class="spacer"></div>
+    </h1>
+    
+    <h2 class="subtitle">Much more diverse than you think</h2>
+    
+    <section class="publishinfo">
+        <span class="date">January 21, 2020</span>
+    </section>
+    
+    <article class="main-content">
+        
+
+<div id="profile" style="visibility: hidden">
+</div>
+
+<script id="template" type="text/html">
+{{ 
+let spro = ["he", "she"][d.gender-1];
+let opro = ["him", "her"][d.gender-1];
+let ppro = ["his", "her"][d.gender-1]; 
+let pppro = ["his", "hers"][d.gender-1]; 
+}}
+<div id="header">
+    <div id="cutout" class="weepeople">{{=d.cutout}}</div>
+    <h1 id="name">&ldquo;{{=d.fname}} {{=d.lname}}&rdquo;</h1>
+    <div class="buttons">
+        <button id="prev-profile" class="move">&#9664;</button>
+        <button id="next-profile" class="move">&#9654;</button>
+    </div>
+    <div id="vitals">
+        {{=d.age}} years old
+        &nbsp;&bullet;&nbsp;
+        {{= ["White", "Black", "Hispanic", "Asian", "Native American", 
+            "Mixed race", "Mixed race", "Middle Eastern"][d.race-1] }}
+        &nbsp;&bullet;&nbsp;
+        {{= ["Straight", "Gay", "Gay", "Bisexual", "Queer"][d.sexuality-1] }}
+        {{= d.trans == 1 ? "transgender" : "" }}
+        {{= d.gender == 1 ? "man" : "woman" }}
+        &nbsp;&bullet;&nbsp;
+        {{= d.immstat == 1 ? "Immigrated to U.S." : "Born in U.S." }}
+    </div>
+    <div id="vitals">
+        Lives in {{=d.loc}} 
+        &nbsp;&bullet;&nbsp;
+        {{= ["Did not finish high school", "High school graduate", 
+             "Some college", "2-year college degree",
+             "Bachelor's degree", "Postgraduate degree"][d.educ-1] }}
+        &nbsp;&bullet;&nbsp;
+        Makes {{= ["less than $10k", "around $15k", "around $25k", 
+        "around $35k", "around $45k", "around $55k", "around $65k",
+        "around $75k", "around $90k", "around $110k", "around $135k",
+        "around $170k", "around $220k", "around $290k", "around $410k",
+        "more than $500k"][d.income-1] }} a year
+    </div>
+    <div id="vitals">
+        {{? d.ideo5 != 6 }}
+        Politically {{=["very liberal", "liberal", "moderate", 
+        "conservative", "very conservative"][d.ideo5-1]}}
+        &nbsp;&bullet;&nbsp;
+        {{?}}
+        {{= ['<span style="color: #47e">Democrat</span>', 
+        '<span style="color: #d43">Republican</span>', 
+        "Independent", "Another political party", 
+        "Not sure what party " + spro + " belongs to"][d.pid3-1] }}
+        &nbsp;&bullet;&nbsp;
+        {{? d.q317 == 1 || d.q317 == 2 }}
+        Voted for {{= ['<span style="color: #d43">Trump</span>', 
+        '<span style="color: #47e">Clinton</span>'][d.q317-1] }} in 2016
+        {{?? true }}
+        Did not vote in 2016
+        {{?}}
+    </div>
+</div>
+
+Agrees with __ of Democratic positions.
+
+<h2>Personal details</h2>
+<p>
+&ldquo;{{=d.fname}}&rdquo; was born in {{=2018-d.age}} and now lives in {{=d.loc}}. 
+{{=cap(spro)}} {{= ["immigrated to the U.S. and became a naturalized citizen",
+"", "has a parent who immigrated to the U.S", 
+"has a grandparent who immigrated to the U.S",
+"and " + ppro + " extended family were all born in the U.S"][d.immstat-1] }}. 
+{{=cap(spro)}} {{= ["is married", "is separated from " + ppro + " spouse",
+"is divorced", "is widowed", "has never been married", 
+"is living in a civil partnership"][d.marstat-1] }} and has 
+{{= d.children == 0 ? "no" : d.children }} 
+{{= d.children == 1 ? "child" : "children" }}. 
+{{? d.ownhome != 3 }}
+{{=cap(spro)}} {{= d.ownhome==1 ? "owns" : "rents" }} a home or apartment.
+{{?}}
+</p>
+
+<p>
+{{=d.fname}} {{= ["did not finish high school", "is a high school graduate", 
+"has had some college", "has a 2-year college degree", 
+"has a bachelor's degree", "has a postgraduate degree"][d.educ-1] }} and is 
+{{= d.edloan==2 ? "not " : ""}}currently paying off 
+{{= d.edloan == 2 ? "any" : ppro }} student loans. 
+{{=cap(spro)}} is {{= ["working full-time", "working part-time",
+"temporarily laid off", "currently unemployed", "retired", 
+"permanently disabled", "a homemaker", "currently a student"][d.employ-1] 
+}}{{? (d.employ != 1) * (d.employ != 2) }} and has 
+{{= d.hadjob == 2 ? "not" : "" }} had a job in the last five years{{?}}. 
+{{=cap(spro)}} {{= d.union == 1 ? "is a" : d.union == 2 ? "was a" 
+: "has never been a"}} union member. 
+{{= [cap(spro) + " is actively serving in the military.", 
+cap(spro) + " is a veteran.", 
+cap(spro) + " has an immediate family member serving in the military.",
+"", ""][["serving", "veteran", "family_serving", "family_veteran", "no"]
+    .indexOf(d.military)] }} 
+{{=cap(ppro)}} household income is {{= ["less than $10,000", 
+"around $15,000", "around $25,000", "around $35,000", "around $45,000", 
+"around $55,000", "around $65,000", "around $75,000", "around $90,000", 
+"around $110,000", "around $135,000", "around $170,000", "around $220,000", 
+"around $290,000", "around $410,000", "more than $500,000"][d.income-1] }} 
+a year, {{= ["a large increase from", "a moderate increase from", 
+"about the same as", "a moderate decrease from", 
+"a large decreasefrom"][d.q302-1] }} last year. 
+{{=cap(spro)}}{{? d.health_ins == "no" }} does not have health insurance.
+{{?? d.health_ins == "employer" }} has employer-provided health insurance.
+{{?? d.health_ins == "medicaid" }} is on Medicaid.
+{{?? d.health_ins == "medicare" }} is on Medicare.
+{{?? d.health_ins == "school" }} has health insurance provided by {{=ppro}} school.
+{{?? d.health_ins == "purchased" }} has purchased health insurance for {{=ppro}}self.
+{{?}}
+</p>
+
+<p>
+Religion is {{= ["very", "somewhat", "not too", "not at all"][d.pew_religimp-1] }} 
+important to {{= d.fname }}. {{=cap(spro)}} is {{? d.pew_bornagain == 1 }}
+{{= ["Protestant", "Catholic",
+"Mormon", "Greek Orthodox", "Jewish", "Muslim", "Buddhist", "Hindu", "atheist",
+"agnostic", "not a part of any particular church", 
+"a follower of a minor religion"][d.religion-1] }}
+{{?? true}}
+an evangelical Christian
+{{?}} and {{? !(d.pew_churatd > 4) }}
+attends services {{= ["more than once a week", "once a week", 
+"once or twice a month", "a few times a year"][d.pew_churatd-1] }}.
+{{?? true }}
+{{= [,,,, "seldom", "never", "never"][d.pew_churatd-1] }} attends services.
+{{?}}
+</p>
+
+{{ let changed = [d.q303_1 == 1, d.q303_2 == 1, d.q303_3 == 1, d.q303_4 == 1, 
+        d.q303_1 == 5, d.q303_1 == 6, d.q303_7 == 1, d.q303_8 == 1, 
+        d.q303_1 == 9, d.q303_10 == 1, d.q303_11 == 1];
+    let num_changed = changed.reduce((a, b) => a+b, 0);
+    let last_changed = changed.lastIndexOf(true); 
+    let changes = ["got married", "lost " + ppro + " job", "finished school", 
+    "retired", "got divorced", "had a child", "started a new job", 
+    "got a traffic ticket", "was a victim of a crime", 
+    "visited an emergency room", "got a raise"];
+    }}
+{{? num_changed == 1}}
+<p>
+Last year, {{=d.fname}} {{= changes[last_changed] }}.
+</p>
+{{?? num_changed != 0}}
+<p>
+Last year, {{=d.fname}}
+{{~ changed :v:i }}
+{{? v }}
+    {{= i == last_changed ? "and" : "" }}
+    {{= changes[i] }}{{= i == last_changed ? "." : ", " }}
+{{?}}
+{{~}}
+</p>
+{{?}}
+
+
+
+<h2>Satisfaction and involvement with government</h2>
+<p>
+{{=d.fname}} {{= ["usually follows", "sometimes follows", 
+"occasionally follows", "doesn&rsquo;t really follow"][d.newsint] }} the news 
+about government and politics. {{=cap(spro)}} 
+{{? d.q309a == 1 & d.q309b == 1 }}
+knows which party controls the House and Senate.
+{{?? d.q309a != 1 & d.q309b == 1 }}
+knows which party controls the Senate, but not which controls the House.
+{{?? d.q309a == 1 & d.q309b != 1 }}
+knows which party controls the House, but not which controls the Senate.
+{{?? d.q309a != 1 & d.q309b != 1 }}
+doesn&rsquo;t know which party controls the House or the Senate.
+{{?}} 
+{{=cap(spro)}} feels like the economy has {{=["gotten much better", 
+"gotten better", "stayed about the same", "gotten worse", 
+"gotten much worse"][d.q301-1]}} over the last year.
+</p>
+
+<p>
+{{ let approval = ["strongly approves", "somewhat approves", 
+"somewhat disapproves", "strongly disapproves", 
+"isn't sure what " + spro + " thinks"]; }}
+{{=cap(spro)}} {{= approval[d.q308a-1] }} of President Trump, 
+{{= approval[d.q308b-1] }} of Congress{{? !!d.q311a }} 
+(and {{= approval[d.q311a-1] }} of his representative)
+{{?}}, 
+{{= approval[d.q308c-1] }} of the Supreme Court, and 
+{{= approval[d.q308d-1] }} of {{=ppro}} governor.
+</p>
+
+<p>
+{{ let grades = ["excellent", "above average", "mediocre", "below average", "bad"]; }}
+In {{=ppro}} local community, {{=d.fname}} thinks 
+the schools are {{= grades[d.q427_a-1] }}, 
+the police are {{= grades[d.q427_b-1] }}, and 
+the roads are {{= grades[d.q427_c-1] }}.
+</p>
+
+<h2>Voting and political engagement</h2>
+<p>
+In 2016, {{=d.fname}} {{= ["voted for Donald Trump", "voted for Hillary Clinton",
+"did not vote"][d.q317-1] }}. 
+In the 2018 midterms, {{=d.fname}} {{= ["didn&rsquo;t vote", 
+"thought about voting, but didn&rsquo;t", 
+"didn&rsquo;t vote, though " + spro + " usually does",
+"tried to vote but couldn&rsquo;t", "voted"][d.q401-1] }}. 
+</p>
+
+{{ let particip = [d.q417a_1 == 1, d.q417a_2 == 1, d.q417a_3 == 1, 
+    d.q417a_4 == 1, d.q417a_1 == 5, d.q417a_1 == 6, d.q417a_7 == 1];
+    let num_particip = particip.reduce((a, b) => a+b, 0);
+    let last_particip = particip.lastIndexOf(true); 
+    let activities = ["attended a local political meeting", 
+    "put up a political sign", "worked for a campaign", "attended a protest",
+    "contacted a public official", "donated money to a political cause",
+    "donated blood"];
+    }}
+{{? num_particip == 1}}
+<p>
+Last year, {{=d.fname}} {{= activities[last_particip] }}.
+</p>
+{{?? num_particip != 0}}
+<p>
+Last year, {{=d.fname}}
+{{~ particip :v:i }}
+{{? v }}
+    {{= i == last_particip ? "and" : "" }}
+    {{= activities[i] }}{{= i == last_particip ? "." : ", " }}
+{{?}}
+{{~}}
+</p>
+{{?}}
+
+<!-- ECONOMIC ================================================ -->
+<h2>Economic issues</h2>
+
+<h4>Taxes</h4>
+<h4>Health care</h4>
+<h4>Trade</h4>
+<h4>Climate</h4>
+<h4>Budget</h4>
+<h4>Regulation</h4>
+- financial CHOICE
+- 2 for 1
+
+<!-- SOCIAL ================================================ -->
+<h2>Social issues</h2>
+
+<h4>Views on race and gender</h4>
+- resentment
+<h4>Gun control</h4>
+<h4>Abortion</h4>
+<h4>Immigration</h4>
+<h4>Other</h4>
+- transgender military
+
+<!-- OTHER ================================================ -->
+<h2>Governance and foreign policy issues</h2>
+
+<h4>Supreme Court</h4>
+<h4>Foreign policy</h4>
+ -nuclear deal
+ -sanctions
+</script>
+
+<div style="height: 10em"></div>
+
+<em>Data from the <a href="https://cces.gov.harvard.edu/">
+        Cooperative Congressional Election Study</a>.</em>
+
+<script src="/js/electorate-2020.js"></script>
+
+    </article>
+
+    </main>
+    <footer>
+    <div class="center">
+        <small>
+            <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
+            <br />
+            <br />
+            &copy; 2020 Cory McCartan. All Rights Reserved.
+        </small>
+    </div>
+</footer>
+
+
+</body>
+</html>

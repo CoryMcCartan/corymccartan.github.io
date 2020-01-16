@@ -1,0 +1,82 @@
+#profile {
+    margin: 1em 0;
+    width: 100%;
+}
+
+#header {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 10ex auto auto 20vw;
+    grid-column-gap: 0.25rem;
+    position: sticky;
+    top: 3.5rem;
+    padding-bottom: 0.75em;
+    background: #f4f4f4;
+    margin-bottom: 1em;
+    border-top: 0.75em solid #f4f4f4;
+    border-bottom: 1px solid #666;
+}
+
+#header #cutout {
+    font-size: 7rem;
+    line-height: 0.7;
+}
+
+#header #name {
+    font-size: 2.7rem;
+    grid-column: 2 / span 2;
+    line-height: 1.1;
+    margin: auto 0;
+}
+
+#header #vitals {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    grid-column: 1 / span 4;
+    text-align: center;
+    margin-top: 0.25rem
+}
+
+#header .buttons {
+    grid-column: 4 / span 1;
+    margin: auto 0 auto auto;
+}
+#header button.move {
+    background: #e5e5e5;
+    padding: 1rem 1rem 0.8rem;
+    font-family: "Overpass", sans-serif;
+    font-size: 1.4rem;
+    color: #bbb;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    outline: none;
+    line-height: 1.2;
+}
+#header button.move:hover {
+    background: #d2d2d2;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 540px) {
+    #header {
+        grid-template-columns: 7ex auto auto 6em;
+    }
+
+    #header button.move {
+        padding: 0.7rem 0.7rem 0.5rem;
+    }
+
+    #header #cutout {
+        font-size: 6rem;
+    }
+    #header #name {
+        font-size: 1.85rem;
+    }
+    #header #vitals {
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+
+}
