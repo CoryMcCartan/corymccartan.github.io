@@ -15,6 +15,7 @@
     margin-bottom: 1em;
     border-top: 0.75em solid #f4f4f4;
     border-bottom: 1px solid #666;
+    z-index: 1;
 }
 
 #header #cutout {
@@ -43,19 +44,92 @@
     margin: auto 0 auto auto;
 }
 #header button.move {
-    background: #e5e5e5;
+    background: #808fbb;
     padding: 1rem 1rem 0.8rem;
     font-family: "Overpass", sans-serif;
     font-size: 1.4rem;
-    color: #bbb;
-    border: 1px solid #bbb;
+    color: #fff;
+    border: 1px solid #668;
     border-radius: 3px;
     outline: none;
     line-height: 1.2;
+    transition: background 100ms;
 }
 #header button.move:hover {
-    background: #d2d2d2;
+    background: #707fab;
     cursor: pointer;
+}
+
+
+.gradient {
+    width: 100%;
+    height: 2.4em;
+    background: linear-gradient(to right, #449, #57f 7%, 
+                                #faeffa 50%, #e54 93%, #944 100%);
+    margin-bottom: 0.5em;
+    border-radius: 3px;
+}
+
+.gradient .bar {
+    width: 3px;
+    height: 2.4em;
+    background: #000a;
+    position: relative;
+    left: -1.5px;
+}
+
+.gradient .bar span {
+    display: block;
+    margin: auto 0 auto 1em;
+}
+
+table.issues {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+
+table.issues th {
+    border-bottom: 1px solid #666;
+}
+
+table.issues td {
+    padding: 0.5rem 0;
+}
+
+table.issues td:first-child {
+    line-height: 1.1;
+    padding-left: 0.5rem;
+}
+
+table.issues tr:nth-child(even) {
+    background: #0000000b;
+}
+
+table.issues td#support, table.issues td#oppose {
+    border-radius: 2px;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 0.25rem;
+    border: 2px solid transparent;
+}
+table.issues td.dem.agree {
+    background: #67f;
+}
+table.issues td.gop.agree {
+    background: #e54;
+}
+table.issues td.gop.dem.agree {
+    background: #c5c;
+}
+table.issues td.dem {
+    border: 2px solid #67f;
+}
+table.issues td.gop {
+    border: 2px solid #e54;
+}
+table.issues td.dem.gop {
+    border: 2px solid #c5c;
 }
 
 
@@ -77,6 +151,11 @@
     #header #vitals {
         font-size: 0.9rem;
         line-height: 1;
+    }
+
+    table.issues td:first-child {
+        line-height: 1.1;
+        font-size: 0.9rem;
     }
 
 }
