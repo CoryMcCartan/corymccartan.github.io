@@ -22,9 +22,18 @@ async function main() {
 
     await load_data();
     let N = electorate.length;
-    let ctr = 0;
+    window.ctr = 0;
     let scrollTo = -1;
     let cells = {};
+    let dem_scale = d3.scaleLinear()
+        .domain([0, 1])
+        .range(["#edea", "#67fa"]);
+    let gop_scale = d3.scaleLinear()
+        .domain([0, 1])
+        .range(["#edea", "#e54a"]);
+    let bip_scale = d3.scaleLinear()
+        .domain([0, 1])
+        .range(["#c5c0", "#c5ca"]);
 
     let next_profile = function() {
         ctr = mod(ctr + 1, N);
@@ -43,6 +52,12 @@ async function main() {
         d3.select("#next-profile").on("click", next_profile);
         d3.select("#prev-profile").on("click", prev_profile);
 
+        if (innerWidth <= 550) {
+            d3.selectAll("#vitals").html(function() {
+                return this.innerHTML.replace(/&nbsp;/g, "");
+            });
+        }
+
         let questions = Object.keys(voter);
         let row = d3.selectAll(".issues tr")
             .data(questions, function(d) {
@@ -59,6 +74,35 @@ async function main() {
             .classed("agree", d => voter[d] == 2)
             .classed("dem", d => dem_line[d] == 2)
             .classed("gop", d => gop_line[d] == 2);
+
+        let nat_pct = function(d) {
+            let [supp, total] = electorate.reduce((a, b) => {
+                if (!!b[d]) return [a[0]+(b[d]==1), a[1]+1];
+                else return a;
+            }, [0, 0]);
+            return supp / total;
+        };
+        let nat_color = function(d) {
+            if (dem_line[d.id] == gop_line[d.id]) {
+                if (dem_line[d.id] == 1)
+                    return bip_scale(d.pct);
+                else
+                    return bip_scale(1-d.pct);
+            } else {
+                if (dem_line[d.id] == 1 && d.pct >= 0.5)
+                    return dem_scale(d.pct);
+                else if (dem_line[d.id] == 1 && d.pct < 0.5)
+                    return gop_scale(d.pct);
+                else if (dem_line[d.id] == 2 && d.pct < 0.5)
+                    return dem_scale(d.pct);
+                else
+                    return gop_scale(d.pct);
+            }
+        };
+        row.select("td#national")
+            .datum(d => ({id: d, pct: nat_pct(d)}))
+            .text(d => f_pct(d.pct))
+            .style("background-color", nat_color);
 
         cells._ = Array.from(document.querySelectorAll("table.issues td"));
         if (scrollTo >= 0) {
