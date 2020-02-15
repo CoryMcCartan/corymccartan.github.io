@@ -6,10 +6,20 @@
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Geography of Political Differences</title>
+      <link>https://corymccartan.github.io/2020/02/the-geography-of-political-differences/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2020/02/the-geography-of-political-differences/</guid>
+      <description>I recently examined the political views of ordinary voters, and made a lot of comparisons across income groups, political parties, education, and race. One factor I didn&#39;t look at, though, was geography. While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&amp;rsquo; views on economic and social issues separately.
+Read: Polarization and the American Electorate &amp;raquo;  Using data from the Cooperative Congressional Election Study, which asks voters about their views on a range of policy questions, we can assign each voter a social and economic score, ranging from –100 (most liberal) to 100 (most conservative).</description>
+    </item>
     
     <item>
       <title>Polarization and the American Electorate</title>
