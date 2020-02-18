@@ -6,7 +6,7 @@
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>On a Streak?</title>
       <link>https://corymccartan.github.io/2020/02/weather/</link>
-      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/2020/02/weather/</guid>
       <description>Streaks are an important part of how we experience a place&#39;s weather: it matters not just how hot it gets, or how much it rains, but also how long these kinds of weather stick around. Mathematically, one way to understand these patterns is through Markov chains. Thinking of weather in this way can reveal some interesting patterns, and confirm some stereotypes.</description>

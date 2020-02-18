@@ -22,8 +22,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://corymccartan.github.io/2020/02/weather/" />
 <meta property="og:image" content="https://corymccartan.github.io/images/2020-02-weather-promo.png" />
-<meta property="article:published_time" content="2020-02-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-17T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-02-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-18T00:00:00+00:00" />
 
 
     <title>On a Streak? • Cory McCartan</title>
@@ -74,7 +74,7 @@
     <h2 class="subtitle">What Markov chains can say about why your city’s weather changes, or doesn’t.</h2>
     
     <section class="publishinfo">
-        <span class="date">February 17, 2020</span>
+        <span class="date">February 18, 2020</span>
     </section>
     
     <article class="main-content">
@@ -108,8 +108,8 @@ think about the probabilities in the diagram above as changing from day to day.
 Sunny streaks are more likely during the summer.</p>
 <p>But if we allow for these changes, and we look at not just sun and rain but also
 clouds and snow, we can start to get an interesting picture of the weather in a
-place.  The next section shows what happens when we use a statistical model do
-this for the largest fifteen or so cities in the U.S.  Try picking different
+place.  The next section shows what happens when we use a statistical model to
+do this for the largest fifteen or so cities in the U.S.  Try picking different
 cities in the drop-down menu and explore how their weather patterns differ.</p>
 <p>[<a href="#comparing-cities">Jump to the second half</a>]   
 [<a href="#methodology">Jump to the methodology section</a>]</p>
@@ -189,8 +189,8 @@ those of most cities in the Northeast and Midwest.</p>
     <img src="sun_streak.png"/> 
 </figure>
 
-<p>The patterns for rain are even less surprising: with the exception of Seattle,
-San Francisco, and Miami, it rains for around 1.7 days at a time in most cities.
+<p>The patterns for rain are even less surprising: except for Seattle, San
+Francisco, and Miami, it rains for around 1.7 days at a time in most cities.
 Phoenix has the shortest average rainy streak, at just over 1.5 days.</p>
 <figure class="w7in">
     <img src="rain_streak.png"/> 
@@ -212,7 +212,7 @@ You decide.</p>
 <p>Given the weather on a day, the Markovianness of the process
 means that the weather on the next day is drawn from a categorical distribution,
 with probabilities given by the corresponding column in the transition matrix.
-The Markov chains used here are time-inhomogenous: the transition matrix changes
+The Markov chains used here are time-inhomogeneous: the transition matrix changes
 from day to day.  The transition matrix probabilities were assumed to vary in
 time along Gaussian radial-basis splines (taking into account the modular
 nature of dates around year boundaries), with six knots spaced evenly
@@ -233,7 +233,7 @@ yielded the weather mixture charts.</p>
 staying in the same weather state from one day to the next. Averaging these
 probabilities across the four weather types (a weighted average, with weights
 proportional to the steady-state probabilities) yielded a composite probability
-of maintainig the current weather.  Markovianness then implies that the number
+of maintaining the current weather.  Markovianness then implies that the number
 of days at a certain state follows a geometric distribution; the average streak
 length is then easily calculated as the reciprocal of the probability of a
 change in the weather.</p>
