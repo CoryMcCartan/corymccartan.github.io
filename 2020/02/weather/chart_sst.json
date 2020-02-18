@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": "container",
+    "height": "container",
+    "title": "Average weather mix",
+    "data": { "name": "data" },
+    "transform": [
+        {"filter": "datum.to == 'Rain'"}
+    ],
+    "encoding": {
+        "x": {
+            "field": "date", 
+            "type": "temporal",
+            "axis": {"title": null, "format": "%B"}
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "opacity": {"value": 0.8},
+                "y": {
+                    "field": "fraction",
+                    "type": "quantitative",
+                    "scale": {"domain": [0, 1]},
+                    "axis": {"title": "Share of weather", "format": ".0%"}
+                },
+                "color": {
+                    "field": "from", 
+                    "type": "nominal",
+                    "legend": {"title": null, "orient": "top"}
+                }
+            },
+            "layer": [{"mark": "area"}]
+        },
+        {
+            "transform": [{"pivot": "from", "value": "fraction", "groupby": ["date"]}],
+            "mark": "rule",
+            "encoding": {
+                "opacity": {
+                    "condition": {"value": 0.3, "selection": "hover"},
+                    "value": 0
+                },
+                "tooltip": [
+                    {"field": "date", "type": "temporal", "format": "%B %-d"},
+                    {"field": "Clouds", "type": "quantitative", "format": ".0%"},
+                    {"field": "Rain", "type": "quantitative", "format": ".0%"},
+                    {"field": "Snow", "type": "quantitative", "format": ".0%"},
+                    {"field": "Sun", "type": "quantitative", "format": ".0%"}
+                ]
+            },
+            "selection": {
+                "hover": {
+                    "type": "single",
+                    "fields": ["date"],
+                    "nearest": true,
+                    "on": "mouseover",
+                    "empty": "none",
+                    "clear": "mouseout"
+                }
+            }
+           
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": "container",
+    "height": "container",
+    "title": "Weather persistence, overall...",
+    "data": { "name": "data" },
+    "transform": [
+        {"filter": "datum.to == datum.from"},
+        {"calculate": "datum.prob * datum.fraction", "as": "prob_wgt"},
+        {"calculate": "datum.prob_l * datum.fraction", "as": "prob_l_wgt"},
+        {"calculate": "datum.prob_u * datum.fraction", "as": "prob_u_wgt"},
+        {
+            "aggregate": [
+                {"op": "sum", "field": "prob_wgt", "as": "prob_wgt"},
+                {"op": "sum", "field": "prob_l_wgt", "as": "prob_l_wgt"},
+                {"op": "sum", "field": "prob_u_wgt", "as": "prob_u_wgt"}
+            ],
+            "groupby": ["date"]
+        },
+        {"calculate": "1 / (1 - datum.prob_wgt)", "as": "per"},
+        {"calculate": "1 / (1 - datum.prob_l_wgt)", "as": "per_l"},
+        {"calculate": "1 / (1 - datum.prob_u_wgt)", "as": "per_u"}
+    ],
+    "encoding": {
+        "x": {
+            "field": "date", 
+            "type": "temporal",
+            "axis": {"title": null, "format": "%B"}
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "y": {"field": "per_u", "type": "quantitative"},
+                "y2": {"field": "per_l", "type": "quantitative"},
+                "opacity": {"value": 0.5},
+                "color": {"value": "#444444"}
+            },
+            "layer": [{"mark": "area"}]
+        },
+        {
+            "encoding": {
+                "y": {
+                    "field": "per",
+                    "type": "quantitative",
+                    "axis": {"title": "Average streak length", "format": ".1f"}
+                },
+                "color": {"value": "#444444"}
+            },
+            "layer": [{"mark": "line"}]
+        }
+    ]
+}

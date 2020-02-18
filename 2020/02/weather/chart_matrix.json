@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": "container",
+    "height": "container",
+    "title": "Weather changes",
+    "data": { "name": "data" },
+    "selection": {
+        "transition_date": {
+            "type": "single",
+            "fields": ["period"],
+            "bind":  {"input": "range", "min": 1, "max": 53, "step": 1,
+                      "name": "Date"},
+            "init": {"period": 1}
+        }
+    },
+    "transform": [
+        {"filter": {"selection": "transition_date"}},
+        {"calculate": "datum.from + ' → ' + datum.to", "as": "transition"}
+    ],
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "from", 
+            "type": "nominal",
+            "axis": {"title": "Weather today", "labelAngle": 0}
+        },
+        "y": {
+            "field": "to", 
+            "type": "nominal",
+            "sort": "descending",
+            "axis": {"title": "Weather tomorrow"}
+
+        },
+        "opacity": {
+            "field": "prob", 
+            "type": "quantitative",
+            "scale": {"domain": [0, 0.95], "range": [0.05, 1]},
+            "legend": {"title": "Probability", "orient": "right", "format": ".0%"}
+        },
+        "color": {
+            "field": "from", 
+            "type": "nominal",
+            "legend": null
+        },
+        "tooltip": [
+            {"field": "transition"},
+            {"field": "date", "type": "temporal", "format": "%B %-d"},
+            {"field": "prob", "type": "quantitative", "format": ".0%"}
+        ]
+    }
+}
