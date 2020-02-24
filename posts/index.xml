@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Nevada Caucuses</title>
+      <link>https://corymccartan.github.io/2020/02/the-nevada-caucuses/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2020/02/the-nevada-caucuses/</guid>
+      <description>Caucuses have a distinct advantage over primaries, which are conducted by ballot: after an initial tally of candidates’ support, voters can realign themselves into new groups before the final count. This realignment process can provide valuable insight into the preferences of voters, and help us understand how the race might change if more candidates start to drop out.</description>
+    </item>
     
     <item>
       <title>On a Streak?</title>
