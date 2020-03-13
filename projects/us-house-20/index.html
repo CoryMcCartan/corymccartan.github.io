@@ -93,7 +93,7 @@ variation in how many seats they may gain or lose.
 </div></p>
 <h1 id="how-the-odds-have-changed">How the odds have changed</h1>
 <p>The model works by using economic indicators, structural factors (like whether
-its is a midterm year, or the party that controls the White House), and
+it is a midterm year, or the party that controls the White House), and
 <a href="#national-polling">national polling data</a> to estimate what the nationwide
 popular vote (adding up all the votes for each party in all 435 districts) and
 the seat breakdown will be.</p>
@@ -124,7 +124,7 @@ local House race.</p>
 <p>Since November 2019, <b id="n_polls"></b> generic ballot polls have been
 conducted.  As new polling data arrive, the model re-estimates how the
 Democratic share on the generic ballot has evolved over time, and forecasts how
-it change toward Election Day. The model makes an intial guess of the
+it could change toward Election Day. The model makes an initial guess of the
 Election-Day popular vote based on the structural and economic factors
 mentioned above.  Right now, it estimates that the Democrats have a
 <b id="prob_pop"></b> chance of winning the popular vote.</p>
@@ -137,7 +137,7 @@ more Democratic.</p>
 <p>In addition, certain polling firms have a pattern of producing polls that lean
 toward one party or another.  These &ldquo;house effects&rdquo; are estimated by the model
 and used to make adjustments in estimating overall public opinion.  Negative
-house effects (red) mean that the firm's polls overestimte Republican support;
+house effects (red) mean that the firm's polls overestimate Republican support;
 positive effects (blue) mean that the firm overestimates Democratic support.</p>
 <table id="firms">
 <col width="42%">
@@ -159,7 +159,7 @@ White House, and whether or not it is a midterm election (along with some
 interaction terms). The model uses House elections since 1974 to make its
 predictions.</p>
 <p>The voter intent model predicts the true state of public opinion at every
-week of the race, up to and including Election Day. The main paramter of
+week of the race, up to and including Election Day. The main parameter of
 interest is latent support for the Democratic party (on a logit scale). The
 results of each poll are assumed to be drawn from a binomial distribution
 with this latent probability, adjusted for the polling firm's house effects,
