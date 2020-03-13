@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://corymccartan.github.io/election-2020/</loc>
+    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://corymccartan.github.io/</loc>
-    <lastmod>2020-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/us-house-20/</loc>
+    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/</loc>
+    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -34,11 +49,6 @@
   
   <url>
     <loc>https://corymccartan.github.io/projects/electorate-2020/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://corymccartan.github.io/projects/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   

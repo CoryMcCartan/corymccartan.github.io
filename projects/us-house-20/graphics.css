@@ -1,0 +1,218 @@
+svg * {
+    pointer-events: none
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.graphic {
+    margin: 0 -1em 0 -1em;
+}
+.graphic svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible
+}
+
+.label {
+    font-size: 8pt;
+    font-weight: bold;
+    fill: #444;
+}
+
+svg .title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.axis text {
+    fill: #444;
+    font-size: 8pt;
+    font-weight: normal;
+    font-family: "Overpass";
+}
+
+.axis .label {
+    font-weight: bold
+}
+
+.axis path,.axis line {
+    stroke: #444
+}
+
+.y.axis .tick line {
+    stroke-dasharray: 1, 2;
+    stroke: #aaa;
+}
+
+.y.axis .domain {
+    display: none
+}
+
+.line {
+    stroke-width: 3;
+    fill: none
+}
+
+svg text.tooltip {
+    font-size: 15pt;
+    font-weight: bold;
+}
+svg rect.tooltip {
+    fill: #f4f4f4;
+    opacity: 0.7;
+}
+
+
+#histogram {
+    margin-top: -1.8em;
+    padding: 0;
+    min-height: 240px;
+    position: relative
+}
+#histogram text.hist-gain {
+    fill: white;
+    font-weight: bold;
+    text-shadow: 4px 4px #0006;
+}
+
+#histogram .tooltip {
+    background: #f4f4f4;
+    font-weight: normal;
+    font-size: 1.15rem;
+    max-width: 25vw;
+    line-height: 1.05;
+    top: 2em;
+    padding: 0;
+}
+#histogram .tooltip b {
+    white-space: nowrap;
+}
+
+button {
+    outline: none;
+    background: #fafafa;
+    border: 2px solid #808fbb;
+    padding: 0.5em;
+    border-radius: 3px;
+    font-family: Overpass;
+    font-weight: normal;
+    font-size: 1rem;
+    min-width: 200px;
+}
+button:hover {
+    background: #fff;
+    cursor: pointer;
+}
+
+#sim_result {
+    text-align: center;
+    font-size: 16pt;
+    flex-grow: 1;
+}
+
+
+#firms {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+#firms th {
+    border-bottom: 1px solid #444;
+}
+#firms td, th {
+    line-height: 1;
+    padding: 1px 0;
+}
+#firms .bar {
+    height: 1.5em;
+    margin-top: 3px;
+    margin-bottom: -2px;
+    display: inline-block;
+}
+
+article section {
+    padding: 0.5em 0;
+}
+
+.banner {
+    padding: 1.2em 100% 1.1em 100%;
+    font-size: 2rem;
+    line-height: 1.25;
+    background: #ddd;
+    margin-bottom: 1em;
+    position: relative;
+    width: 300%;
+    left: -100%;
+    border-top: 1px solid #444;
+    z-index: -1;
+}
+
+.banner p {
+    margin: 0 0 0.5em;
+    line-height: 1.05;
+    text-align: left;
+}
+
+.banner .updated {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0.6rem auto -0.4rem
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -5em;
+    visibility: hidden
+}
+
+
+svg: empty {
+    background: #67f
+}
+
+.mjx-chtml {
+    outline: none
+}
+
+@media screen and (max-width:  639px) {
+    .banner {
+        font-size: 1.5rem
+    }
+}
+@media screen and (min-width:  960px) {
+    svg text.tooltip {
+        font-size: 18pt;
+    }
+}
+
+@media screen and (max-width:  600px) {
+    #histogram {
+        min-height: 160px !important;
+    }
+    #histogram .tooltip {
+        font-size: 0.9rem;
+        max-width: 45vw;
+        top: 2.5em;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:  480px) {
+    .maj {
+        display: none
+    }
+}
+
+@media screen and (max-width:  360px) {
+    .gain {
+        display: none
+    }
+}
