@@ -199,6 +199,9 @@ svg: empty {
         max-width: 45vw;
         top: 2.5em;
     }
+    #histogram text.hist-gain {
+        text-shadow: 3px 3px #0006;
+    }
 
     button {
         width: 100%;
