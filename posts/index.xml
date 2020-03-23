@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Not Just Like the Flu</title>
+      <link>https://corymccartan.github.io/2020/03/covid-deaths/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2020/03/covid-deaths/</guid>
+      <description>Should this be the last daylight savings? The time zone shift is an excellent opportunity to look at daylight patterns across the country.</description>
+    </item>
     
     <item>
       <title>The Other March Madness</title>
