@@ -52,7 +52,8 @@ function recalc() {
     let adj_r = age_scfr.map(r => r * inf_rate*0.5 * scfr/0.014); 
     let age_d = values.map((x, i) => x*adj_r[i]);
 
-    b_est_d.innerHTML = d3.format(".1f")(d3.sum(age_d));
+    let est_d = d3.sum(age_d);
+    b_est_d.innerHTML = Math.floor(est_d) + "&ndash;" + Math.ceil(est_d);
     let lp_none = values.map((x, i) => x * Math.log(1 - adj_r[i]));
     let pr_one = 1 - Math.exp(d3.sum(lp_none));
     b_pr_one.innerHTML = probToText(pr_one); 
