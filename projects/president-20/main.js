@@ -277,7 +277,7 @@ function state_select(val) {
         hrule_label: "EVEN",
         h: bigScreen ? 300 : 220,
         title: "Chances of winning " + name,
-        format: pct,
+        format: d3.format(".0%"),
         tooltip_format: pct,
         halfwidth: true,
         refl: 1,
@@ -307,7 +307,7 @@ function state_select(val) {
         addl_left: 4,
         h: bigScreen ? 260 : 200,
         title: `Chances ${name} decides the elction`,
-        format: pct,
+        format: d3.format(".0%"),
         tooltip_format: pct,
         halfwidth: true,
         hrule: -1e-6, // weird bugfix
