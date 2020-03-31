@@ -109,7 +109,7 @@ async function main() {
                 format: margin_rnd,
                 tooltip_format: margin,
                 today: Date.now(),
-                hrule_label: "",
+                hrule_label: "EVEN",
             });
         });
 
