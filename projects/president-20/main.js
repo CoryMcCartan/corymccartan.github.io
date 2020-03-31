@@ -314,7 +314,6 @@ function state_select(val) {
         color: "#666",
         refl: 0,
     });
-    let vp_fmt = x => x < 0.005 ? "<0.1" : d3.format(".1f")(x);
     chart_line(data, "#tipping_history", "rel_voter_power", false, {
         ymin: 0,
         ymax: 5,
@@ -323,8 +322,8 @@ function state_select(val) {
         hrule: 1,
         hrule_label: "AVERAGE",
         title: `Relative importance of ${name} voters`,
-        format: vp_fmt,
-        tooltip_format: vp_fmt,
+        format: d3.format(".1f"),
+        tooltip_format: x => x < 0.005 ? "<0.1" : d3.format(".1f")(x),
         halfwidth: true,
         color: "#666",
         refl: 0,
