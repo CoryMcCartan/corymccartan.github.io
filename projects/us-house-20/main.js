@@ -2,7 +2,18 @@ const est_url = "https://corymccartan.github.io/us-house-20/estimate.json";
 const hist_url = "https://corymccartan.github.io/us-house-20/history.csv";
 const poll_url = "https://corymccartan.github.io/us-house-20/polls.csv";
 
-window.fontSize = innerWidth < 500 ? 11 : 12;
+const currentSeats = 235;
+
+let margin = function(x) {
+    let fmt = d3.format(".1f");
+    if (x == 0.5) return "0.0";
+    return x > 0.5 ? "D+" + fmt(200*x - 100) : "R+" + fmt(100 - 200*x);
+};
+let margin_rnd = function(x) {
+    let fmt = d3.format(".0f");
+    if (x == 0.5) return "0";
+    return x > 0.5 ? "D+" + fmt(200*x - 100) : "R+" + fmt(100 - 200*x);
+};
 
 async function main() {
     let estimates = await (await fetch(est_url)).json();
@@ -54,18 +65,18 @@ async function main() {
             });
 
             chart_line(estimates.intent, "#public_opinion", "i", true, {
-                title: "Estimated Demoractic vote share",
-                hrule: 0.5,
+                title: "Estimated margin in national support",
                 addl_left: 4,
+                hrule: 0.5,
+                hrule_label: "EVEN",
                 pts: polls,
                 pts_key: "dem",
                 dodge: true,
                 //ymin: 0.45, ymax: 0.6,
                 pad: 0.3,
-                format: d3.format(".0%"),
-                tooltip_format: d3.format(".1%"),
+                format: margin_rnd,
+                tooltip_format: margin,
                 today: Date.now(),
-                hrule_label: "",
             });
         });
 
@@ -97,7 +108,7 @@ function fill_summary(data) {
     let frac = probToText(data.prob);
 
     $(".banner > .text").innerHTML = `
-        <p>The <b style="color: ${BLUE}">Democrats</b> are expected to win 
+        <p>The <b style="color: ${BLUE};">Democrats</b> are expected to win 
         <b>between ${Math.round(data.s_q05)} and ${Math.round(data.s_q95)} 
         seats</b>.</p><p>They have a <b>${frac} chance</b> of keeping control
         of the House.</p>`;
@@ -124,24 +135,6 @@ function fill_summary(data) {
     $("#n_polls").innerHTML = data.n_polls;
 }
 
-const nums =   [1,   1,  1,  1,  1,  1,  1,  1, 1, 1, 1, 1, 1, 1, 2, 1]
-const denoms = [100, 50, 40, 20, 15, 12, 10, 9, 8, 7, 6, 5, 4, 3, 5, 2];
-
-function probToText(prob) {
-    if (prob < 0.005)
-        return "<1 in 100";
-    else if (prob > 0.995)
-        return ">99 in 100";
-
-    let p = Math.min(prob, 1 - prob);
-    let dists = nums.map((n, i) => Math.abs(n/denoms[i] - p));
-    let idx = dists.indexOf(Math.min.apply(null, dists));
-    if (p == prob) 
-        return `${nums[idx]} in ${denoms[idx]}`;
-    else 
-        return `${denoms[idx] - nums[idx]} in ${denoms[idx]}`;
-}
-
 function sampleHist(hist) {
     let n = hist.length;
     let u = Math.random() * d3.sum(hist);
@@ -153,12 +146,5 @@ function sampleHist(hist) {
     }
     return x;
 }
-
-
-window.$ = s => document.querySelector(s);
-window.LOG = function(val) {
-    console.log(val);
-    return val;
-};
 
 main();

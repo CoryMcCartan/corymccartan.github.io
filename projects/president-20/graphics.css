@@ -1,0 +1,185 @@
+main h1 {
+    margin-top: 1.5em;
+}
+
+#histogram {
+    min-height: 280px;
+}
+#histogram svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible
+}
+
+.chart {
+    min-height: 240px;
+}
+
+#map {
+    max-width: 760px;
+    margin: -0.5em auto 0;
+    position: relative;
+}
+#map .states > path {
+    pointer-events: all;
+    cursor: pointer;
+}
+#map .tooltip {
+    top: unset;
+    width: 180px;
+    padding: 0.75em;
+    font-weight: normal;
+    line-height: 1.1;
+}
+#map .tooltip h3 {
+    font-family: Overpass;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+
+
+#states {
+    width: 100%;
+    margin: 0 auto 1em auto;
+    border-collapse: collapse;
+    border-bottom: 1px solid #444;
+    font-weight: normal;
+    font-size: 0.95em;
+}
+
+#states th {
+    border-bottom: 1px solid #444;
+    cursor: ns-resize;
+    user-select: none;
+}
+#states th.selected {
+    background-color: #ddd;
+}
+#states th.selected[data-asc="0"]::before {
+    content: "\25BC";
+}
+#states th.selected[data-asc="1"]::before {
+    content: "\25B2";
+}
+#states th.small {
+    font-size: 0.9em;
+}
+
+#states td, #states th {
+    line-height: 1.1;
+    padding: 6px 4px;
+}
+#states td:nth-child(1) {
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 6px 2px;
+}
+#states td.est {
+    padding: 3px 0;
+}
+#states td.est div {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 32px;
+    color: #000a;
+    text-indent: -6.4px;
+}
+#states td:nth-child(3) {
+    border-right: 1px solid #aaa;
+}
+#states td.num {
+    text-align: right;
+}
+
+#states.minim tr:nth-child(1n+16) {
+    display: none;
+}
+
+#states_marker {
+    height: 0;
+    margin: 0;
+}
+#states_marker::before {
+  content: '';
+  display: block;
+  height: calc(56px + 0.2rem);
+  margin-top: -calc(56px + 0.2rem);
+  visibility: hidden;
+  z-index: -1;
+}
+
+
+.sim_result {
+    text-align: center;
+    font-size: 16pt;
+    flex-grow: 1;
+    width: 100%;
+}
+
+
+#state_buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    grid-gap: 0.25em; 
+    justify-content: space-between; 
+}
+#state_buttons .button {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 0.25em 0;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+#state_buttons .button.selected {
+    color: black;
+    box-shadow: 0 0 0 1px black;
+}
+
+#filter_prob {
+    width: 100%;
+    height: 6px;
+    margin-top: 4px;
+}
+#reset_states {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:  600px) {
+    #histogram {
+        min-height: 200px !important;
+    }
+
+    .chart {
+        min-height: 240px;
+    }
+
+    .sim_result {
+        font-size: 14pt;
+        line-height: 1.15;
+    }
+
+    #states td:nth-child(2), #states td:nth-child(7),
+    #states col:nth-child(2), #states col:nth-child(7),
+    #states th:nth-child(2), #states th:nth-child(6) {
+        display: none;
+    }
+    #states th.small {
+        font-size: 0.85em;
+    }
+    #states td:nth-child(5) {
+        font-size: 0.9em;
+    }
+
+    #states.minim tr:nth-child(1n+11) {
+        display: none;
+    }
+}

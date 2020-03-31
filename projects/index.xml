@@ -6,10 +6,20 @@
     <description>Recent content in Projects on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 Presidential Forecast</title>
+      <link>https://corymccartan.github.io/projects/president-20/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/projects/president-20/</guid>
+      <description>2020 FORECASTS  President House       The electoral map Hover over a state to see the chances each candidate has of winning it, and click on a state to see more detailed forecasts.
+ What does a  chance feel like?-- Simulate an election Reset map    has a  chance of winning, but what does that really mean? There is a wide range of possible outcomes, at the state level and nationally.</description>
+    </item>
     
     <item>
       <title>2020 House Forecast</title>
@@ -17,7 +27,7 @@
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/projects/us-house-20/</guid>
-      <description>What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
+      <description>2020 FORECASTS  President House       What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
 How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
     </item>
     

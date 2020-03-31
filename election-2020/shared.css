@@ -1,0 +1,315 @@
+svg * {
+    pointer-events: none
+}
+
+html {
+    overflow-x: hidden;
+}
+
+h1.title, h2.subtitle, .publishinfo {
+    display: none;
+}
+
+
+.tabs {
+    border-bottom: 1px solid #666;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+.tabs a {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 0.5em;
+    margin-bottom: -1px;
+    font-weight: bold;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1rem;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+tabs a:first-child {
+    margin-left: 0;
+}
+.tabs a.current {
+    border: 1px solid #666;
+    border-radius: 2px 2px 0 0;
+    color: #666;
+    border-bottom: 1.5px solid #f4f4f4;
+}
+
+#forecast-links {
+    text-align: center;
+    margin-top: -0.8em;
+    padding: 0.1em 95% 0 95%;
+    background: #808fbb;
+    color: white;
+    font-size: 1.3rem;
+    position: relative;
+    width: 300%;
+    left: -100%;
+}
+#forecast-links a {
+    font-size: 1.3rem;
+    padding: 3px 9px;
+    margin-top: 4px;
+    color: #fffb;
+    text-transform: uppercase;
+}
+#forecast-links a.current {
+    background: #f4f4f4;
+    color: #666;
+}
+
+.link-banner {
+    color: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    justify-content: space-around;
+    line-height: 2;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: #f4f4f4;
+    z-index: 10;
+    padding: 0.25em 1.1em;
+    border-top: 1px solid #444;
+}
+.link-banner a {
+    color: #666;
+    margin: 0 2px;
+}
+
+
+article section {
+    padding: 0.5em 0;
+}
+
+
+button {
+    outline: none;
+    background: #fafafa;
+    border: 2px solid #808fbb;
+    padding: 0.5em;
+    border-radius: 3px;
+    font-family: Overpass;
+    font-weight: normal;
+    font-size: 1rem;
+    min-width: 200px;
+    margin: 0 1em 0 0;
+}
+button:not(:disabled):hover {
+    background: #fff;
+    cursor: pointer;
+}
+button:disabled {
+    color: #666;
+    border: 2px solid #aaa;
+}
+button.small {
+    min-width: unset;
+    padding: 0.25em 0.5em;
+    margin: 0 0.25em 0.25em; 0;
+}
+
+select {
+    font-family: Overpass; 
+    font-size: 11pt; 
+    font-weight: bold;
+    background: #fafafa;
+}
+
+
+#histogram {
+    padding: 0;
+    position: relative;
+    cursor: crosshair;
+}
+
+#histogram .tooltip {
+    background: #f4f4f4;
+    font-weight: normal;
+    font-size: 1.15rem;
+    max-width: 25vw;
+    line-height: 1.05;
+    top: 2em;
+    padding: 0;
+    z-index: -3;
+}
+#histogram .tooltip b {
+    white-space: nowrap;
+}
+
+
+.banner {
+    padding: 1.35em 100% 1.1em 100%;
+    font-size: 2rem;
+    line-height: 1.25;
+    background: #ddd;
+    margin-bottom: 1em;
+    position: relative;
+    width: 300%;
+    left: -100%;
+    border-top: 1px solid #444;
+    z-index: -1;
+}
+
+.banner p {
+    margin: 0 0 0.5em;
+    line-height: 1.05;
+    text-align: left;
+}
+
+.banner .updated {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0.6rem auto -0.4rem
+}
+
+
+#firms {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-bottom: 1px solid #444;
+    font-weight: normal;
+    font-size: 0.95em;
+}
+#firms th {
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px !important;
+}
+#firms td, #firms th {
+    line-height: 1;
+    padding: 1px 0 0;
+}
+#firms tr:last-child td {
+    padding-bottom: 2px;
+}
+#firms .bar {
+    height: 1.4em;
+    margin-top: 2px;
+    margin-bottom: -1px;
+    display: inline-block;
+}
+
+
+
+.label {
+    font-size: 8pt;
+    font-weight: bold;
+    fill: #444;
+}
+
+svg .title {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.axis text {
+    fill: #444;
+    font-size: 8pt;
+    font-weight: normal;
+    font-family: "Overpass";
+}
+
+.axis .label {
+    font-weight: bold
+}
+
+.axis path,.axis line {
+    stroke: #444
+}
+
+.y.axis .tick line {
+    stroke-dasharray: 1, 2;
+    stroke: #aaa;
+}
+
+.y.axis .domain {
+    display: none
+}
+
+.line {
+    stroke-width: 3;
+    fill: none
+}
+
+svg text.tooltip {
+    font-size: 15pt;
+    font-weight: bold;
+}
+svg rect.tooltip {
+    fill: #f4f4f4;
+    opacity: 0.7;
+}
+
+
+svg: empty {
+    background: #67f
+}
+
+
+.mjx-chtml {
+    outline: none
+}
+
+
+
+
+
+@media screen and (max-width:  639px) {
+    .banner {
+        font-size: 1.5rem
+    }
+}
+@media screen and (min-width:  960px) {
+    svg text.tooltip {
+        font-size: 18pt;
+    }
+}
+
+@media screen and (max-width:  600px) {
+    #histogram .tooltip {
+        font-size: 0.9rem;
+        max-width: 45vw;
+        top: 2.5em;
+    }
+    #histogram .tooltip b {
+        white-space: normal;
+    }
+    
+    .tabs a {
+        margin-left: 0.3em;
+        font-size: 0.9rem;
+    }
+
+    #forecast-links > span {
+        display: none;
+    }
+    #forecast-links a {
+        font-size: 1.2rem;
+    }
+
+    svg text.tooltip {
+        font-size: 13pt;
+        font-weight: bold;
+    }
+
+    svg .title {
+        font-size: 11pt;
+    }
+
+    button:not(.small) {
+        width: 100%;
+        margin: 0 0 0.5em 0;
+    }
+
+    select {
+        width: 100%;
+    }
+}
