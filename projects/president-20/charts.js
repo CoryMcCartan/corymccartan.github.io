@@ -444,7 +444,7 @@ function chart_histogram(data, id) {
         .classed("label", true)
         .attr("text-anchor", "middle")
         .attr("y", gap - 14)
-        .text(`${Math.floor(ev_exp)} EXPECTED`);
+        .text("EXPECTED");
 
     // CI line
     svg.append("line")
