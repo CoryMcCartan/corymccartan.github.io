@@ -279,7 +279,7 @@ function chart_map(data, us, id) {
         .attr("class", "tooltip")
         .style("visibility", "hidden");
 
-    states_hover.on("mousemove", function(d) {
+    let mmv = function(d) {
         let [mx, my] = d3.mouse(chart.node());
         if (mx < 40) mx = 40;
         if (mx > w - 120) mx = w - 120;
@@ -306,11 +306,16 @@ function chart_map(data, us, id) {
             .html(txt)
             .style("left", (mx - 50) + "px")
             .style("bottom", (h - my + 25) + "px");
-    });
-    chart.on("mouseout", function() {
+    };
+    let mout = function() {
         tt.style("visibility", "hidden");
         states_hover.style("stroke-width", "0");
-    });
+    };
+
+    states_hover.on("mousemove", mmv);
+    states_hover.on("touchmove", mmv);
+    chart.on("mouseout", mout);
+    chart.on("touchend", mout);
 
     states_hover.on("click", function(d) {
         state_select(data[idxs[d.id]].state);
