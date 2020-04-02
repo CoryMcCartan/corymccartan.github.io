@@ -2,13 +2,27 @@ main h1 {
     margin-top: 1.5em;
 }
 
-#histogram {
+#categories {
     min-height: 280px;
+    padding: 0;
+    position: relative;
 }
-#histogram svg {
+#categories svg {
     display: block;
     margin: 0 auto;
     overflow: visible
+}
+#categories svg rect {
+    pointer-events: all;
+    cursor: pointer;
+}
+#categories svg text{
+    font-family: Overpass;
+    font-weight: normal;
+}
+
+section.banner {
+    padding-top: 1.6em;
 }
 
 .chart {
@@ -24,20 +38,30 @@ main h1 {
     pointer-events: all;
     cursor: pointer;
 }
-#map .tooltip {
+#map .tooltip, #categories .tooltip {
     top: unset;
     width: 180px;
     padding: 0.75em;
     font-weight: normal;
     line-height: 1.1;
+    z-index: 20;
 }
-#map .tooltip h3 {
+#map .tooltip h3, #categories .tooltip h3 {
     font-family: Overpass;
     margin: 0;
     padding: 0;
     font-size: 1.2em;
 }
 
+
+#histogram {
+    margin: -1.5em 0 3em 0;
+}
+#histogram svg {
+    display: block;
+    margin: 0 auto;
+    overflow: visible
+}
 
 
 #states {
@@ -154,7 +178,7 @@ main h1 {
 
 
 @media screen and (max-width:  600px) {
-    #histogram {
+    #categories {
         min-height: 200px !important;
     }
 

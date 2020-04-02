@@ -23,7 +23,7 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://corymccartan.github.io/projects/president-20/" />
-<meta property="og:image" content="https://corymccartan.github.io/election-2020/pres_histogram.png" />
+<meta property="og:image" content="https://corymccartan.github.io/election-2020/pres_promo.png" />
 <meta property="article:published_time" content="2020-03-30T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-03-30T00:00:00+00:00" />
 
@@ -92,8 +92,7 @@
 <a href="/projects/president-20/" class="current">President</a>
 <a href="/projects/us-house-20/">House</a>
 </div>
-<div id="chart_hist"></div>
-<section id="histogram"></section>
+<section id="categories"></section>
 <section class="banner">
 <span class="text"></span>
 <span class="updated"></span>
@@ -101,9 +100,7 @@
 <h1 id="the-electoral-map">The electoral map</h1>
 <p>Hover over a state to see the chances each candidate has of winning it, and
 click on a state to see more detailed forecasts.</p>
-<section id="map">
-</section>
-<!--<h1>What does a <span id="prob_win"></span> chance feel like?</h1>-->
+<section id="map"></section>
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
 <button id="sim_elec">Simulate an election</button>
 <button disabled id="reset_map">Reset map</button>
@@ -113,6 +110,14 @@ click on a state to see more detailed forecasts.</p>
 winning, but what does that really mean? There is a wide range of possible
 outcomes, at the state level and nationally.  Click the button above to
 randomly simulate a possible election outcome.</p>
+<h3 id="all-the-possible-outcomes">All the possible outcomes</h3>
+<section id="histogram"></section>
+<p>The histogram above shows the distribution of electoral votes that the model
+is currently predicting. The wide range of possible outcomes reflects the
+inherent uncertainty in predicting elections. The fact that small numbers of
+votes can flip a state from one candidate to another, along with all of that
+state's electoral votes, means that this distribution is very spiky, unlike
+a normal bell curve.</p>
 <h1 id="how-the-odds-have-changed">How the odds have changed</h1>
 <p>The model works by first building a <a href="#prior-model">structural forecast</a> for the
 national race and the race in each state, based on economic indicators, the
@@ -223,7 +228,11 @@ Chance&nbsp;of deciding election</th>
 </select>
 <p><span id="selected_state"></span> has <b><span id="state_ev"></span> electoral
 votes</b> and voted for <span id="state_2016"></span> and
-<span id="state_2012"></span>. <span id="state_polls"></span></p>
+<span id="state_2012"></span>.
+<span hidden id="split_ev">The state awards two electoral votes to the statewide
+winner and one electoral vote to the winner of each of its congressional
+districts; this detail is not accounted for in the model.</span>
+<span id="state_polls"></span></p>
 <section id="state_history"></section>
 <p><a href="#state-forecasts">See above</a> for more information about what &ldquo;deciding the
 election&rdquo; and &ldquo;relative voter importance&rdquo; mean.</p>
