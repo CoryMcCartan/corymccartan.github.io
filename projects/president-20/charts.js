@@ -109,7 +109,6 @@ function chart_categories(data, id) {
         .attr("fill", d => color(d.rating))
         .attr("stroke", BLK);
 
-    console.log(h/w);
     let fontSize = bigScreen ? d => 2 + (w/h)*0.25*(y(0) - y(d.h))
         : d => 6 + (w/h)*0.2*(y(0) - y(d.h));
     states.selectAll("text")
