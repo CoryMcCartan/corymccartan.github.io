@@ -83,7 +83,7 @@ function chart_categories(data, id) {
     let color_gop = d3.scaleLinear()
         .domain([3, 0])
         .range([RED, midpt]);
-    let color = x => x > 0 ? color_gop(x) : color_dem(x);
+    window.color = x => x > 0 ? color_gop(x) : color_dem(x);
 
     let axis = d3.axisBottom(x)
         .tickSize(8)
