@@ -207,7 +207,7 @@ function chart_categories(data, id) {
         tt.style("visibility", "visible")
             .html(txt)
             .style("left", (mx - 50) + "px")
-            .style("bottom", (h - my + 25) + "px");
+            .style("bottom", (h - my + 15) + "px");
     });
     svg.on("mouseout", function() {
         tt.style("visibility", "hidden");
