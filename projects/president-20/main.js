@@ -5,8 +5,10 @@ const poll_url = "https://corymccartan.github.io/president/polls.csv";
 const sims_url = "https://corymccartan.github.io/president/sims.json";
 const prev_url = "https://corymccartan.github.io/president/prev_results.csv";
 
+let fetch_opts = {cache: "reload"};
+
 async function main() {
-    let estimates = await (await fetch(est_url)).json();
+    let estimates = await (await fetch(est_url, fetch_opts)).json();
     estimates.natl_intent = estimates.natl_intent.map(d => {
         d.date = new Date(d.date + " 2:00 EDT");
         return d;
@@ -27,7 +29,7 @@ async function main() {
     let key_states = estimates.states.slice(0).sort(
         (a, b) => d3.descending(+a.tipping_pt, +b.tipping_pt));
     
-    fetch(hist_url)
+    fetch(hist_url, fetch_opts)
         .then(r => r.text())
         .then(history => {
             window.hist = d3.csvParse(history)
@@ -95,7 +97,7 @@ async function main() {
             $("#pv_history").style.display = "none";
         })
 
-    fetch(poll_url)
+    fetch(poll_url, fetch_opts)
         .then(r => r.text())
         .then(raw => {
             window.polls = d3.csvParse(raw)
@@ -122,21 +124,21 @@ async function main() {
             });
         });
 
-    fetch("usa.json")
+    fetch("usa.json", {cache: "force-cache"})
         .then(r => r.json())
         .then(us_json => {
             window.us = us_json;
             chart_map(estimates.states, us_json, "#map");
         })
 
-    fetch(prev_url)
+    fetch(prev_url, {cache: "force-cache"})
         .then(r => r.text())
         .then(raw => {
             let parsed = d3.csvParse(raw);
             window.prev_results = d3.nest().key(d => d.state).object(parsed);
         })
     .then(() => {
-    fetch(state_hist_url)
+    fetch(state_hist_url, fetch_opts)
         .then(r => r.text())
         .then(history => {
             window.state_hist = d3.csvParse(history)
@@ -160,7 +162,7 @@ async function main() {
         });
     });
 
-    fetch(sims_url)
+    fetch(sims_url, fetch_opts)
         .then(r => r.json())
         .then(sims => {
             sims = d3.shuffle(sims);

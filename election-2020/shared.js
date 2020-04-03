@@ -243,7 +243,7 @@ function chart_line(data, id, key, bounds, opts) {
             .attr("d", dem_line)
             .attr("stroke", opts.color || BLUE);
         chart.append("path")
-            .datum(data.filter(d => +d[line_key] < opts.hrule 
+            .datum(data.filter(d => +d[line_key] <= opts.hrule 
                                && d.date <= today + 2*dy))
             .attr("class", "line")
             .attr("d", dem_line)
@@ -256,7 +256,7 @@ function chart_line(data, id, key, bounds, opts) {
             .attr("stroke-dasharray", [4, 3])
             .attr("stroke", opts.color || BLUE);
         chart.append("path")
-            .datum(data.filter(d => +d[line_key] < opts.hrule 
+            .datum(data.filter(d => +d[line_key] <= opts.hrule 
                                && d.date >= today - 5*dy))
             .attr("class", "line")
             .attr("d", dem_line)
