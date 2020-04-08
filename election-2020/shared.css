@@ -132,7 +132,7 @@ select {
     background: #f4f4f4;
     font-weight: normal;
     font-size: 1.15rem;
-    max-width: 25vw;
+    max-width: min(300px, 25vw);
     line-height: 1.05;
     top: 2em;
     padding: 0;
