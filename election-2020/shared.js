@@ -237,8 +237,9 @@ function chart_line(data, id, key, bounds, opts) {
             .attr("stroke", RED);
     } else if (!!opts.hrule) {
         chart.append("path")
-            .datum(data.filter(d => +d[line_key] >= opts.hrule
-                               && d.date <= today + 2*dy))
+            //.datum(data.filter(d => +d[line_key] >= opts.hrule
+            //                   && d.date <= today + 2*dy))
+            .datum(data.filter(d =>d.date <= today + 2*dy))
             .attr("class", "line")
             .attr("d", dem_line)
             .attr("stroke", opts.color || BLUE);
@@ -247,7 +248,8 @@ function chart_line(data, id, key, bounds, opts) {
                                && d.date <= today + 2*dy))
             .attr("class", "line")
             .attr("d", dem_line)
-            .attr("stroke", opts.color || RED);
+            .attr("stroke", opts.color || RED)
+            .attr("stroke-width", 3.1);
         chart.append("path")
             .datum(data.filter(d => +d[line_key] >= opts.hrule 
                                && d.date >= today - 5*dy))
