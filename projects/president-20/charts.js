@@ -33,14 +33,13 @@ function chart_categories(data, id) {
         .sortValues((a, b) => a.prob >= 0.65 ? b.prob - a.prob : a.prob - b.prob)
         .entries(data);
     let totals = by_rating.map(d => d3.sum(d.values, x => x.ev));
-    let maxes = by_rating.map(d => d3.max(d.values, x => x.ev));
     let max_total = d3.max(totals);
     by_rating.map((d, i) => {
         let cuml = 0;
-        let max = d3.max(d.values, x => x.ev);
+        //let max = d3.max(d.values, x => x.ev);
         for (let s of d.values) {
-            s.mult = Math.pow(max / s.ev, 0.4 + 0.25*(1 - maxes[i]/55));
-            //s.mult = Math.pow(max / s.ev, bigScreen ? 0.4 : 0.3);
+            //s.mult = Math.pow(max / s.ev, 0.4 + 0.25*(1 - maxes[i]/55));
+            s.mult = Math.pow(55 / s.ev, w / (11*h) + 0.2);
             s.h = s.ev * s.mult;
             cuml += s.h;
             s.cuml_h = cuml;
@@ -70,7 +69,7 @@ function chart_categories(data, id) {
     let x = d3.scaleBand()
         .domain([-3, -2, -1, 0, 1, 2, 3])
         .range([0, w])
-        .padding(0.15)
+        .padding(bigScreen ? 0.08 : 0.03)
         .paddingOuter(0);
     let y = d3.scaleLinear()
         .domain([0, max_h])
