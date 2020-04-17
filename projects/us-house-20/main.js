@@ -74,6 +74,7 @@ async function main() {
                 dodge: true,
                 //ymin: 0.45, ymax: 0.6,
                 pad: 0.3,
+                xstep: 7,
                 format: margin_rnd,
                 tooltip_format: margin,
                 today: Date.now(),
