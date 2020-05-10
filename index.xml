@@ -6,10 +6,20 @@
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Candidates are Rallying Their Bases</title>
+      <link>https://corymccartan.github.io/2020/05/ads/</link>
+      <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/2020/05/ads/</guid>
+      <description>The race for president continues in these strange times, albeit with one candidate stuck in his basement. As the pandemic unfolded around us, the focus of the race shifted from the primaries to the general election, and while it’s a long way to November, Joe Biden has emerged as the polling leader and a moderate favorite to win the election, according to this site’s forecast.
+There&#39;s been some discussion of Biden&#39;s fundraising gap with Donald Trump, and what it might mean for his prospects.</description>
+    </item>
     
     <item>
       <title>2020 Presidential Forecast</title>
@@ -35,7 +45,7 @@
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/election-2020/</guid>
-      <description>Presidential Forecast &amp;raquo;  House Forecast &amp;raquo;  Senate Forecast (Someday)   .promo { width: 100%; display: flex; background: white; font-size: 20pt; margin-bottom: 1em; border-radius: 8px; border-bottom: 2px solid #aaa; } .promo img { width: 50%; max-width: 3in; border-radius: 8px 0 0 7px; } .promo a { padding: 1em; margin: auto; text-decoration: none; } .promo a:hover { color: black; text-decoration: underline; } .promo a.broken:hover { cursor: default; text-decoration: none; } @media screen and (max-width: 540px) { .</description>
+      <description>Presidential Forecast &amp;raquo;  House Forecast &amp;raquo;  Senate Forecast (Someday)   .promo { width: 100%; display: flex; background: white; font-size: 20pt; margin-bottom: 1em; border-radius: 8px; border-bottom: 2px solid #aaa; } .promo img { width: 50%; max-width: 3in; border-radius: 8px 0 0 7px; align-self: flex-start; } .promo a { padding: 1em; margin: auto; text-decoration: none; } .promo a:hover { color: black; text-decoration: underline; } .promo a.broken:hover { cursor: default; text-decoration: none; } @media screen and (max-width: 540px) { .</description>
     </item>
     
     <item>

@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://corymccartan.github.io/projects/president-20/</loc>
-    <lastmod>2020-03-30T00:00:00+00:00</lastmod>
+    <loc>https://corymccartan.github.io/</loc>
+    <lastmod>2020-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://corymccartan.github.io/</loc>
+    <loc>https://corymccartan.github.io/posts/</loc>
+    <lastmod>2020-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/2020/05/ads/</loc>
+    <lastmod>2020-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://corymccartan.github.io/projects/president-20/</loc>
     <lastmod>2020-03-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -19,11 +29,6 @@
   
   <url>
     <loc>https://corymccartan.github.io/2020/03/covid-deaths/</loc>
-    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://corymccartan.github.io/posts/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
   </url>
   

@@ -7,10 +7,12 @@ const prev_url = "https://corymccartan.github.io/president/prev_results.csv";
 
 let fetch_opts = {cache: "reload"};
 
+let toDate = d => new Date(d + "T02:00:00-04:00");
+
 async function main() {
     let estimates = await (await fetch(est_url, fetch_opts)).json();
     estimates.natl_intent = estimates.natl_intent.map(d => {
-        d.date = new Date(d.date + " 2:00 EDT");
+        d.date = toDate(d.date);
         return d;
     });
     estimates.states.map(d => {
@@ -34,7 +36,7 @@ async function main() {
         .then(history => {
             window.hist = d3.csvParse(history)
                 .map(d => {
-                    d.date = new Date(d.date + " 2:00 EDT");
+                    d.date = toDate(d.date);
                     return d;
                 });
 
@@ -102,7 +104,7 @@ async function main() {
         .then(raw => {
             window.polls = d3.csvParse(raw)
             .map(d => {
-                d.date = new Date(d.date + " 2:00 EDT");
+                d.date = toDate(d.date);
                 return d;
             });
 
@@ -143,7 +145,7 @@ async function main() {
         .then(history => {
             window.state_hist = d3.csvParse(history)
                 .map(d => {
-                    d.date = new Date(d.date + " 2:00 EDT");
+                    d.date = toDate(d.date);
                     return d;
                 });
 
@@ -214,7 +216,7 @@ function fill_summary(raw_data) {
         <b>between ${Math.round(data.ev_q05)} and ${Math.round(data.ev_q95)}</b> 
         electoral votes.</p>`;
 
-    let date = new Date(data.time);
+    let date = new Date(data.time.replace(/\s/, "T") + "-04:00");
     let dateStr = date.toLocaleString("en-US", {
         weekday: "long",
         month: "long",
@@ -307,7 +309,7 @@ function state_select(val) {
         hrule_label: "EVEN",
         h: bigScreen ? 300 : 220,
         pts: polls.filter(p => p.national == "FALSE" && 
-                          p.date >= new Date("2020-03-14") &&
+                          p.date >= toDate("2020-03-14") &&
                           estimates.states[+p.state-1].state == abbr),
         pts_key: "dem",
         halfwidth: true,
