@@ -167,7 +167,7 @@ async function main() {
     fetch(sims_url, fetch_opts)
         .then(r => r.json())
         .then(sims => {
-            sims = d3.shuffle(sims.filter(x => x.ev==269));
+            sims = d3.shuffle(sims);
 
             window.sims = sims;
             window.sim_ctr = 0;
