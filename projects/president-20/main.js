@@ -167,8 +167,9 @@ async function main() {
     fetch(sims_url, fetch_opts)
         .then(r => r.json())
         .then(sims => {
-            sims = d3.shuffle(sims);
+            sims = d3.shuffle(sims.filter(x => x.ev==269));
 
+            window.sims = sims;
             window.sim_ctr = 0;
             $("#sim_elec").onclick = () => sim_election(sims, "#map");
             $("#reset_map").onclick = () => reset_map(estimates.states, "#map");
@@ -333,7 +334,7 @@ function state_select(val) {
     });
     chart_line(data, "#tipping_history", "rel_voter_power", false, {
         ymin: 0,
-        ymax: 5,
+        ymax: 6,
         h: bigScreen ? 260 : 200,
         addl_left: 4,
         hrule: 1,

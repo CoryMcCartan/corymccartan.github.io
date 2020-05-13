@@ -1,7 +1,7 @@
 let pct = function(x) {
-    if (x < 0.005)
+    if (x <= 0.005)
         return "<1%";
-    else if (x > 0.995)
+    else if (x >= 0.995)
         return ">99%";
     else
         return d3.format(".0%")(x);
@@ -540,8 +540,9 @@ function sim_election(sims, id) {
         $("#map_sim_result").innerHTML = `
             <b>Electoral college tie</b>;
             ${sim.natl > 0.5 ? "Joe Biden" : "Donald Trump"}
-            wins ${d3.format(".1%")(sim.natl > 0.5 ? sim_natl : 1 - sim_natl)}
+            wins ${d3.format(".1%")(sim.natl > 0.5 ? sim.natl : 1 - sim.natl)}
             of the popular vote.`;
+            return;
     }
 
     $("#map_sim_result").innerHTML = `
@@ -654,7 +655,7 @@ function table_states(data, id) {
         .attr("class", "num")
         .style("background", d => tip_color(d.tipping_pt));
     rows.append("td")
-        .text(d => d.rel_voter_power < 0.005 ? "<0.1" : 
+        .text(d => d.rel_voter_power <= 0.05 ? "<0.1" : 
               d3.format(".1f")(d.rel_voter_power))
         .attr("class", "num")
         .style("background", d => power_color(d.rel_voter_power));
@@ -708,7 +709,8 @@ function table_states(data, id) {
         headers.classed("selected", false);
         d3.select(this).classed("selected", true);
 
-        sort_fun = (a, b) => order(ext_fun(a), ext_fun(b));
+        sort_fun = (a, b) => order(ext_fun(a), ext_fun(b)) || 
+            d3.ascending(Math.abs(a.margin), Math.abs(b.margin));
         rows.sort(sort_fun);
     });
 }
