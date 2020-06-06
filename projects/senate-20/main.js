@@ -59,7 +59,7 @@ async function main() {
             });
 
             chart_line(hist, "#pv_history .chart", "natl", true, {
-                title: "Projected popular vote margin",
+                title: "Projected generic ballot margin",
                 addl_left: 4,
                 hrule: 0.5,
                 hrule_label: "EVEN",
