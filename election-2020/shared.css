@@ -28,7 +28,10 @@ h1.title, h2.subtitle, .publishinfo {
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
 }
-tabs a:first-child {
+.tabs a:first-child {  /* 2020 FORECASTS */
+    font-weight: 300;
+}
+.tabs a:nth-child(2) { /* LEFT LINK */
     margin-left: 0;
 }
 .tabs a.current {

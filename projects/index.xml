@@ -6,10 +6,20 @@
     <description>Recent content in Projects on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://corymccartan.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 Senate Forecast</title>
+      <link>https://corymccartan.github.io/projects/senate-20/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.github.io/projects/senate-20/</guid>
+      <description>2020 FORECASTS  President Senate House      What does a  chance feel like? There is a wide range of possible outcomes across all 35 races. Click the button above to randomly simulate one possible election result.
+Simulate an election   How the odds have changed The model works by first building a structural forecast for the national race and the race in each state, based on economic indicators, the president’s approval rating, past election results, the home races of each of the candidates, and incumbency and regional effects.</description>
+    </item>
     
     <item>
       <title>2020 Presidential Forecast</title>
@@ -17,7 +27,7 @@
       <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/projects/president-20/</guid>
-      <description>2020 FORECASTS  President House      NOTE  This model relies on GDP forecasts made by the New York branch of the Federal Reserve. On Friday, April 17, the Fed branch revised its estimate of second-quarter GDP growth sharply downwards, causing the model to adjust its structural forecast in favor of Joe Biden, which greatly increased his estimated chances of winning the election.  The pandemic and its economic fallout have caused a lot to change very quickly, just as the presidential race moves from the primary to the general election stage.</description>
+      <description>2020 FORECASTS  President Senate House      NOTE  This model relies on GDP forecasts made by the New York branch of the Federal Reserve. On Friday, April 17, the Fed branch revised its estimate of second-quarter GDP growth sharply downwards, causing the model to adjust its structural forecast in favor of Joe Biden, which greatly increased his estimated chances of winning the election.  The pandemic and its economic fallout have caused a lot to change very quickly, just as the presidential race moves from the primary to the general election stage.</description>
     </item>
     
     <item>
@@ -26,7 +36,7 @@
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/projects/us-house-20/</guid>
-      <description>2020 FORECASTS  President House       What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
+      <description>2020 FORECASTS  President Senate House       What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
 How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
     </item>
     

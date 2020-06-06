@@ -39,6 +39,8 @@
     
 
     
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
 </head>
 <body>
     <header>
@@ -74,31 +76,90 @@
     </section>
     
     <article class="main-content">
-        <div class="promo">
+        <h1>Who will control the government?</h1>
+<p>The table below shows all the possible scenarios for the partisan control
+of the White House and each house of Congress. Click on the top of each column
+to be taken to the corresponding forecast.</p>
+<table id="probs">
+<col width="30%">
+<col width="20%">
+<col width="20%">
+<col width="30%">
+<thead>
+<tr>
+<th><a href="/projects/president-20/">Presidency &raquo;</a></th>
+<th><a href="/projects/senate-20/">Senate &raquo;</a></th>
+<th><a href="/projects/us-house-20/">House &raquo;</a></th>
+<th>Chances</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>The probabilities are given as ranges because there isn’t enough data to
+accurately model the interdependence of the national presidential, House, and
+Senate races; instead, we use modified
+<a href="https://en.wikipedia.org/wiki/Fr%C3%A9chet_inequalities">Fréchet inequalities</a>
+to create ranges.</p>
+<style>
+    #probs {
+        width: 100%;
+        margin: 0 auto;
+        border-spacing: 6px;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #444;
+        font-weight: normal;
+    }
+
+    #probs th {
+        user-select: none;
+        padding: 6px;
+        line-height: 1.3;
+    }
+    #probs td {
+        line-height: 1.3;
+        padding: 12px;
+        border-radius: 2px;
+    }
+
+    @media screen and (max-width: 540px) {
+        #probs {
+            font-size: 0.92em;
+            border-spacing: 4px;
+        }
+        #probs th {
+            padding: 4px 0;
+        }
+        #probs td {
+            padding: 8px 6px;
+        }
+    }
+</style>
+<p><br /></p>
+<div class="promo">
 <img src="/election-2020/wh.jpg">
 <a href="/projects/president-20/">Presidential Forecast &raquo;</a>
 </div>
 <div class="promo">
-<img src="/election-2020/capitol.jpg">
-<a href="/projects/us-house-20/">House Forecast &raquo;</a>
+<img src="/election-2020/senate.jpg">
+<a href="/projects/senate-20/">Senate Forecast &raquo;</a>
 </div>
 <div class="promo">
-<img src="/election-2020/senate.jpg">
-<a class="broken" href="#">Senate Forecast (Someday)</a>
+<img src="/election-2020/capitol.jpg">
+<a href="/projects/us-house-20/">House Forecast &raquo;</a>
 </div>
 <style>
 .promo {
     width: 100%;
     display: flex;
     background: white;
-    font-size: 20pt;
-    margin-bottom: 1em;
+    font-size: 16pt;
+    margin-bottom: 0.5em;
     border-radius: 8px;
     border-bottom: 2px solid #aaa;
 }
 .promo img {
     width: 50%;
-    max-width: 3in;
+    max-width: 2in;
     border-radius: 8px 0 0 7px;
     align-self: flex-start;
 }
@@ -128,6 +189,7 @@
     }
 }
 </style>
+<script src="main.js"></script>
 
     </article>
 

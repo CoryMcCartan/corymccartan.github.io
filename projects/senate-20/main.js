@@ -1,9 +1,8 @@
-const est_url = "https://corymccartan.github.io/president/estimate.json";
-const hist_url = "https://corymccartan.github.io/president/history.csv";
-const state_hist_url = "https://corymccartan.github.io/president/state_history.csv";
-const poll_url = "https://corymccartan.github.io/president/polls.csv";
-const sims_url = "https://corymccartan.github.io/president/sims.json";
-const prev_url = "https://corymccartan.github.io/president/prev_results.csv";
+const est_url = "https://corymccartan.github.io/senate/estimate.json";
+const hist_url = "https://corymccartan.github.io/senate/history.csv";
+const race_hist_url = "https://corymccartan.github.io/senate/race_history.csv";
+const poll_url = "https://corymccartan.github.io/senate/polls.csv";
+const sims_url = "https://corymccartan.github.io/senate/sims.json";
 
 let fetch_opts = {cache: "reload"};
 
@@ -15,7 +14,7 @@ async function main() {
         d.date = toDate(d.date);
         return d;
     });
-    estimates.states.map(d => {
+    estimates.races.map(d => {
         if (d.prob >= 0.95) d.rating = -3;
         else if (d.prob >= 0.8) d.rating = -2;
         else if (d.prob >= 0.65) d.rating = -1;
@@ -28,8 +27,6 @@ async function main() {
 
     fill_summary(estimates);
 
-    let key_states = estimates.states.slice(0).sort(
-        (a, b) => d3.descending(+a.tipping_pt, +b.tipping_pt));
     
     fetch(hist_url, fetch_opts)
         .then(r => r.text())
@@ -45,21 +42,20 @@ async function main() {
                 hrule: 0.5,
                 addl_left: 4,
                 hrule_label: "EVEN",
-                //h: bigScreen ? 280 : 200,
-                title: "Chances of winning the presidency",
+                title: "Chances of winning the Senate",
                 format: d3.format(".0%"),
                 tooltip_format: pct,
                 smooth: false,
                 refl: 1,
             });
-            chart_line(hist, "#ev_history .chart", "ev", true, {
-                title: "Biden’s projected electoral votes",
-                ymin: 0, ymax: 538,
+            chart_line(hist, "#seats_history .chart", "s", true, {
+                title: "Projected Democratic seats",
+                ymin: 40, ymax: 65,
                 addl_left: 4,
-                hrule: 270,
+                hrule: 50,
                 pad: 0.1,
                 smooth: false,
-                hrule_label: "270 TO WIN",
+                hrule_label: "MAJORITY",
             });
 
             chart_line(hist, "#pv_history .chart", "natl", true, {
@@ -69,35 +65,40 @@ async function main() {
                 hrule_label: "EVEN",
                 format: margin_rnd,
                 tooltip_format: margin, 
-                pad: 0.2,
+                pad: 0.3,
                 smooth: false,
             });
 
-            chart_line(hist, "#pop_ev_history", "prob_pop", false, {
-                addl_left: 4,
-                ymin: 0.02, ymax: 0.98,
-                h: bigScreen ? 280 : 200,
-                title: "Win popular vote",
-                format: d3.format(".0%"),
-                tooltip_format: pct,
-                halfwidth: true,
-                refl: 1,
-            });
-            chart_line(hist, "#pop_ev_history", "prob_pop_ev_DR", false, {
-                addl_left: 4,
-                ymin: 0, ymax: 0.28,
-                series2: "prob_pop_ev_RD",
-                h: bigScreen ? 280 : 200,
-                title: "Win popular vote but lose presidency",
-                format: d3.format(".0%"),
-                tooltip_format: pct,
-                halfwidth: true,
-                refl: 1,
-            });
-
-            $("#ev_history").style.display = "none";
+            $("#seats_history").style.display = "none";
             $("#pv_history").style.display = "none";
+
+            chart_line(hist, "#pickup_history", "dem_pickup", true, {
+                addl_left: 4,
+                ymin: 0, ymax: 15,
+                h: bigScreen ? 280 : 200,
+                title: "Projected Democratic seat gain",
+                halfwidth: true,
+                hrule: 0.00001,
+                hrule_label: "",
+                //refl: 1,
+            });
+            chart_line(hist, "#pickup_history", "gop_pickup", true, {
+                addl_left: 4,
+                //ymin: 0, 
+                ymin: 0, ymax: 15,
+                h: bigScreen ? 280 : 200,
+                title: "Projected Republican seat gain",
+                halfwidth: true,
+                hrule: 15,
+                hrule_label: "",
+                //refl: 1,
+            });
         })
+
+    chart_histogram(estimates, "#histogram");
+    table_races(estimates.races, "#races");
+    let key_races = estimates.races.slice(0).sort(
+        (a, b) => d3.ascending(Math.abs(+a.margin), Math.abs(+b.margin)));
 
     fetch(poll_url, fetch_opts)
         .then(r => r.text())
@@ -126,60 +127,43 @@ async function main() {
             });
         });
 
-    fetch("usa.json", {cache: "force-cache"})
-        .then(r => r.json())
-        .then(us_json => {
-            window.us = us_json;
-            chart_map(estimates.states, us_json, "#map");
-        })
 
-    fetch(prev_url, {cache: "force-cache"})
-        .then(r => r.text())
-        .then(raw => {
-            let parsed = d3.csvParse(raw);
-            window.prev_results = d3.nest().key(d => d.state).object(parsed);
-        })
-    .then(() => {
-    fetch(state_hist_url, fetch_opts)
+    fetch(race_hist_url, fetch_opts)
         .then(r => r.text())
         .then(history => {
-            window.state_hist = d3.csvParse(history)
+            window.race_hist = d3.csvParse(history)
                 .map(d => {
                     d.date = toDate(d.date);
                     return d;
                 });
 
-            let st_sel = d3.select("#state");
+            let st_sel = d3.select("#race");
             st_sel.selectAll("option")
-                .data(estimates.states)
+                .data(estimates.races)
                 .enter().append("option")
-                .attr("value", d => d.state)
-                .text(d => d.state_name);
-            st_sel.on("change", state_select);
+                .attr("value", d => d.race)
+                .text(d => d.race_name);
+            st_sel.on("change", race_select);
 
-            let tip_max = d3.max(estimates.states, d => d.tipping_pt);
-            let tip_idx = estimates.states.findIndex(d => d.tipping_pt == tip_max);
-            st_sel.node().value = estimates.states[tip_idx].state;
-            state_select();
+            st_sel.node().value = key_races[0].race;
+            race_select();
         });
-    });
 
     fetch(sims_url, fetch_opts)
         .then(r => r.json())
         .then(sims => {
             sims = d3.shuffle(sims);
+            sims.map(s => {
+                s.seats = 35 + s.dem.reduce((a, b) => a+b, 0);
+            });
 
             window.sims = sims;
             window.sim_ctr = 0;
-            $("#sim_elec").onclick = () => sim_election(sims, "#map");
-            $("#reset_map").onclick = () => reset_map(estimates.states, "#map");
+            $("#sim_elec").onclick = () => sim_election(sims);
 
-            setup_filter_sim(sims, key_states, "#state_buttons");
+            setup_filter_sim(sims, key_races, "#race_buttons");
         });
 
-    chart_categories(estimates.states, "#categories");
-    chart_histogram(estimates, "#histogram");
-    table_states(estimates.states, "#states");
     table_firms(estimates.firm_effects, "#firms");
 
     d3.selectAll("#history_tabs .tabs a")
@@ -202,20 +186,19 @@ function fill_summary(raw_data) {
     let dside = raw_data.prob >= 0.5;
     let data = Object.assign({}, raw_data);
     if (!dside) {
-        let old_5 = data.ev_q05;
-        data.ev_q05 = 538 - data.ev_q95;
-        data.ev_q95 = 538 - old_5;
-        data.prob = 1 - data.prob - 0.004; // rough tie probability
+        let old_5 = data.s_q05;
+        data.s_q05 = 100 - data.s_q95;
+        data.s_q95 = 100 - old_5;
+        data.prob = 1 - data.prob;
     }
     let frac = probToText(data.prob);
 
     $(".banner > .text").innerHTML = `
-        <p><b style="color: ${dside ? BLUE : RED};">
-        ${dside ? "Joe Biden" : "Donald Trump"}</b> has a
-        <b>${frac} chance</b> of winning the presidency.</p>
-        <p>He is expected to win 
-        <b>between ${Math.round(data.ev_q05)} and ${Math.round(data.ev_q95)}</b> 
-        electoral votes.</p>`;
+        <p>The <b style="color: ${dside ? BLUE : RED};">
+        ${dside ? "Democrats" : "Republicans"}</b> are expected to win
+        <b>between ${Math.round(data.s_q05)} and ${Math.round(data.s_q95)}</b> 
+        seats.</p> <p>They have a 
+        <b>${frac} chance</b> of winning control of the Senate.</p>`;
 
     let date = new Date(data.time.replace(/\s/, "T") + "-04:00");
     let dateStr = date.toLocaleString("en-US", {
@@ -232,67 +215,51 @@ function fill_summary(raw_data) {
     $(".banner > .updated").innerText = `Last updated ${dateStr} at ${timeStr}.`;
 
     $("#prob_win").innerHTML = probToText(data.prob);
-    $("#prob_pop").innerHTML = probToText(data.prob_pop);
-    $("#prob_tie").innerHTML = probToText(data.prob_tie);
-    $("#prob_recount").innerHTML = probToText(data.prob_recount);
-    $("#cand_lean").innerHTML = dside ? "Biden" : "Trump";
+    $("#prob_tie").innerHTML = probToText(data.pr_tie);
     $("#n_polls").innerHTML = data.n_polls;
-    $("#q2_gdp").innerHTML = d3.format(".1%")(data.gdp_mean) + " &pm; " +
-        d3.format(".1%")(data.gdp_moe);
-    $("#pres_appr").innerHTML = d3.format(".1%")(data.pres_appr);
     $("#natl_prior").innerHTML = d3.format(".1%")(data.prior_natl_mean) + 
         " &pm; " + d3.format(".1%")(data.prior_natl_moe);
 }
 
-function state_select(val) {
-    let st_sel = $("#state");
+function race_select(val) {
+    let st_sel = $("#race");
     if (!!val) st_sel.value = val;
     let abbr = st_sel.value;
     let name = st_sel.selectedOptions[0].innerHTML;
-    if (name == "District of Columbia") name = "D.C.";
-    let data = state_hist.filter(d => d.state == abbr);
+    let data = race_hist.filter(d => d.race == abbr);
 
-    $("#selected_state").innerHTML = name;
-    $("#state_ev").innerHTML = data[0].ev;
-
-    let prev = prev_results[abbr][0];
-    $("#state_2012").innerHTML = `
-        <b style="color: ${+prev.dem_win_2012 ? BLUE : RED}">
-        ${+prev.dem_win_2012 ? "Obama" : "Romney"}</b> in 2012 by a 
-        <b>${d3.format(".2p")(+prev.margin_2012)}</b> margin`;
-    $("#state_2016").innerHTML = `
-        <b style="color: ${+prev.dem_win_2016 ? BLUE : RED}">
-        ${+prev.dem_win_2016 ? "Clinton" : "Trump"}</b> in 2016 by a 
-        <b>${d3.format(".2p")(+prev.margin_2016)}</b> margin`;
+    $("#selected_race").innerHTML = name;
+    $("#race_inc").innerHTML = [" has a Republican incumbent",
+        "'s race has no incumbent", 
+        " has a Democratic incumbent"][+data.slice(-1)[0].inc + 1];
 
     if ("polls" in window) {
         let n_polls = polls.filter(p => p.national == "FALSE" && 
-                          estimates.states[+p.state-1].state == abbr &&
+                          estimates.races[+p.race-1].race == abbr &&
                           (+p.date + 14*1000*3600*24) >= Date.now()).length
-        let url = ("https://projects.fivethirtyeight.com/polls/president-general/" 
-                   + name.toLowerCase().replace(/ /g, "-") + "/");
+        let url_name = name == "Georgia (special)" ? "Georgia" : name;
+        let url = ("https://projects.fivethirtyeight.com/polls/senate/" 
+                   + url_name.toLowerCase().replace(/ /g, "-") + "/");
         switch (n_polls) {
             case 0:
-                $("#state_polls").innerHTML = `There have been no polls 
+                $("#race_polls").innerHTML = `There have been no polls 
                 conducted in ${name} in the last two weeks.`; 
                 break;
             case 1:
-                $("#state_polls").innerHTML = `There has been <a target="_blank" 
+                $("#race_polls").innerHTML = `There has been <a target="_blank"
                 href="${url}">one poll</a> 
                 conducted in ${name} in the last two weeks.`; 
                 break;
             default:
-                $("#state_polls").innerHTML = `There have been <a target="_blank" 
+                $("#race_polls").innerHTML = `There have been <a target="_blank"
                 href="${url}">${n_polls} polls</a> 
                 conducted in ${name} in the last two weeks.`; 
                 break;
         }
     }
 
-    $("#split_ev").hidden = !(abbr == "NE" || abbr == "ME");
-
-    $("#state_history").innerHTML = "";
-    chart_line(data, "#state_history", "prob", false, {
+    $("#race_history").innerHTML = "";
+    chart_line(data, "#race_history", "prob", false, {
         ymin: 0, ymax: 1.05,
         addl_left: 4,
         hrule: 0.5,
@@ -305,56 +272,28 @@ function state_select(val) {
         refl: 1,
     });
 
-    chart_line(data, "#state_history", "dem", true, {
+    chart_line(data, "#race_history", "dem", true, {
         title: "Projected vote margin in " + name,
-        ymin: 0.15,
-        ymax: abbr == "DC" ? 0.99 : 0.75,
+        ymin: Math.min(+data[0].dem_q05, 0.3),
+        ymax: Math.max(+data[0].dem_q95, 0.7),
         addl_left: 4,
         hrule: 0.5,
         hrule_label: "EVEN",
         h: bigScreen ? 300 : 220,
         pts: polls.filter(p => p.national == "FALSE" && 
-                          p.date >= toDate("2020-03-14") &&
-                          estimates.states[+p.state-1].state == abbr),
+                          p.date >= toDate("2020-05-21") &&
+                          estimates.races[+p.race-1].race == abbr),
         pts_key: "dem",
         halfwidth: true,
         format: margin_rnd,
         tooltip_format: margin,
-    });
-
-    $("#tipping_history").innerHTML = "";
-    chart_line(data, "#tipping_history", "tipping_pt", false, {
-        ymin: 0,
-        ymax: 0.32,
-        addl_left: 4,
-        h: bigScreen ? 260 : 200,
-        title: `Chances ${name} decides the elction`,
-        format: d3.format(".0%"),
-        tooltip_format: pct,
-        halfwidth: true,
-        hrule: -1e-6, // weird bugfix
-        color: "#666",
-        refl: 0,
-    });
-    chart_line(data, "#tipping_history", "rel_voter_power", false, {
-        ymin: 0,
-        ymax: 6,
-        h: bigScreen ? 260 : 200,
-        addl_left: 4,
-        hrule: 1,
-        hrule_label: "AVERAGE",
-        title: `Relative importance of ${name} voters`,
-        format: d3.format(".1f"),
-        tooltip_format: x => x < 0.005 ? "<0.1" : d3.format(".1f")(x),
-        halfwidth: true,
-        color: "#666",
-        refl: 0,
     });
 }
 
 
 const abbrs = {"AK":"Alaska","AL":"Ala.","AR":"Ark.","AZ":"Ariz.","CA":"Calif.",
     "CO":"Colo.","CT":"Conn.","DC":"D.C.","DE":"Del.","FL":"Fla.","GA":"Ga.",
+    "GA-S":"Ga. (spec.)",
     "HI":"Hawaii","IA":"Iowa","ID":"Idaho","IL":"Ill.","IN":"Ind.","KS":"Kan.",
     "KY":"Ky.","LA":"La.","MA":"Mass.","MD":"Md.","ME":"Me.","MI":"Mich.",
     "MN":"Minn.","MO":"Mo.","MS":"Miss.","MT":"Mont.","NC":"N.C.","ND":"N.D.",
