@@ -35,7 +35,7 @@ async function main() {
                 });
 
             chart_line(hist, "#prob_history", "prob", false, {
-                ymin: 0.02, ymax: 0.98,
+                ymin: 0.0, ymax: 1,
                 hrule: 0.5,
                 addl_left: 4,
                 hrule_label: "EVEN",

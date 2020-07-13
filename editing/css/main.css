@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Futura", sans-serif;
+    font-size: 11pt;
+}
+
+header {
+    padding: 0.5em;
+    color: #777;
+    display: flex;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+#stats {
+    margin-left: 1em;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+}
+
+#text {
+    flex-basis: 960px;
+    padding: 1em;
+    font-family: "Baskerville", serif;
+    font-size: 13pt;
+    line-height: 1.2;
+    outline: none;
+}
+
+#text p {
+    border-bottom: 1px solid #aaa;
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+#text p:last-child {
+    border-bottom: none;
+}
+
+.sentence {
+    margin 0.25em -0.25em -0.25em -0.5em;
+    padding: 0.25em 0.25em 0.25em 1.75em;
+    text-indent: -1em;
+}
+.long {
+   border-left: 2px solid red; 
+}
+.passive {
+    background: #eee;
+    color: #222;
+    border-radius: 4px;
+}
+
+.word-count {
+    padding: 2px 3px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-size: 0.6em;
+    font-family: "Futura", sans-serif;
+    position: relative;
+    bottom: 0.1rem;
+}
+
+.highlight {
+    border-radius: 2px;
+    margin: 0 -2px;
+    padding: 0 2px;
+}
+.adverb {
+    background-color: #f4e2;
+    text-decoration: underline;
+}
+.adjective {
+    background-color: #fd42;
+}
+.flag {
+    background-color: #f327;
+}
+
+.hframing {
+    flex-basis: 64px;;
+    flex-shrink: 2;
+    flex-grow: 1;
+}
+
+button#go {
+    font-family: "Futura", sans-serif;
+    font-size: 11pt;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    background: #5e67d4;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+}
+button#go:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+button#go:active {
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+}

@@ -94,15 +94,15 @@ for the most consecutive days without any rain: 198. Just last month, Seattle
 set a city record for having had rain
 <a href="https://www.washingtonpost.com/weather/2020/01/31/after-29-straight-days-rain-an-intense-atmospheric-river-will-drench-seattle-through-weekend/">every single day in January</a>,
 except New Year’s Day.</p>
-<p>These streaks highlight an important part of how we experience a place's weather:
+<p>These streaks highlight an important part of how we experience a place&rsquo;s weather:
 it matters not just how hot it gets, or how much it rains, but also how long
-these kinds of weather stick around.  Thus Mark Twain's famous quote: &ldquo;If you
-don't like the weather in New England now, just wait a few minutes.&rdquo;</p>
+these kinds of weather stick around.  Thus Mark Twain&rsquo;s famous quote: &ldquo;If you
+don&rsquo;t like the weather in New England now, just wait a few minutes.&rdquo;</p>
 <p>Mathematically, one way to understand these patterns is through
 <em><a href="https://en.wikipedia.org/wiki/Markov_chain">Markov chains</a></em>, which are a fancy
 way of talking about the picture below. Suppose we live in Pleasantville, USA,
-and it's sunny today. Tomorrow, there's a 70% chance it will still be sunny, and
-a 30% chance it will rain.  If it does rain tomorrow, then there's a 40% chance
+and it&rsquo;s sunny today. Tomorrow, there&rsquo;s a 70% chance it will still be sunny, and
+a 30% chance it will rain.  If it does rain tomorrow, then there&rsquo;s a 40% chance
 it will rain again the day after that, and a 60% chance it will go back to being
 sunny. You can imagine your finger tracing out the weather pattern along the
 arrows.</p>
@@ -193,7 +193,7 @@ about the predictability of weather across the U.S.)</p>
 
 <p>Other patterns are rather predictable. Ranking cities by the average length
 of their sunny streaks yields, predictably, cities in the South and West.
-Slightly less predictable is that Seattle's sunny streaks are about as long as
+Slightly less predictable is that Seattle&rsquo;s sunny streaks are about as long as
 those of most cities in the Northeast and Midwest.</p>
 <figure class="w7in">
     <img src="sun_streak.png"/> 
@@ -206,7 +206,7 @@ Phoenix has the shortest average rainy streak, at just over 1.5 days.</p>
     <img src="rain_streak.png"/> 
 </figure>
 
-<p>And on the subject of rain, it's informative to look at how the <em>amount</em> of rain
+<p>And on the subject of rain, it&rsquo;s informative to look at how the <em>amount</em> of rain
 a city gets corresponds to the <em>number</em> of rainy days it gets. While for most
 cities these go hand in hand, in Seattle, rainfall is spread out over a much
 larger number of days.  While the city receives less rain than D.C., New York,
@@ -234,7 +234,7 @@ than 7 days), and the number of transitions from each kind of weather to the
 other, across all the years of data, was counted. Then these counts were
 modelled from a multinomial distribution, with transition probabilities coming
 from the above splines.</p>
-<p>Once the model was fit to each city's data (using
+<p>Once the model was fit to each city&rsquo;s data (using
 <a href="https://mc-stan.org/">Stan</a>), a transition matrix could be drawn for every
 week (or day, if desired) of the year, and this transition matrix could be
 solved for its steady-state distribution using its eigendecomposition.  This
@@ -248,7 +248,7 @@ of days at a certain state follows a geometric distribution; the average streak
 length is then easily calculated as the reciprocal of the probability of a
 change in the weather.</p>
 <h3 id="data">Data</h3>
-<p>Weather data came from <a href="ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/">NOAA's database</a>.
+<p>Weather data came from <a href="ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily/">NOAA&rsquo;s database</a>.
 A day was classified as cloudy if the sun shone for less than 30% of the day.
 Most cities&rsquo; weather stations had around 35 years where precipitation, snowfall,
 and cloud cover were measured every day.</p>
