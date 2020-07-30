@@ -98,28 +98,27 @@
 <span class="text"></span>
 <span class="updated"></span>
 </section>
-<!--
+<!-- -->
 <div class="editor-note">
 <h2>NOTE</h2>
 <p>
-This model relies on GDP forecasts made by the New York branch of the Federal
-Reserve. On Friday, April 17, the Fed branch revised its estimate of
-second-quarter GDP growth sharply downwards, causing the model to adjust its
-structural forecast in favor of Joe Biden, which greatly increased his estimated
-chances of winning the election.
+This model relies on second-quarter GDP growth to build a prior estimate of
+the election day vote share.  On Thursday, July 30, advance Q2 GDP estimates
+were released which were substantially below Federal Reserve forecasts, and
+much worse than any GDP data since records have been kept.  Directly inputting
+this GDP estimate into the model here would not provide an accurate picture of
+the economic and political uncertainty resulting from the coronavirus pandemic.
 </p>
 <p>
-The pandemic and its economic fallout have caused a lot to change very quickly,
-just as the presidential race moves from the primary to the general election
-stage.  This has necessarily, and correctly, injected more uncertainty and
-swings into the model&rsquo;s forecasts.  As more economic and polling data arrive,
-the estimates here will stabilize. 
+For the time being, the model will be using an average of Q2 and Q3 GDP growth
+to build the prior, with the former coming from the advance estimate and the 
+latter from the Federal Reserve forecasts.
 </p>
 <div style="color: #877; font-size: 0.85rem; text-align: right;">
-3:22 p.m., April 19, 2020
+2:40 p.m., July 30, 2020
 </div>
 </div>
--->
+<!-- -->
 <h1 id="the-electoral-map">The electoral map</h1>
 <p>Hover over a state to see the chances each candidate has of winning it, and
 click on a state to see more detailed forecasts.</p>
@@ -307,8 +306,8 @@ by political scientist Alan Abramowitz, which has correctly called the winner
 of the popular vote in every post-World War II election except 2016, where it
 predicted Trump would win the popular vote. The model takes three inputs:</p>
 <ul>
-<li>Second-quarter annualized GDP growth is estimated by the New York branch of
-the Federal Reserve at <b id="q2_gdp"></b>.</li>
+<li>The average of second- and third-quarter annualized GDP growth is estimated
+by the New York branch of the Federal Reserve at <b id="q2_gdp"></b>.</li>
 <li>The president&rsquo;s current approval rating (among those stating an
 opinion) is <b id="pres_appr"></b>.</li>
 <li>Trump is a first-term incumbent.</li>
