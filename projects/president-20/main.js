@@ -75,7 +75,7 @@ async function main() {
 
             chart_line(hist, "#pop_ev_history", "prob_pop", false, {
                 addl_left: 4,
-                ymin: 0.02, ymax: 0.98,
+                ymin: 0.001, ymax: 0.999,
                 h: bigScreen ? 280 : 200,
                 title: "Win popular vote",
                 format: d3.format(".0%"),
