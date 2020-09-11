@@ -43,14 +43,14 @@ async function main() {
                 title: "Chances of controlling the House",
                 format: d3.format(".0%"),
                 tooltip_format: d3.format(".0%"),
-                smooth: true,
+                smooth: false,
                 refl: 1,
             });
             chart_line(hist, "#seat_history", "s", true, {
                 title: "Projected Democratic seats",
                 hrule: 218,
                 pad: 0.1,
-                smooth: true,
+                smooth: false,
                 hrule_label: "MAJORITY",
             });
         })
