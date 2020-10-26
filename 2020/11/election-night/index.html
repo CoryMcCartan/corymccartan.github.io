@@ -75,7 +75,13 @@
     </section>
     
     <article class="main-content">
-        <iframe id="elec-embed" src="https://corymccartan.shinyapps.io/election2020/"></iframe>
+        <p><b id="loading">This page may take a few seconds to load&hellip;</b></p>
+<iframe id="elec-embed" src="https://corymccartan.shinyapps.io/election2020/"></iframe>
+<script>
+document.querySelector("#elec-embed").onload = function() {
+    document.querySelector("#loading").style.display = "none";
+};
+</script>
 <style>
 #elec-embed {
     width: 100vw;
