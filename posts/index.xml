@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://corymccartan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 03 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conditional Forecasts</title>
       <link>https://corymccartan.github.io/2020/11/election-night/</link>
@@ -71,7 +67,7 @@
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.github.io/2020/02/the-geography-of-political-differences/</guid>
-      <description>While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&amp;rsquo; views on economic and social issues separately.</description>
+      <description>While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&#39; views on economic and social issues separately.</description>
     </item>
     
     <item>
