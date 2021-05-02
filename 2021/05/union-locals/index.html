@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Big unions’ sizes are driven by a couple large locals">
+    <meta name="theme-color" content="#f4f4f4">
+    
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79274202-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-79274202-4');
+    </script>
+
+    
+    <meta property="og:title" content="Union Local Size" />
+<meta property="og:description" content="Big unions’ sizes are driven by a couple large locals" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://corymccartan.github.io/2021/05/union-locals/" />
+<meta property="og:image" content="https://corymccartan.github.io/2021/05/union-locals/cover.jpeg" />
+<meta property="article:published_time" content="2021-05-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-02T00:00:00+00:00" />
+
+
+    <title>Union Local Size • Cory McCartan</title>
+    
+    <link rel="icon" href="/images/logo-64.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://corymccartan.github.io/sass/main.min.css">
+    
+    
+
+    
+</head>
+<body>
+    <header>
+    <div class="center flex-row">
+        <a href="/">
+            <img src="/images/logo-128.png" id="logo">
+        </a>
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <span class="spacer"></span>
+        <nav>
+            <ul>
+                <li><a href="/election-2020/">2020</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="center">
+        
+    
+    <h1 class="title">
+        <div class="text">Union Local Size</div>
+        <div class="triangle"></div>
+        <div class="spacer"></div>
+    </h1>
+    
+    <h2 class="subtitle">Big unions’ sizes are driven by a couple large locals</h2>
+    
+    <section class="publishinfo">
+        <span class="date">May 2, 2021</span>
+    </section>
+    
+    <article class="main-content">
+        <figure class="w100">
+<img src="cover.jpeg" alt="Sears Roebuck employees on strike.">
+<figcaption>
+<p>
+Sears Roebuck employees on strike against unfair labor practices, March
+15, 1967.
+</p>
+</figcaption>
+</figure>
+<p><span class="leadin">THE ROUGHLY SEVEN AND A HALF MILLION PRIVATE-SECTOR
+UNION MEMBERS</span> in this country are represented by just over 15,000
+different local unions, most of which are affiliated with one of 132
+national unions (around 750,000 belong to independent or unaffiliated
+locals).</p>
+<p>Some locals are big—AFSCME’s Local 1000 (CSEA), with 230,353 members,
+AFT’s Local 2 (NYC teachers), with 190,975 members, or SEIU’s Local 2015
+(CA caregivers), with 188,219 members—and others are small, like the
+ILA’s Local 1427 (Peoria), with two members. But while some unions have
+relatively even local memberships, others have huge disparities in size
+between their largest and smallest locals.</p>
+<p>Size differences aren’t inherently a problem, of course, as long as
+every worker has an equal say in how the national union is run. But
+union local sizes display some interesting patterns, which can tell us
+something about the structure of the labor movement.</p>
+<p>Finding data on every local union is tricky, since public sector locals
+are regulated by state, not federal, labor agencies. And complicated
+internal union structures involving intermediary bodies like joint
+councils can obfuscate which parts of the union directly represent
+actual workers. Here, we’ll limit ourselves to around 8,100
+private-sector locals belonging to 44 national unions with the best
+federal data quality.</p>
+<p>Then, chanelling Bernie Sanders, we’ll ask: for each union, how much of
+the overall membership do the top <em>x</em>% of locals represent? For
+instance, at the SEIU, the top 3 locals (around 4%) represent just under
+40% of the total members.[1] By repeating this calculation for the top
+1%, top 2%, and so on, we can trace out the curves below, which capture
+the distribution of sizes of union locals.</p>
+<figure class="w100">
+<img src="figures/cuml-curve-1.png" width="960" />
+</figure>
+<p>Curves which are squished into the top left corner represent unions with
+huge caps between the largest and smallest locals. Curves which are
+closer to the 45° diagonal represent unions with more equally-sized
+locals.</p>
+<p>To capture these curves more quantitatively, we can borrow an income
+inequality measure: the Gini coefficient. It (roughly) measures the
+ratio of the area below each of these curves to the total area. Values
+closer to 0 mean equality of local sizes, while values closer to 1 mean
+inequality of local sizes.</p>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#oeozgtruuq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: transparent;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_heading {
+  background-color: transparent;
+  text-align: center;
+  border-bottom-color: transparent;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_title {
+  color: black;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: transparent;
+  border-bottom-width: 0;
+}
+
+#oeozgtruuq .gt_subtitle {
+  color: black;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: transparent;
+  border-top-width: 0;
+}
+
+#oeozgtruuq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_col_heading {
+  color: black;
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#oeozgtruuq .gt_column_spanner_outer {
+  color: black;
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#oeozgtruuq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#oeozgtruuq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#oeozgtruuq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#oeozgtruuq .gt_group_heading {
+  padding: 8px;
+  color: black;
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#oeozgtruuq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: black;
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#oeozgtruuq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#oeozgtruuq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#oeozgtruuq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#oeozgtruuq .gt_stub {
+  color: black;
+  background-color: transparent;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#oeozgtruuq .gt_summary_row {
+  color: black;
+  background-color: transparent;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oeozgtruuq .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_grand_summary_row {
+  color: black;
+  background-color: transparent;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oeozgtruuq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#oeozgtruuq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_footnotes {
+  color: black;
+  background-color: transparent;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#oeozgtruuq .gt_sourcenotes {
+  color: black;
+  background-color: transparent;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oeozgtruuq .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#oeozgtruuq .gt_left {
+  text-align: left;
+}
+
+#oeozgtruuq .gt_center {
+  text-align: center;
+}
+
+#oeozgtruuq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#oeozgtruuq .gt_font_normal {
+  font-weight: normal;
+}
+
+#oeozgtruuq .gt_font_bold {
+  font-weight: bold;
+}
+
+#oeozgtruuq .gt_font_italic {
+  font-style: italic;
+}
+
+#oeozgtruuq .gt_super {
+  font-size: 65%;
+}
+
+#oeozgtruuq .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="oeozgtruuq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Union Gini Coefficients (Local Size)</th>
+    </tr>
+    <tr>
+      <th colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">No.</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Union</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Gini index</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left">1</td>
+      <td class="gt_row gt_left">AFT</td>
+      <td class="gt_row gt_right">0.97</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">2</td>
+      <td class="gt_row gt_left">AFSCME</td>
+      <td class="gt_row gt_right">0.91</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">3</td>
+      <td class="gt_row gt_left">PTE</td>
+      <td class="gt_row gt_right">0.88</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">4</td>
+      <td class="gt_row gt_left">RWDSU</td>
+      <td class="gt_row gt_right">0.83</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">5</td>
+      <td class="gt_row gt_left">UFCW</td>
+      <td class="gt_row gt_right">0.83</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">6</td>
+      <td class="gt_row gt_left">TWU</td>
+      <td class="gt_row gt_right">0.82</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">7</td>
+      <td class="gt_row gt_left">IATSE</td>
+      <td class="gt_row gt_right">0.80</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">8</td>
+      <td class="gt_row gt_left">ILWU</td>
+      <td class="gt_row gt_right">0.79</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">9</td>
+      <td class="gt_row gt_left">UNITHE</td>
+      <td class="gt_row gt_right">0.78</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">10</td>
+      <td class="gt_row gt_left">SEIU</td>
+      <td class="gt_row gt_right">0.78</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">...</td>
+      <td class="gt_row gt_left">...</td>
+      <td class="gt_row gt_right">...</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">35</td>
+      <td class="gt_row gt_left">BSOIW</td>
+      <td class="gt_row gt_right">0.50</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">36</td>
+      <td class="gt_row gt_left">LIUNA</td>
+      <td class="gt_row gt_right">0.50</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">37</td>
+      <td class="gt_row gt_left">UWNE</td>
+      <td class="gt_row gt_right">0.47</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">38</td>
+      <td class="gt_row gt_left">OPCM</td>
+      <td class="gt_row gt_right">0.46</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">39</td>
+      <td class="gt_row gt_left">WPPW</td>
+      <td class="gt_row gt_right">0.44</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">40</td>
+      <td class="gt_row gt_left">NACU</td>
+      <td class="gt_row gt_right">0.39</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">41</td>
+      <td class="gt_row gt_left">PPAN</td>
+      <td class="gt_row gt_right">0.35</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">42</td>
+      <td class="gt_row gt_left">NLRBU</td>
+      <td class="gt_row gt_right">0.25</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">43</td>
+      <td class="gt_row gt_left">NPW</td>
+      <td class="gt_row gt_right">0.15</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">44</td>
+      <td class="gt_row gt_left">FAAM</td>
+      <td class="gt_row gt_right">0.14</td>
+    </tr>
+  </tbody>
+</table></div>
+<p>What happens when we compare unions’ Gini coefficient to their overall
+membership? Larger unions overall have larger size disparities between
+their locals, on average. This means that their overall membrship is
+disproportionately driven by a few large locals. For example, the AFT’s
+total membership in large part consists of it’s Local 2 (UFT),
+representing New York City teachers. At the other end of the scale, the
+small NLRBU (NLRB employees’ union) is organized around regional locals
+with a few dozen members each.</p>
+<figure class="w100">
+<img src="figures/gini-size-1.png" width="960" />
+</figure>
+<p><em>Data provided by the Office of Labor-Management Standards, a division
+of the U.S. Department of Labor.</em></p>
+<p>[1] Of the members and locals represented in our data.</p>
+
+    </article>
+
+    </main>
+    <footer>
+    <div class="center">
+        <small>
+            <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
+            <br />
+            <br />
+            &copy; 2021 Cory McCartan. All Rights Reserved.
+        </small>
+    </div>
+</footer>
+
+
+</body>
+</html>
