@@ -2,155 +2,155 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepage on Cory McCartan</title>
-    <link>https://corymccartan.github.io/</link>
+    <link>https://corymccartan.com/</link>
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crossing the Continent by Train, Twice</title>
-      <link>https://corymccartan.github.io/2021/08/usa-rail/</link>
+      <link>https://corymccartan.com/2021/08/usa-rail/</link>
       <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2021/08/usa-rail/</guid>
+      <guid>https://corymccartan.com/2021/08/usa-rail/</guid>
       <description>Suppose—hypothetically—that you find yourself one evening, early in the  second summer of our pandemic, reading your email, when you open up an advertisement for discounted train tickets.</description>
     </item>
     
     <item>
       <title>Union Local Size</title>
-      <link>https://corymccartan.github.io/2021/05/union-locals/</link>
+      <link>https://corymccartan.com/2021/05/union-locals/</link>
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2021/05/union-locals/</guid>
+      <guid>https://corymccartan.com/2021/05/union-locals/</guid>
       <description>Some unions have relatively even local memberships, others have huge  disparities in size between their largest and smallest locals.  Why? And can we measure it?</description>
     </item>
     
     <item>
       <title>Northern Irish Parliamentary Constituencies</title>
-      <link>https://corymccartan.github.io/2021/02/northern-ireland/</link>
+      <link>https://corymccartan.com/2021/02/northern-ireland/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2021/02/northern-ireland/</guid>
+      <guid>https://corymccartan.com/2021/02/northern-ireland/</guid>
       <description>In a place where religious polarization is stronger than political  polarization (though they are intertwined), how does the redistricting  process look? Are the boundaries fair? Random simulations can provide an answer.</description>
     </item>
     
     <item>
       <title>Conditional Forecasts</title>
-      <link>https://corymccartan.github.io/2020/11/election-night/</link>
+      <link>https://corymccartan.com/2020/11/election-night/</link>
       <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/11/election-night/</guid>
+      <guid>https://corymccartan.com/2020/11/election-night/</guid>
       <description>Use this tool to game out various scenarios, or to  make real-time election-night forecasts for the presidential race as the results roll in.</description>
     </item>
     
     <item>
       <title>2020 Senate Forecast</title>
-      <link>https://corymccartan.github.io/projects/senate-20/</link>
+      <link>https://corymccartan.com/projects/senate-20/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/senate-20/</guid>
+      <guid>https://corymccartan.com/projects/senate-20/</guid>
       <description>2020 FORECASTS  President Senate House      What does a  chance feel like? There is a wide range of possible outcomes across all 35 races. Click the button above to randomly simulate one possible election result.
 Simulate an election   How the odds have changed The model works by first building a structural forecast for the national race and the race in each state, based on economic indicators, the president’s approval rating, past election results, the home races of each of the candidates, and incumbency and regional effects.</description>
     </item>
     
     <item>
       <title>The Candidates are Rallying Their Bases</title>
-      <link>https://corymccartan.github.io/2020/05/ads/</link>
+      <link>https://corymccartan.com/2020/05/ads/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/05/ads/</guid>
+      <guid>https://corymccartan.com/2020/05/ads/</guid>
       <description>Last week, Biden outspent Trump on Facebook by more than a 2-to-1 margin. But per-state spending has little to do with how competitive each state is, and everything to do with how many supportive voters live there.</description>
     </item>
     
     <item>
       <title>2020 Presidential Forecast</title>
-      <link>https://corymccartan.github.io/projects/president-20/</link>
+      <link>https://corymccartan.com/projects/president-20/</link>
       <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/president-20/</guid>
+      <guid>https://corymccartan.com/projects/president-20/</guid>
       <description>2020 FORECASTS  President Senate House      NOTE  This model relies on second-quarter GDP growth to build a prior estimate of the election day vote share. On Thursday, July 30, advance Q2 GDP estimates were released which were substantially below Federal Reserve forecasts, and much worse than any GDP data since records have been kept. Directly inputting this GDP estimate into the model here would not provide an accurate picture of the economic and political uncertainty resulting from the coronavirus pandemic.</description>
     </item>
     
     <item>
       <title>Not Just Like the Flu</title>
-      <link>https://corymccartan.github.io/2020/03/covid-deaths/</link>
+      <link>https://corymccartan.com/2020/03/covid-deaths/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/03/covid-deaths/</guid>
+      <guid>https://corymccartan.com/2020/03/covid-deaths/</guid>
       <description>All of the numbers floating around about the coronavirus can obscure the one  simple fact that we must all remember if we are to be disciplined enough in our social distancing: this pandemic is deadly serious, and if we don’t continue to take drastic action, at an individual and societal level, then someone you know will probably die.</description>
     </item>
     
     <item>
       <title>2020 Election Forecasts</title>
-      <link>https://corymccartan.github.io/election-2020/</link>
+      <link>https://corymccartan.com/election-2020/</link>
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/election-2020/</guid>
+      <guid>https://corymccartan.com/election-2020/</guid>
       <description>Who will control the government? The table below shows all the possible scenarios for the partisan control of the White House and each house of Congress. Click on the top of each column to be taken to the corresponding forecast.
   Presidency &amp;raquo; Senate &amp;raquo; House &amp;raquo; Chances     The probabilities are given as ranges because there isn’t enough data to accurately model the interdependence of the national presidential, House, and Senate races; instead, we use modified Fréchet inequalities to create ranges.</description>
     </item>
     
     <item>
       <title>2020 House Forecast</title>
-      <link>https://corymccartan.github.io/projects/us-house-20/</link>
+      <link>https://corymccartan.com/projects/us-house-20/</link>
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/us-house-20/</guid>
+      <guid>https://corymccartan.com/projects/us-house-20/</guid>
       <description>2020 FORECASTS  President Senate House       What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
 How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
     </item>
     
     <item>
       <title>The Other March Madness</title>
-      <link>https://corymccartan.github.io/2020/03/dst/</link>
+      <link>https://corymccartan.com/2020/03/dst/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/03/dst/</guid>
+      <guid>https://corymccartan.com/2020/03/dst/</guid>
       <description>Should this be the last daylight savings? The time zone shift is an excellent opportunity to look at daylight patterns across the country.</description>
     </item>
     
     <item>
       <title>The Nevada Caucuses</title>
-      <link>https://corymccartan.github.io/2020/02/the-nevada-caucuses/</link>
+      <link>https://corymccartan.com/2020/02/the-nevada-caucuses/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/02/the-nevada-caucuses/</guid>
+      <guid>https://corymccartan.com/2020/02/the-nevada-caucuses/</guid>
       <description>Caucuses have a distinct advantage over primaries, which are conducted by ballot: after an initial tally of candidates’ support, voters can realign themselves into new groups before the final count. This realignment process can provide valuable insight into the preferences of voters, and help us understand how the race might change if more candidates start to drop out.</description>
     </item>
     
     <item>
       <title>On a Streak?</title>
-      <link>https://corymccartan.github.io/2020/02/weather/</link>
+      <link>https://corymccartan.com/2020/02/weather/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/02/weather/</guid>
+      <guid>https://corymccartan.com/2020/02/weather/</guid>
       <description>Streaks are an important part of how we experience a place&amp;rsquo;s weather: it matters not just how hot it gets, or how much it rains, but also how long these kinds of weather stick around. Mathematically, one way to understand these patterns is through Markov chains. Thinking of weather in this way can reveal some interesting patterns, and confirm some stereotypes.</description>
     </item>
     
     <item>
       <title>The Geography of Political Differences</title>
-      <link>https://corymccartan.github.io/2020/02/the-geography-of-political-differences/</link>
+      <link>https://corymccartan.com/2020/02/the-geography-of-political-differences/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2020/02/the-geography-of-political-differences/</guid>
-      <description>While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&#39; views on economic and social issues separately.</description>
+      <guid>https://corymccartan.com/2020/02/the-geography-of-political-differences/</guid>
+      <description>While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&amp;rsquo; views on economic and social issues separately.</description>
     </item>
     
     <item>
       <title>Polarization and the American Electorate</title>
-      <link>https://corymccartan.github.io/projects/electorate-2020/</link>
+      <link>https://corymccartan.com/projects/electorate-2020/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/electorate-2020/</guid>
+      <guid>https://corymccartan.com/projects/electorate-2020/</guid>
       <description>It&amp;rsquo;s hard to watch the steadiness of Donald Trump&amp;rsquo;s job approval numbers&amp;mdash;43% of voters approving and 52% disapproving, for most of the last year&amp;mdash;and not be convinced that Americans are deeply polarized: one half watches Fox news, the other half watches MSNBC; one half hates immigrants, the other embraces them; one half thinks climate change is a hoax, the other wants to pass the Green New Deal. Neither half wants their children to marry a member of the other half.</description>
     </item>
     
     <item>
       <title>One Industrial Union Grand?</title>
-      <link>https://corymccartan.github.io/projects/unions-2019/</link>
+      <link>https://corymccartan.com/projects/unions-2019/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/unions-2019/</guid>
+      <guid>https://corymccartan.com/projects/unions-2019/</guid>
       <description>AFL-CIO headquarters, Washington, D.C.
   There is power there is power in a band of workingmen,
 When they stand hand in hand,
@@ -162,20 +162,20 @@ One Industrial Union Grand.
     
     <item>
       <title>The Continental Divide</title>
-      <link>https://corymccartan.github.io/2019/12/the-continental-divide/</link>
+      <link>https://corymccartan.com/2019/12/the-continental-divide/</link>
       <pubDate>Sun, 29 Dec 2019 16:15:17 -0800</pubDate>
       
-      <guid>https://corymccartan.github.io/2019/12/the-continental-divide/</guid>
+      <guid>https://corymccartan.com/2019/12/the-continental-divide/</guid>
       <description>&lt;p&gt;The standard U.S. map shows states laid out in two dimensions, but doesn&amp;rsquo;t
 convey any information about the crucial third dimension: altitude.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Which Democratic candidates are most electable?</title>
-      <link>https://corymccartan.github.io/projects/electability-2020/</link>
+      <link>https://corymccartan.com/projects/electability-2020/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/electability-2020/</guid>
+      <guid>https://corymccartan.com/projects/electability-2020/</guid>
       <description>The interactive below accompanies this article I wrote for the Washington Post. The article has some other figures, explains the motivation, and provides a less-detailed overview of the methodology than that provided below.
 If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states:  (Drag the vertical line)
     Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
@@ -183,19 +183,19 @@ If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39
     
     <item>
       <title>2018 U.S. House Predictions</title>
-      <link>https://corymccartan.github.io/projects/us-house-2018/</link>
+      <link>https://corymccartan.com/projects/us-house-2018/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/projects/us-house-2018/</guid>
+      <guid>https://corymccartan.com/projects/us-house-2018/</guid>
       <description>MathJax.Hub.Config({ messageStyle: &#34;none&#34;, CommonHTML: { linebreaks: { automatic: true } }, tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;]]} });         How the odds have changed  The model is continuously updated with new polling data and approval ratings. As new information comes in, the odds may shift towards one party or another. Additionally, as we get closer to the election, there is less uncertainty in the result, since there is less time for a large shift in public opinion.</description>
     </item>
     
     <item>
       <title>37 Supreme Court Justices on a Plane</title>
-      <link>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</link>
+      <link>https://corymccartan.com/2017/10/37-supreme-court-justices-on-a-plane/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2017/10/37-supreme-court-justices-on-a-plane/</guid>
+      <guid>https://corymccartan.com/2017/10/37-supreme-court-justices-on-a-plane/</guid>
       <description>&lt;p&gt;The most common measure of Supreme Court justice ideology are the
 &lt;a href=&#34;https://mqscores.lsa.umich.edu/&#34;&gt;Martin&amp;ndash;Quinn scores&lt;/a&gt;, developed by the
 eponymous political scientists.  Since their &lt;a href=&#34;https://mqscores.lsa.umich.edu/media/pa02.pdf&#34;&gt;original publication in
@@ -206,10 +206,10 @@ a left&amp;ndash;right political spectrum.&lt;/p&gt;</description>
     
     <item>
       <title>Swirling Fractals</title>
-      <link>https://corymccartan.github.io/2015/04/swirling-fractals/</link>
+      <link>https://corymccartan.com/2015/04/swirling-fractals/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://corymccartan.github.io/2015/04/swirling-fractals/</guid>
+      <guid>https://corymccartan.com/2015/04/swirling-fractals/</guid>
       <description>Corresponding to each point in and around the Mandelbrot set is a Julia set. If we start with a point near the origin, and move it in a circle around the main bulb of the Mandelbrot set, the series of corresponding Julia sets morph beautifully into one another.</description>
     </item>
     
