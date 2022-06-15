@@ -1,8 +1,8 @@
-const est_url = "https://corymccartan.github.io/senate/estimate.json";
-const hist_url = "https://corymccartan.github.io/senate/history.csv";
-const race_hist_url = "https://corymccartan.github.io/senate/race_history.csv";
-const poll_url = "https://corymccartan.github.io/senate/polls.csv";
-const sims_url = "https://corymccartan.github.io/senate/sims.json";
+const est_url = "https://corymccartan.com/senate/estimate.json";
+const hist_url = "https://corymccartan.com/senate/history.csv";
+const race_hist_url = "https://corymccartan.com/senate/race_history.csv";
+const poll_url = "https://corymccartan.com/senate/polls.csv";
+const sims_url = "https://corymccartan.com/senate/sims.json";
 
 let fetch_opts = {cache: "reload"};
 

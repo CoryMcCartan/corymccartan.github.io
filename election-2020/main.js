@@ -1,6 +1,6 @@
-const p_url = "https://corymccartan.github.io/president/estimate.json";
-const s_url = "https://corymccartan.github.io/senate/estimate.json";
-const h_url = "https://corymccartan.github.io/us-house-20/estimate.json";
+const p_url = "https://corymccartan.com/president/estimate.json";
+const s_url = "https://corymccartan.com/senate/estimate.json";
+const h_url = "https://corymccartan.com/us-house-20/estimate.json";
 
 let fetch_opts = {cache: "reload"};
 let toDate = d => new Date(d + "T02:00:00-04:00");

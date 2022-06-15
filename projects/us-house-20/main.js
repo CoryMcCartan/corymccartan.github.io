@@ -1,6 +1,6 @@
-const est_url = "https://corymccartan.github.io/us-house-20/estimate.json";
-const hist_url = "https://corymccartan.github.io/us-house-20/history.csv";
-const poll_url = "https://corymccartan.github.io/us-house-20/polls.csv";
+const est_url = "https://corymccartan.com/us-house-20/estimate.json";
+const hist_url = "https://corymccartan.com/us-house-20/history.csv";
+const poll_url = "https://corymccartan.com/us-house-20/polls.csv";
 
 const currentSeats = 235;
 
