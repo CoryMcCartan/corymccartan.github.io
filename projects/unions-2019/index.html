@@ -461,5 +461,11 @@ Labor. Download cleaned data
 </footer>
 
 
+    
+    <script type="text/javasript">
+        Array.from(document.links)
+            .filter(link => link.hostname != window.location.hostname)
+            .forEach(link => link.target = "_blank");
+    </script>
 </body>
 </html>
