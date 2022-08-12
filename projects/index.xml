@@ -13,8 +13,8 @@
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.com/projects/senate-20/</guid>
-      <description>2020 FORECASTS  President Senate House      What does a  chance feel like? There is a wide range of possible outcomes across all 35 races. Click the button above to randomly simulate one possible election result.
-Simulate an election   How the odds have changed The model works by first building a structural forecast for the national race and the race in each state, based on economic indicators, the president’s approval rating, past election results, the home races of each of the candidates, and incumbency and regional effects.</description>
+      <description>2020 FORECASTS President Senate House What does a chance feel like? There is a wide range of possible outcomes across all 35 races. Click the button above to randomly simulate one possible election result.
+Simulate an election How the odds have changed The model works by first building a structural forecast for the national race and the race in each state, based on economic indicators, the president’s approval rating, past election results, the home races of each of the candidates, and incumbency and regional effects.</description>
     </item>
     
     <item>
@@ -23,7 +23,8 @@ Simulate an election   How the odds have changed The model works by first buildi
       <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.com/projects/president-20/</guid>
-      <description>2020 FORECASTS  President Senate House      NOTE  This model relies on second-quarter GDP growth to build a prior estimate of the election day vote share. On Thursday, July 30, advance Q2 GDP estimates were released which were substantially below Federal Reserve forecasts, and much worse than any GDP data since records have been kept. Directly inputting this GDP estimate into the model here would not provide an accurate picture of the economic and political uncertainty resulting from the coronavirus pandemic.</description>
+      <description>2020 FORECASTS President Senate House NEW Explore scenarios and track each candidate’s chances of claiming the presidency, depending on which states they win—and by how much. Conditional Forecasts &amp;raquo; The electoral map Hover over a state to see the chances each candidate has of winning it, and click on a state to see more detailed forecasts.
+Simulate an election Reset map has a chance of winning, but what does that really mean?</description>
     </item>
     
     <item>
@@ -32,8 +33,7 @@ Simulate an election   How the odds have changed The model works by first buildi
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.com/projects/us-house-20/</guid>
-      <description>2020 FORECASTS  President Senate House       What does a  chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election  
-How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
+      <description>2020 FORECASTS President Senate House What does a chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
     </item>
     
     <item>
@@ -52,12 +52,12 @@ How the odds have changed The model works by using economic indicators, structur
       
       <guid>https://corymccartan.com/projects/unions-2019/</guid>
       <description>AFL-CIO headquarters, Washington, D.C.
-  There is power there is power in a band of workingmen,
+There is power there is power in a band of workingmen,
 When they stand hand in hand,
 That&amp;rsquo;s a power, that&amp;rsquo;s a power
 That must rule in every land—
 One Industrial Union Grand.
- &amp;mdash; &amp;ldquo;There is Power in a Union,&amp;rdquo; Joe Hill   “Big Labor’s Big Shrink,” gloated the headline of a Wall Street Journal editorial last year, using Joe Biden’s presidential campaign kickoff at a union hall as an opportunity to trot out its tried-and-true union-bashing lines.</description>
+&amp;mdash; &amp;ldquo;There is Power in a Union,&amp;rdquo; Joe Hill “Big Labor’s Big Shrink,” gloated the headline of a Wall Street Journal editorial last year, using Joe Biden’s presidential campaign kickoff at a union hall as an opportunity to trot out its tried-and-true union-bashing lines.</description>
     </item>
     
     <item>
@@ -67,8 +67,8 @@ One Industrial Union Grand.
       
       <guid>https://corymccartan.com/projects/electability-2020/</guid>
       <description>The interactive below accompanies this article I wrote for the Washington Post. The article has some other figures, explains the motivation, and provides a less-detailed overview of the methodology than that provided below.
-If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states:  (Drag the vertical line)
-    Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
+If the national popular vote were 50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states: (Drag the vertical line)
+Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
     </item>
     
     <item>
@@ -77,7 +77,7 @@ If the national popular vote were  50.0% Democratic and 50.0% Republican, we&#39
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://corymccartan.com/projects/us-house-2018/</guid>
-      <description>MathJax.Hub.Config({ messageStyle: &#34;none&#34;, CommonHTML: { linebreaks: { automatic: true } }, tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;]]} });         How the odds have changed  The model is continuously updated with new polling data and approval ratings. As new information comes in, the odds may shift towards one party or another. Additionally, as we get closer to the election, there is less uncertainty in the result, since there is less time for a large shift in public opinion.</description>
+      <description>How the odds have changed The model is continuously updated with new polling data and approval ratings. As new information comes in, the odds may shift towards one party or another. Additionally, as we get closer to the election, there is less uncertainty in the result, since there is less time for a large shift in public opinion. This also changes the odds over time. The chart below plots the changing odds of each party winning control.</description>
     </item>
     
   </channel>
