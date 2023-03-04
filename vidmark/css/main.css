@@ -1,0 +1,58 @@
+nav {
+    margin-bottom: 1em;
+}
+
+#main {
+    max-width: 800px;
+}
+
+#url-text {
+    font-family: monospace;
+}
+
+#video {
+    margin: 1em 0;
+}
+#progress {
+    width: 100%;
+    height: 15px;
+    background: #c4c4c4;
+    position: relative;
+}
+#pbar {
+    height: 15px;
+    background: #e02030;
+}
+.tmark {
+    height: 15px;
+    width: 2px;
+    background: #ed3;
+    position: absolute;
+    top: 0;
+}
+.loop {
+    height: 15px;
+    background: #fffa;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+}
+#loop-left {
+    left: 0;
+}
+#loop-right {
+    right: 0;
+}
+
+.form-group {
+    margin-top: 2px;
+}
+.form-switch {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+pre {
+    margin-top: 1em;
+}
+
