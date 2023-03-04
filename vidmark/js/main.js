@@ -60,13 +60,23 @@ function onPlayerReady() {
         window.player.seekTo(t, true);
     });
     requestAnimationFrame(updatePbar);
+
+    window.addEventListener("pagehide", function(e) {
+        let vd = window.player.getVideoData();
+        if ("video_id" in vd) {
+            localStorage["vidmark." + vd.video_id] = JSON.stringify({
+                marks: window.marks.slice(1),
+                duration: window.player.getDuration(),
+            });
+        }
+    });
 }
 
 function onPlayerChg(e) {
     if (e.data == -1) { // new video loaded
         document.body.focus();
     } if (e.data == 1) {
-        let title = player.getVideoData().title;
+        let title = window.player.videoTitle;
         document.title = title;
         $("#pg-title").innerText = title;
     }
@@ -95,22 +105,36 @@ function updatePbar() {
 }
 
 function loadPlayer(url) {
-    window.player.loadVideoById(ytID(url));
+    let vid_id = ytID(url);
+    window.player.loadVideoById(vid_id);
 
     for (let id of window.markIds.slice(1)) {
         $("#" + id).remove();
     }
     window.marks = [0];
     window.markIds = ["mark-1"];
+    
+    if ($("#switch-load").checked) {
+        let loc_id = "vidmark." + vid_id;
+        if (loc_id in localStorage) {
+            let obj = JSON.parse(localStorage[loc_id]);
+            for (m of obj.marks) {
+                addMark(m, obj.duration);
+            }
+        }
+    }
     //log(`Mark ${fmtTime(0)}`);
 }
 
-function addMark() {
-    let t = window.player.getCurrentTime();
+function addMark(t=-1, dur=0) {
+    if (t < 0) {
+        t = window.player.getCurrentTime();
+        dur = window.player.getDuration();
+    }
     window.marks.push(t);
     let div_mk = document.createElement("div");
     div_mk.className = "tmark";
-    div_mk.style.left = (t / window.player.getDuration()) * w + "px";
+    div_mk.style.left = (t / dur) * w + "px";
     div_mk.id = "mark-" + window.marks.length;
     window.markIds.push(div_mk.id);
     $("#progress").appendChild(div_mk);
