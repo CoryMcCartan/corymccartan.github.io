@@ -89,13 +89,10 @@ function updatePbar() {
         window.player.seekTo(t, true);
         checkDelay();
 
-        // should pause to let player play loop, AND is currently playing
-        if ($("#switch-loop-alt").checked ) {
-            if (window.player.isMuted()) {
-                window.player.unMute();
-            } else {
-                window.player.mute();
-            }
+        if (window.player.isMuted()) {
+            window.player.unMute();
+        } else if ($("#switch-loop-alt").checked) {
+            window.player.mute();
         }
     }
 
