@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.109.0">
+	<meta name="generator" content="Hugo 0.111.3">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ph.D. candidate, Department of Statistics, Harvard University.
@@ -88,7 +88,7 @@ and political analysis.
 <button onClick="expandElements(true)">Show all detail</button>
 <button onClick="expandElements(false)">Collapse all detail</button>
 </div>
-<h1 id="papers">Papers</h1>
+<h1 id="working-papers">Working Papers</h1>
 <p><a href="https://arxiv.org/abs/2303.02580"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a>.
 <span class="coauthors">
 With Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
@@ -145,8 +145,76 @@ gerrymandering in New Jersey, voting rights litigation in Alabama, and racial
 dynamics of Boston City Council elections.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a>.
+<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a>.
 Under Review.
+<span class="coauthors">
+With Jacob R. Brown and Kosuke Imai.
+</span>
+<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
+<a href="/docs/poster_nbhd.pdf">Poster</a></p>
+<details>
+<summary>Abstract</summary>
+<p>
+Granular geographic data present new opportunities to understand how
+neighborhoods are formed, and how they influence politics. At the same time,
+the inherent subjectivity of neighborhoods creates methodological challenges in
+measuring and modeling them. We develop a survey instrument that allows
+respondents to draw their neighborhoods on a map. We also propose a statistical
+model to analyze how the characteristics of respondents and local areas
+determine subjective neighborhoods. We conduct two surveys: collecting
+subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
+asking New York City residents to draw a community of interest for inclusion in
+their city council district. Our analysis shows that, holding other factors
+constant, White respondents include census blocks with more White residents in
+their neighborhoods. Similarly, Democrats and Republicans are more likely to
+include co-partisan areas. In addition, our model provides more accurate
+out-of-sample predictions than standard neighborhood measures.
+</p>
+</details>
+<p><a href="https://arxiv.org/abs/2304.00427"><strong>Finding Pareto Efficient Redistricting Plans with Short Bursts</strong></a>.
+Under Review.</p>
+<details>
+<summary>Abstract</summary>
+<p>
+Redistricting practitioners must balance many competing constraints and
+criteria when drawing district boundaries. To aid in this process, researchers
+have developed many methods for optimizing districting plans according to one
+or more criteria. This research note extends a recently-proposed
+single-criterion optimization method, short bursts (Cannon et al., 2023), to
+handle the multi-criterion case, and in doing so approximate the Pareto
+frontier for any set of constraints. We study the empirical performance of the
+method in a realistic setting and find it behaves as expected and is not very
+sensitive to algorithmic parameters. The proposed approach, which is
+implemented in open-source software, should allow researchers and practitioners
+to better understand the tradeoffs inherent to the redistricting process.
+</p>
+</details>
+<p><a href="https://arxiv.org/abs/2208.06968"><strong>Widespread Partisan Gerrymandering Mostly Cancels in Aggregate, but Reduces
+Competition and Responsiveness</strong></a>.
+Under Review.
+<span class="coauthors">
+With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
+</span></p>
+<details>
+<summary>Abstract</summary>
+<p>
+Congressional district lines in many U.S. states are drawn by partisan actors,
+raising concerns about gerrymandering. To isolate the electoral impact of
+gerrymandering from the effects of other factors including geography and
+redistricting rules, we compare predicted election outcomes under the enacted
+plan with those under a large sample of non-partisan, simulated alternative
+plans for all states. We find that partisan gerrymandering is widespread in the
+2020 redistricting cycle, but most of the bias it creates cancels at the
+national level, giving Republicans two additional seats, on average. In
+contrast, moderate pro-Republican bias due to geography and redistricting rules
+remains. Finally, we find that partisan gerrymandering reduces electoral
+competition and makes the House's partisan composition less responsive to
+shifts in the national vote.
+</p>
+</details>
+<h1 id="publications">Publications</h1>
+<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a>.
+<em>Annals of Applied Statistics</em>, Forthcoming.
 <span class="coauthors">With Kosuke Imai.</span>
 <a href="https://alarm-redist.org/redist/">Software implementation</a>.<br />
 Covered by <a href="https://www.washingtonpost.com/politics/interactive/2022/algorithmic-redistricting/"><em>The Washington Post</em></a>.</p>
@@ -209,62 +277,6 @@ While the DAS leads to a likely violation of the “One Person, One Vote”
 standard as currently interpreted, it does not prevent accurate predictions of
 an individual’s race and ethnicity. Our findings underscore the difficulty of
 balancing accuracy and respondent privacy in the Census.
-</p>
-</details>
-<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a>.
-Under Review.
-<span class="coauthors">
-With Jacob R. Brown and Kosuke Imai.
-</span>
-<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
-<a href="/docs/poster_nbhd.pdf">Poster</a></p>
-<details>
-<summary>Abstract</summary>
-<p>
-With the availability of granular geographical data, social scientists are
-increasingly interested in examining how residential neighborhoods are formed
-and how they influence attitudes and behavior. To facilitate such studies, we
-develop an easy-to-use online survey instrument that allows respondents to draw
-their neighborhoods on a map. We then propose a statistical model to analyze
-how the characteristics of respondents, relevant local areas, and their
-interactions shape subjective neighborhoods. The model also generates
-out-of-sample predictions of one's neighborhood given these observed
-characteristics. We illustrate the proposed methodology by conducting a survey
-among registered voters in Miami, New York City, and Phoenix. We find that
-across these cities voters are more likely to include same-race and co-partisan
-census blocks in their neighborhoods. Net of other factors, White respondents
-are 6.1 to 16.9 percentage points more likely to include in their neighborhoods
-a census block composed entirely of White residents compared to one with no
-White residents. Similarly, Democratic and Republican respondents are 8.6 to
-19.2 percentage points more likely to include an entirely co-partisan census
-block compared to one consisting entirely of out-partisans. Co-partisanship
-exhibits a similar, independent, influence. We also show that our model
-provides more accurate out-of-sample predictions than the standard
-distance-based measures of neighborhoods. Open-source software is available for
-implementing the proposed methodology.
-</p>
-</details>
-<p><a href="https://arxiv.org/abs/2208.06968"><strong>Widespread Partisan Gerrymandering Mostly Cancels in Aggregate, but Reduces
-Competition and Responsiveness</strong></a>.
-Under Review.
-<span class="coauthors">
-With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
-</span></p>
-<details>
-<summary>Abstract</summary>
-<p>
-Congressional district lines in many U.S. states are drawn by partisan actors,
-raising concerns about gerrymandering. To isolate the electoral impact of
-gerrymandering from the effects of other factors including geography and
-redistricting rules, we compare predicted election outcomes under the enacted
-plan with those under a large sample of non-partisan, simulated alternative
-plans for all states. We find that partisan gerrymandering is widespread in the
-2020 redistricting cycle, but most of the bias it creates cancels at the
-national level, giving Republicans two additional seats, on average. In
-contrast, moderate pro-Republican bias due to geography and redistricting rules
-remains. Finally, we find that partisan gerrymandering reduces electoral
-competition and makes the House's partisan composition less responsive to
-shifts in the national vote.
 </p>
 </details>
 <p><a href="https://doi.org/10.1038/s41597-022-01808-2"><strong>Simulated redistricting plans for the analysis and evaluation of
@@ -365,6 +377,10 @@ With Xiao-Li Meng.
 <p><strong>Algorithm-Assisted Redistricting Methodology</strong> (book).
 <span class="coauthors">
 With Kosuke Imai, Christopher Kenny, and Tyler Simko.
+</span></p>
+<p><strong>Studying Officeholders’ Perceived Geographic Constituencies.</strong>
+<span class="coauthors">
+With Jacob R. Brown and Hunter E. Rendleman.
 </span></p>
 <h1 id="software">Software</h1>
 <img class="soft-logo" src="https://alarm-redist.org/redist/reference/figures/logo.png">
