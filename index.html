@@ -30,7 +30,7 @@
     <title>
     Cory McCartan
 </title>
-    
+
     <link rel="icon" href="/images/logo-64.png">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
@@ -40,6 +40,7 @@
     
         
         <link rel="stylesheet" href="https://corymccartan.com/sass/home.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
     
 
@@ -51,14 +52,17 @@
         <a href="/">
             <img src="/images/logo-128.png" id="logo">
         </a>
-        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1> 
+        <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1>
         <span class="spacer"></span>
         <nav>
             <ul>
-                <li class="hidesmall"><a href="https://alarm-redist.org/fifty-states/">Redistricting</a></li>
+                <li class="hidemed"><a href="/#working-papers">Research</a></li>
+                <li class="hidemed"><a href="/#software">Software</a></li>
+                <li><a href="/#contact">Contact</a></li>
                 
                 
-                <li><a href="/frontpage/">Writing</a></li>
+                
+                <li><a href="/frontpage/">Blog</a></li>
                 <li><a href="/cv/cv.pdf">CV</a></li>
             </ul>
         </nav>
@@ -87,50 +91,57 @@ Methodology (ALARM) Project, I work on open-source R software for redistricting
 and political analysis.
 </div>
 <div class="show-hide">
-<button onClick="expandElements(true)">Show all detail</button>
-<button onClick="expandElements(false)">Collapse all detail</button>
+<span style="flex-grow: 1"></span>
+<a href="mailto:corymccartan@nyu.edu"><i class="bi-envelope-fill"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/CoryMcCartan"><i class="bi-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CoryMcCartan"><i class="bi-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://scholar.google.com/citations?user=2jbDYYUAAAAJ&hl=en"><i class="bi-mortarboard-fill"></i></a>
+<span style="flex-grow: 1"></span>
+<button onclick="expandElements(true)">Show all detail</button>
+<button onclick="expandElements(false)">Collapse all detail</button>
 </div>
 <h1 id="working-papers">Working Papers</h1>
-<p><a href="https://arxiv.org/abs/2303.02580"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a>.
+<p><a href="https://arxiv.org/abs/2303.02580"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2023).
 <span class="coauthors">
 With Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
 </span>
 <a href="https://github.com/CoryMcCartan/birdie">Software and replication code</a>;
-<a href="/docs/poster_race.pdf">Poster</a>.</p>
+<a href="/docs/poster_race.pdf">Poster</a><br /></p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
-The estimation of racial disparities in health care, financial services,
-voting, and other contexts is often hampered by the lack of individual-level
-racial information in administrative records. In many cases, the law prohibits
-the collection of such information to prevent direct racial discrimination. As
-a result, many analysts have adopted Bayesian Improved Surname Geocoding
-(BISG), which combines individual names and addresses with the Census data to
-predict race. Although BISG tends to produce well-calibrated racial
-predictions, its residuals are often correlated with the outcomes of interest,
-yielding biased estimates of racial disparities. We propose an alternative
-identification strategy that corrects this bias. The proposed strategy is
-applicable whenever one's surname is conditionally independent of the outcome
-given their (unobserved) race, residence location, and other observed
-characteristics. Leveraging this identification strategy, we introduce a new
-class of models, Bayesian Instrumental Regression for Disparity Estimation
-(BIRDiE), that estimate racial disparities by using surnames as a
-high-dimensional instrumental variable for race. Our estimation method is
-scalable, making it possible to analyze large-scale administrative data. We
-also show how to address potential violations of the key identification
-assumptions. A validation study based on the North Carolina voter file shows
-that BIRDiE reduces error by up to 84% in comparison to the standard approaches
-for estimating racial differences in party registration. Open-source software
-is available which implements the proposed methodology.
+The estimation of racial disparities in health care, financial services, voting,
+and other contexts is often hampered by the lack of individual-level racial
+information in administrative records. In many cases, the law prohibits the
+collection of such information to prevent direct racial discrimination. As a
+result, many analysts have adopted Bayesian Improved Surname Geocoding (BISG),
+which combines individual names and addresses with the Census data to predict
+race. Although BISG tends to produce well-calibrated racial predictions, its
+residuals are often correlated with the outcomes of interest, yielding biased
+estimates of racial disparities. We propose an alternative identification
+strategy that corrects this bias. The proposed strategy is applicable
+whenever one's surname is conditionally independent of the outcome given their
+(unobserved) race, residence location, and other observed characteristics.
+Leveraging this identification strategy, we introduce a new class of models,
+Bayesian Instrumental Regression for Disparity Estimation (BIRDiE), that
+estimate racial disparities by using surnames as a high-dimensional instrumental
+variable for race. Our estimation method is scalable, making it possible to
+analyze large-scale administrative data. We also show how to address potential
+violations of the key identification assumptions. A validation study based on
+the North Carolina voter file shows that BIRDiE reduces error by up to 84% in
+comparison to the standard approaches for estimating racial differences in party
+registration. Open-source software is available which implements the proposed
+methodology.
 </p>
 </details>
-<p><a href="https://osf.io/preprints/socarxiv/nc2x7/"><strong>Individual and Differential Harm in Redistricting</strong></a>.
+<p><a href="https://osf.io/preprints/socarxiv/nc2x7/"><strong>Individual and Differential Harm in Redistricting</strong></a> (2022).
+Under Review.
 <span class="coauthors">
 With Christopher T. Kenny.
 </span>
-<a href="https://github.com/CoryMcCartan/harm-redistricting">Replication code</a></p>
+<a href="https://github.com/CoryMcCartan/harm-redistricting">Replication code</a><br /></p>
 <details>
 <summary>
 Abstract
@@ -140,46 +151,46 @@ Social scientists have developed dozens of measures for assessing partisan bias
 in redistricting. But these measures cannot be easily adapted to other groups,
 including those defined by race, class, or geography. Nor are they applicable
 to single- or no-party contexts such as local redistricting. To overcome these
-limitations, we propose a unified framework of <i>harm</i> for evaluating the impacts
-of a districting plan on individual voters and the groups to which they belong.
-We consider a voter harmed if their chosen candidate is not elected under the
-current plan, but would be under a different plan. Harm improves on existing
-measures by both focusing on the choices of individual voters and directly
-incorporating counterfactual plans. We discuss strategies for estimating harm,
-and demonstrate the utility of our framework through analyses of partisan
-gerrymandering in New Jersey, voting rights litigation in Alabama, and racial
-dynamics of Boston City Council elections.
+limitations, we propose a unified framework of <i>harm</i> for evaluating the
+impacts of a districting plan on individual voters and the groups to which they
+belong. We consider a voter harmed if their chosen candidate is not elected
+under the current plan, but would be under a different plan. Harm improves
+on existing measures by both focusing on the choices of individual voters
+and directly incorporating counterfactual plans. We discuss strategies for
+estimating harm, and demonstrate the utility of our framework through analyses
+of partisan gerrymandering in New Jersey, voting rights litigation in Alabama,
+and racial dynamics of Boston City Council elections.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a>.
+<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2021).
 Under Review.
 <span class="coauthors">
 With Jacob R. Brown and Kosuke Imai.
 </span>
 <a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
-<a href="/docs/poster_nbhd.pdf">Poster</a></p>
+<a href="/docs/poster_nbhd.pdf">Poster</a><br /></p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
 Granular geographic data present new opportunities to understand how
-neighborhoods are formed, and how they influence politics. At the same time,
-the inherent subjectivity of neighborhoods creates methodological challenges in
-measuring and modeling them. We develop a survey instrument that allows
-respondents to draw their neighborhoods on a map. We also propose a statistical
-model to analyze how the characteristics of respondents and local areas
-determine subjective neighborhoods. We conduct two surveys: collecting
+neighborhoods are formed, and how they influence politics. At the same
+time, the inherent subjectivity of neighborhoods creates methodological
+challenges in measuring and modeling them. We develop a survey instrument that
+allows respondents to draw their neighborhoods on a map. We also propose a
+statistical model to analyze how the characteristics of respondents and local
+areas determine subjective neighborhoods. We conduct two surveys: collecting
 subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
-asking New York City residents to draw a community of interest for inclusion in
-their city council district. Our analysis shows that, holding other factors
-constant, White respondents include census blocks with more White residents in
-their neighborhoods. Similarly, Democrats and Republicans are more likely to
-include co-partisan areas. In addition, our model provides more accurate
+asking New York City residents to draw a community of interest for inclusion
+in their city council district. Our analysis shows that, holding other factors
+constant, White respondents include census blocks with more White residents
+in their neighborhoods. Similarly, Democrats and Republicans are more likely
+to include co-partisan areas. In addition, our model provides more accurate
 out-of-sample predictions than standard neighborhood measures.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2306.07521"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a>.
+<p><a href="https://arxiv.org/abs/2306.07521"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2023).
 <span class="coauthors">
 With Christopher T. Kenny, Shiro Kuriwaki, Tyler Simko, and Kosuke Imai.
 </span></p>
@@ -189,24 +200,26 @@ Abstract
 </summary>
 <p>
 The United States Census Bureau faces a difficult trade-off between the
-accuracy of Census statistics and the protection of individual information. We
-conduct the first independent evaluation of bias and noise induced by the
+accuracy of Census statistics and the protection of individual information.
+We conduct the first independent evaluation of bias and noise induced by the
 Bureau's two main disclosure avoidance systems: the TopDown algorithm employed
 for the 2020 Census and the swapping algorithm implemented for the 1990, 2000,
 and 2010 Censuses. Our evaluation leverages the recent release of the Noisy
-Measure File (NMF) as well as the availability of two independent runs of
-the TopDown algorithm applied to the 2010 decennial Census. We find that
-the NMF contains too much noise to be directly useful alone, especially for
-Hispanic and multiracial populations. TopDown's post-processing
-dramatically reduces the NMF noise and produces similarly accurate data to
-swapping in terms of bias and noise. These patterns hold across census
-geographies with varying population sizes and racial diversity. While the
-estimated errors for both TopDown and swapping are generally no larger than
-other sources of Census error, they can be relatively substantial for
-geographies with small total populations.
+Measure File (NMF) as well as the availability of two independent runs of the
+TopDown algorithm applied to the 2010 decennial Census. We find that the NMF
+contains too much noise to be directly useful alone, especially for Hispanic
+and multiracial populations. TopDown's post-processing dramatically reduces the
+NMF noise and produces similarly accurate data to swapping in terms of bias and
+noise. These patterns hold across census geographies with varying population
+sizes and racial diversity. While the estimated errors for both TopDown and
+swapping are generally no larger than other sources of Census error, they can be
+relatively substantial for geographies with small total populations.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2305.07208"><strong>Making Differential Privacy Work for Census Data Users</strong></a>.</p>
+<p><a href="https://arxiv.org/abs/2305.07208"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
+<span class="coauthors">
+With Tyler Simko and Kosuke Imai.
+</span></p>
 <details>
 <summary>
 Abstract
@@ -214,83 +227,83 @@ Abstract
 <p>
 The U.S. Census Bureau collects and publishes detailed demographic data about
 Americans which are heavily used by researchers and policymakers. The Bureau
-has recently adopted the framework of differential privacy in an effort to
-improve confidentiality of individual census responses. A key output of this
-privacy protection system is the Noisy Measurement File (NMF), which is
-produced by adding random noise to tabulated statistics. The NMF is critical to
-understanding any biases in the data, and performing valid statistical
+has recently adopted the framework of differential privacy in an effort
+to improve confidentiality of individual census responses. A key output of
+this privacy protection system is the Noisy Measurement File (NMF), which is
+produced by adding random noise to tabulated statistics. The NMF is critical
+to understanding any biases in the data, and performing valid statistical
 inference on published census data. Unfortunately, the current release format
-of the NMF is difficult to access and work with. We describe the process we use
-to transform the NMF into a usable format, and provide recommendations to the
-Bureau for how to release future versions of the NMF. These changes are
+of the NMF is difficult to access and work with. We describe the process we
+use to transform the NMF into a usable format, and provide recommendations to
+the Bureau for how to release future versions of the NMF. These changes are
 essential for ensuring transparency of privacy measures and reproducibility of
-scientific research built on census data.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2304.00427"><strong>Finding Pareto Efficient Redistricting Plans with Short Bursts</strong></a>.
+<p><a href="https://arxiv.org/abs/2304.00427"><strong>Finding Pareto Efficient Redistricting Plans with Short Bursts</strong></a> (2023).
 <br />
-<a href="https://github.com/CoryMcCartan/redist-pareto">Replication code</a></p>
+<a href="https://github.com/CoryMcCartan/redist-pareto">Replication code</a><br /></p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
-Redistricting practitioners must balance many competing constraints and
-criteria when drawing district boundaries. To aid in this process, researchers
-have developed many methods for optimizing districting plans according to one
-or more criteria. This research note extends a recently-proposed
-single-criterion optimization method, short bursts (Cannon et al., 2023), to
-handle the multi-criterion case, and in doing so approximate the Pareto
-frontier for any set of constraints. We study the empirical performance of the
-method in a realistic setting and find it behaves as expected and is not very
-sensitive to algorithmic parameters. The proposed approach, which is
-implemented in open-source software, should allow researchers and practitioners
-to better understand the tradeoffs inherent to the redistricting process.
+Redistricting practitioners must balance many competing constraints and criteria
+when drawing district boundaries. To aid in this process, researchers have
+developed many methods for optimizing districting plans according to one or
+more criteria. This research note extends a recently-proposed single-criterion
+optimization method, short bursts (Cannon et al., 2023), to handle the
+multi-criterion case, and in doing so approximate the Pareto frontier for
+any set of constraints. We study the empirical performance of the method in
+a realistic setting and find it behaves as expected and is not very sensitive
+to algorithmic parameters. The proposed approach, which is implemented in
+open-source software, should allow researchers and practitioners to better
+understand the tradeoffs inherent to the redistricting process.
+</p>
 </p>
 </details>
 <h1 id="publications">Publications</h1>
-<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a>.
+<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2020).
 <em>Annals of Applied Statistics</em>, Forthcoming.
-<span class="coauthors">With Kosuke Imai.</span>
-<a href="https://alarm-redist.org/redist/">Software implementation</a>.<br />
-Covered by <a href="https://www.washingtonpost.com/politics/interactive/2022/algorithmic-redistricting/"><em>The Washington Post</em></a>.</p>
+<span class="coauthors">
+With Kosuke Imai.
+</span>
+<a href="https://alarm-redist.org/redist/">Software implementation</a><br />
+Covered by <a href="https://www.washingtonpost.com/politics/interactive/2022/algorithmic-redistricting/"><em>The Washington Post</em></a>, <a href="https://www.quantamagazine.org/how-math-has-changed-the-shape-of-gerrymandering-20230601/"><em>Quanta</em> magazine</a>.</p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
-Random sampling of graph partitions under constraints has become a popular tool
-for evaluating legislative redistricting plans. Analysts detect partisan
+Random sampling of graph partitions under constraints has become a popular
+tool for evaluating legislative redistricting plans. Analysts detect partisan
 gerrymandering by comparing a proposed redistricting plan with an ensemble
 of sampled alternative plans. For successful application, sampling methods
 must scale to large maps with many districts, incorporate realistic legal
 constraints, and accurately and efficiently sample from a selected target
 distribution. Unfortunately, most existing methods struggle in at least one
-of these areas. We present a new Sequential Monte Carlo (SMC) algorithm
-that generates a sample of redistricting plans converging to a realistic
-target distribution. Because it draws many plans in parallel, the SMC
-algorithm can efficiently explore the relevant space of redistricting plans
-better than the existing Markov chain Monte Carlo (MCMC) algorithms that
-generate plans sequentially. Our algorithm can simultaneously incorporate
-several constraints commonly imposed in real-world redistricting problems,
-including equal population, compactness, and preservation of administrative
-boundaries. We validate the accuracy of the proposed algorithm by using a
-small map where all redistricting plans can be enumerated. We then apply
-the SMC algorithm to evaluate the partisan implications of several maps
-submitted by relevant parties in a recent high-profile redistricting case
-in the state of Pennsylvania. We find that the proposed algorithm converges
-to the target distribution faster and with fewer samples than a
-state-of-the-art MCMC algorithm. Open-source software is available for
-implementing the proposed methodology.
+of these areas. We present a new Sequential Monte Carlo (SMC) algorithm that
+generates a sample of redistricting plans converging to a realistic target
+distribution. Because it draws many plans in parallel, the SMC algorithm
+can efficiently explore the relevant space of redistricting plans better
+than the existing Markov chain Monte Carlo (MCMC) algorithms that generate
+plans sequentially. Our algorithm can simultaneously incorporate several
+constraints commonly imposed in real-world redistricting problems, including
+equal population, compactness, and preservation of administrative boundaries.
+We validate the accuracy of the proposed algorithm by using a small map where
+all redistricting plans can be enumerated. We then apply the SMC algorithm to
+evaluate the partisan implications of several maps submitted by relevant parties
+in a recent high-profile redistricting case in the state of Pennsylvania. We
+find that the proposed algorithm converges to the target distribution faster and
+with fewer samples than a state-of-the-art MCMC algorithm. Open-source software
+is available for implementing the proposed methodology.
 </p>
 </details>
-<p><a href="https://doi.org/10.1073/pnas.2217322120"><strong>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces
-Electoral Competition</strong></a>.
-2023. <em>Proceedings of the National Academy of Sciences</em> 120:25.
+<p><a href="https://doi.org/10.1073/pnas.2217322120"><strong>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</strong></a> (2023).
+<em>Proceedings of the National Academy of Sciences</em> 120:25, e2217322120.
 <span class="coauthors">
 With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
 </span>
-<a href="https://doi.org/10.7910/DVN/JI1U8X">Replication code</a></p>
+<a href="https://doi.org/10.7910/DVN/JI1U8X">Replication code</a><br /></p>
 <details>
 <summary>
 Abstract
@@ -301,30 +314,120 @@ raising concerns about gerrymandering. To isolate the electoral impact of
 gerrymandering from the effects of other factors including geography and
 redistricting rules, we compare predicted election outcomes under the enacted
 plan with those under a large sample of non-partisan, simulated alternative
-plans for all states. We find that partisan gerrymandering is widespread in the
-2020 redistricting cycle, but most of the bias it creates cancels at the
-national level, giving Republicans two additional seats, on average. In
-contrast, moderate pro-Republican bias due to geography and redistricting rules
-remains. Finally, we find that partisan gerrymandering reduces electoral
-competition and makes the House's partisan composition less responsive to
-shifts in the national vote.
+plans for all states. We find that partisan gerrymandering is widespread
+in the 2020 redistricting cycle, but most of the bias it creates cancels at
+the national level, giving Republicans two additional seats, on average. In
+contrast, moderate pro-Republican bias due to geography and redistricting
+rules remains. Finally, we find that partisan gerrymandering reduces electoral
+competition and makes the House's partisan composition less responsive to shifts
+in the national vote.
 </p>
 </details>
-<p><a href="https://doi.org/10.1126/science.adi7004"><strong>Researchers need better access to US Census data</strong></a>.
-2023. <em>Science</em> 380:6648.
+<p><a href="https://doi.org/10.1126/science.adi7004"><strong>Researchers Need Better Access to U.S. Census Data</strong></a> (2023).
+<em>Science</em> 380:6648, 902-903.
 <span class="coauthors">
 With Tyler Simko and Kosuke Imai.
 </span></p>
-<p><a href="https://www.science.org/doi/10.1126/sciadv.abk3283"><strong>The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census</strong></a>.
-2021. <em>Science Advances</em> 7(41), eabk3283.
+<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why Does it Work, and When Can it Be Expected to Work Well?</strong></a> (2023).
+<em>Political Analysis</em> 1:11.
 <span class="coauthors">
-With Christopher T. Kenny, Shiro Kuriwaki, Evan T. R. Rosenman, Tyler Simko, and Kosuke Imai.
+With Evan T.R. Rosenman and Santiago Olivella.
+</span></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+The output of predictive models is routinely recalibrated by reconciling
+low-level predictions with known quantities defined at higher levels of
+aggregation. For example, models predicting vote probabilities at the individual
+level in U.S. elections can be adjusted so that their aggregation matches
+the observed vote totals in each county, thus producing better calibrated
+predictions. In this research note, we provide theoretical grounding for one
+of the most commonly used recalibration strategies, known colloquially as
+the "logit shift." Typically cast as a heuristic adjustment strategy (whereby
+a constant correction on the logit scale is found, such that aggregated
+predictions match target totals), we show that the logit shift offers a fast
+and accurate approximation to a principled, but computationally impractical
+adjustment strategy: computing the posterior prediction probabilities,
+conditional on the observed totals. After deriving analytical bounds on the
+quality of the approximation, we illustrate its accuracy using Monte Carlo
+simulations. We also discuss scenarios in which the logit shift is less
+effective at recalibrating predictions: when the target totals are defined
+only for highly heterogeneous populations, and when the original predictions
+correctly capture the mean of true individual probabilities, but fail to capture
+the shape of their distribution.
+</p>
+</details>
+<p><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1"><strong>Comment: the Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</strong></a> (2023).
+<em>Harvard Data Science Review</em>, Special Issue 2.
+<span class="coauthors">
+With Christopher T. Kenny, Shiro Kuriwaki, Evan T.R. Rosenman, Tyler Simko, and Kosuke Imai.
 </span>
-Originally a Public Comment to the Census Bureau (May 28, 2021).
+Response to <a href="https://hdsr.mitpress.mit.edu/pub/3vj5j6i0/release/1?readingCollection=a133a0a2">boyd and Sarathy (2022)</a>.</p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+In "Differential Perspectives: Epistemic Disconnects Surrounding the US Census
+Bureau's Use of Differential Privacy," boyd and Sarathy argue that empirical
+evaluations of the Census Disclosure Avoidance System (DAS), including our
+published analysis, failed to recognize how the benchmark data against which
+the 2020 DAS was evaluated is never a ground truth of population counts. In
+this commentary, we explain why policy evaluation, which was the main goal of
+our analysis, is still meaningful without access to a perfect ground truth. We
+also point out that our evaluation leveraged features specific to the decennial
+Census and redistricting data, such as block-level population invariance under
+swapping and voter file racial identification, better approximating a comparison
+with the ground truth. Lastly, we show that accurate statistical predictions
+of individual race based on the Bayesian Improved Surname Geocoding, while not
+a violation of differential privacy, substantially increases the disclosure
+risk of private information the Census Bureau sought to protect. We conclude by
+arguing that policy makers must confront a key trade-off between data utility
+and privacy protection, and an epistemic disconnect alone is insufficient to
+explain disagreements between policy choices.
+</p>
+</details>
+<p><a href="https://doi.org/10.1038/s41597-022-01808-2"><strong>Simulated Redistricting Plans for the Analysis and Evaluation of Redistricting in the United States</strong></a> (2022).
+<em>Nature: Scientific Data</em> 9:1, 689.
+<span class="coauthors">
+With Christopher T. Kenny, Tyler Simko, George Garcia III, Kevin Wang, Melissa Wu, Shiro Kuriwaki, and Kosuke Imai.
+</span>
+<a href="https://alarm-redist.org/fifty-states/">Project website</a>;
+<a href="https://github.com/alarm-redist/fifty-states">Replication code</a>;
+<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Data</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+A collection of simulated congressional districting plans and underlying
+code developed by the Algorithm-Assisted Redistricting Methodology (ALARM)
+Project. The data allow for the evaluation of enacted and other congressional
+redistricting plans in the United States. While the use of redistricting
+simulation algorithms has become standard in academic research and court
+cases, any simulation analysis requires non-trivial efforts to combine multiple
+data sets, identify state-specific redistricting criteria, implement complex
+simulation algorithms, and summarize and visualize simulation outputs. We
+have developed a complete workflow that facilitates this entire process of
+simulation-based redistricting analysis for the congressional districts of all
+50 states. The resulting data include ensembles of simulated 2020 congressional
+redistricting plans and necessary replication data. We provide the underlying
+code, which serves as a template for customized analyses. All data and code are
+free and publicly available.
+</p>
+</details>
+<p><a href="https://www.science.org/doi/10.1126/sciadv.abk3283"><strong>The Use of Differential Privacy for Census Data and Its Impact on Redistricting: the Case of the 2020 U.S. Census</strong></a> (2021).
+<em>Science Advances</em> 7:41, eabk3283.
+<span class="coauthors">
+With Christopher T. Kenny, Shiro Kuriwaki, Evan T.R. Rosenman, Tyler Simko, and Kosuke Imai.
+</span>
 <a href="https://alarm-redist.org/posts/2021-06-02-das-evaluation-faq/">FAQ</a>;
 <a href="https://alarm-redist.org/posts/2021-06-09-dsep-decision-response/">Reaction to the Bureau&rsquo;s Response</a>;
 <a href="https://www.science.org/doi/suppl/10.1126/sciadv.abk3283/suppl_file/sciadv.abk3283_sm.pdf">Supplementary information</a>;
-<a href="https://doi.org/10.7910/DVN/TNNSXG">Replication materials</a>.<br />
+<a href="https://doi.org/10.7910/DVN/TNNSXG">Replication materials</a><br />
+Originally a Public Comment to the Census Bureau (May 28, 2021).<br />
 Covered by <a href="https://www.washingtonpost.com/local/social-issues/2020-census-differential-privacy-ipums/2021/06/01/6c94b46e-c30d-11eb-93f5-ee9558eecf4b_story.html"><em>The Washington Post</em></a>,
 the <a href="https://apnews.com/article/business-census-2020-technology-e701e313e841674be6396321343b7e49"><em>Associated Press</em></a>,
 the <a href="https://www.sfchronicle.com/us-world/article/The-most-detailed-data-about-the-US-population-in-16378154.php"><em>San Francisco Chronicle</em></a>,
@@ -334,15 +437,15 @@ the <a href="https://www.sfchronicle.com/us-world/article/The-most-detailed-data
 Abstract
 </summary>
 <p>
-Census statistics play a key role in public policy decisions and social science
-research. However, given the risk of revealing individual information, many
-statistical agencies are considering disclosure control methods based on
-differential privacy, which add noise to tabulated data. Unlike other
+Census statistics play a key role in public policy decisions and social
+science research. However, given the risk of revealing individual information,
+many statistical agencies are considering disclosure control methods based
+on differential privacy, which add noise to tabulated data. Unlike other
 applications of differential privacy, however, census statistics must be
-postprocessed after noise injection to be usable. We study the impact of the
-U.S. Census Bureau's latest disclosure avoidance system (DAS) on a major
-application of census statistics, the redrawing of electoral districts. We find
-that the DAS systematically undercounts the population in mixed-race and
+postprocessed after noise injection to be usable. We study the impact of
+the U.S. Census Bureau's latest disclosure avoidance system (DAS) on a major
+application of census statistics, the redrawing of electoral districts. We
+find that the DAS systematically undercounts the population in mixed-race and
 mixed-partisan precincts, yielding unpredictable racial and partisan biases.
 While the DAS leads to a likely violation of the "One Person, One Vote"
 standard as currently interpreted, it does not prevent accurate predictions of
@@ -350,91 +453,10 @@ an individual's race and ethnicity. Our findings underscore the difficulty of
 balancing accuracy and respondent privacy in the Census.
 </p>
 </details>
-<p><a href="https://doi.org/10.1038/s41597-022-01808-2"><strong>Simulated redistricting plans for the analysis and evaluation of
-redistricting plans in the United States</strong></a>.
-2022. <em>Nature Scientific Data</em> 9, 689.
+<p><a href="https://doi.org/10.4171/JFG/100"><strong>Geodesic Interpolation on Sierpinski Gaskets</strong></a> (2021).
+<em>Journal of Fractal Geometry</em> 8:2, 117-152.
 <span class="coauthors">
-With Christopher Kenny, Tyler Simko, Shiro Kuriwaki, George Garcia III, Kevin
-Wang, Melissa Wu, and Kosuke Imai.
-</span>
-<a href="https://alarm-redist.org/fifty-states/">Project website</a>;
-<a href="https://github.com/alarm-redist/fifty-states">Replication code</a>;
-<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Data</a></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-A collection of simulated congressional districting plans and underlying code
-developed by the Algorithm-Assisted Redistricting Methodology
-(ALARM) Project. The data allow for the evaluation of enacted and other congressional
-redistricting plans in the United States. While the use of redistricting
-simulation algorithms has become standard in academic research and court cases,
-any simulation analysis requires non-trivial efforts to combine multiple data
-sets, identify state-specific redistricting criteria, implement complex
-simulation algorithms, and summarize and visualize simulation outputs. We have
-developed a complete workflow that facilitates this entire process of
-simulation-based redistricting analysis for the congressional districts of all
-50 states. The resulting data include ensembles of simulated 2020
-congressional redistricting plans and necessary replication data. We provide
-the underlying code, which serves as a template for customized analyses. All
-data and code are free and publicly available.
-</p>
-</details>
-<p><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1"><strong>Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</strong></a>.
-2023. <em>Harvard Data Science Review</em>, Special Issue 2.
-<span class="coauthors">
-With Christopher T. Kenny, Shiro Kuriwaki, Evan T. R. Rosenman, Tyler Simko, and Kosuke Imai.
-</span>
-Response to <a href="https://hdsr.mitpress.mit.edu/pub/3vj5j6i0/release/1?readingCollection=a133a0a2">boyd and Sarathy (2022)</a></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-In "Differential Perspectives: Epistemic Disconnects Surrounding the US Census Bureau's Use of Differential Privacy," boyd and Sarathy argue that empirical evaluations of the Census Disclosure Avoidance System (DAS), including our published analysis, failed to recognize how the benchmark data against which the 2020 DAS was evaluated is never a ground truth of population counts.
-In this commentary, we explain why policy evaluation, which was the main goal of our analysis, is still meaningful without access to a perfect ground truth.
-We also point out that our evaluation leveraged features specific to the decennial Census and redistricting data, such as block-level population invariance under swapping and voter file racial identification, better approximating a comparison with the ground truth.
-Lastly, we show that accurate statistical predictions of individual race based on the Bayesian Improved Surname Geocoding, while not a violation of differential privacy, substantially increases the disclosure risk of private information the Census Bureau sought to protect.
-We conclude by arguing that policy makers must confront a key trade-off between data utility and privacy protection, and an epistemic disconnect alone is insufficient to explain disagreements between policy choices.
-</p>
-</details>
-<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration Of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why does it work, and when can it be expected to work well?</strong></a>
-Forthcoming in <em>Political Analysis</em>.
-<span class="coauthors">
-With Evan T. R. Rosenman and Santiago Olivella.
-</span></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-The output of predictive models is routinely recalibrated by reconciling
-low-level predictions with known quantities defined at higher levels of
-aggregation. For example, models predicting vote probabilities at the
-individual level in U.S. elections can be adjusted so that their aggregation
-matches the observed vote totals in each county, thus producing better
-calibrated predictions. In this research note, we provide theoretical grounding
-for one of the most commonly used recalibration strategies, known colloquially
-as the "logit shift." Typically cast as a heuristic adjustment strategy
-(whereby a constant correction on the logit scale is found, such that
-aggregated predictions match target totals), we show that the logit shift
-offers a fast and accurate approximation to a principled, but
-computationally impractical adjustment strategy: computing the posterior
-prediction probabilities, conditional on the observed totals. After
-deriving analytical bounds on the quality of the approximation, we
-illustrate its accuracy using Monte Carlo simulations. We also discuss
-scenarios in which the logit shift is less effective at recalibrating
-predictions: when the target totals are defined only for highly
-heterogeneous populations, and when the original predictions correctly
-capture the mean of true individual probabilities, but fail to capture the
-shape of their distribution.
-</p>
-</details>
-<p><a href="https://doi.org/10.4171/JFG/100"><strong>Geodesic Interpolation on Sierpinski Gaskets</strong></a>.
-2021. <em>Journal of Fractal Geometry</em> 8(2), 117-152.
-<span class="coauthors">
-With Caitlin M. Davis, Laura A. LeGare, and Luke G. Rogers.
+With Caitlin Davis, Laura LeGare, and Luke Rogers.
 </span></p>
 <details>
 <summary>
@@ -469,7 +491,7 @@ algorithm of Cannon et al. (2020).<br>
 Reliable and flexible tools for scoring redistricting plans using common
 measures and metrics. These functions provide key direct access to tools useful
 for non-simulation analyses of redistricting plans, such as for measuring
-compactness or partisan fairness. Tools are designed to work with the &lsquo;redist&rsquo;
+compactness or partisan fairness. Tools are designed to work with the <code>redist</code>
 package seamlessly.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/birdie/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/birdie/"><strong><code>birdie</code>: Bayesian Instrumental Regression for Disparity Estimation</strong></a>
@@ -499,6 +521,13 @@ the rstan package) to the specification of its likelihood and priors. Users
 provide a series of alternate sampling specifications, and the package uses
 Pareto-smoothed importance sampling to estimate posterior quantities of interest
 under each specification.<br>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/causaltbl/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<p><a href="http://corymccartan.com/causaltbl/"><strong><code>causaltbl</code>: Tidy Causal Data Frames and Tools</strong></a>
+<br />
+Provides a <code>causal_tbl</code> class for causal inference. A <code>causal_tbl</code> keeps
+track of information on the roles of variables like treatment and outcome, and
+provides functionality to store models and their fitted values as columns in a
+data frame. <br /><br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/conformalbayes/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/conformalbayes/"><strong><code>conformalbayes</code>: Jackknife(+) Predictive Intervals for Bayesian Models</strong></a>  <a href="https://CRAN.R-project.org/package=conformalbayes"><img src="https://www.r-pkg.org/badges/version/conformalbayes" alt="CRAN Status" height=17></a>
 <br />
@@ -524,9 +553,9 @@ Uses FCC block-level population estimates from 2010&ndash;2019, which are based 
 new roads and map data, along with decennial Census and ACS data, to estimate
 2020 block populations. <br /><br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/ggredist/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
-<p><a href="https://alarm-redist.org/ggredist/"><strong><code>ggredist</code>: Scales, Geometries, and Extensions of &lsquo;ggplot2&rsquo; for Election Mapping</strong></a>
+<p><a href="https://alarm-redist.org/ggredist/"><strong><code>ggredist</code>: Scales, Geometries, and Extensions of <code>ggplot2</code> for Election Mapping</strong></a>
 <br />
-Provides &lsquo;ggplot2&rsquo; extensions for political map making. Implements new
+Provides <code>ggplot2</code> extensions for political map making. Implements new
 geometries for groups of simple feature geometries. Adds palettes and scales for
 red to blue color mapping and for discrete maps. Implements tools for easy label
 generation and placement, automatic map coloring, and themes.<br>
@@ -548,96 +577,69 @@ at several different levels of overall brightness and saturation. Each palette
 has been evaluated to ensure colors are distinguishable by colorblind people.<br>
 <br /></p>
 <h1 id="other-writing">Other Writing</h1>
-<p><a href="https://blog.isi-web.org/react/2021/12/candy-cane-shortages/"><strong>Candy cane shortages and the importance of variation</strong></a>.
-December 21, 2021. International Statistical Institute: <em>Statisticians React to the News</em>.</p>
-<p><a href="https://blog.isi-web.org/react/2021/05/where-will-the-rocket-land/"><strong>Where will the rocket land?</strong></a>
-May 12, 2021. International Statistical Institute: <em>Statisticians React to the News</em>.</p>
-<p><a href="https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/"><strong>Who&rsquo;s the most electable Democrat? It might be Warren or Buttigieg, not Biden</strong></a>.
-October 23, 2019. <em>The Washington Post</em>.</p>
-<p><a href="https://www.wsdot.wa.gov/publications/fulltext/design/ConsultantSrvs/I-405ExpressTollLanes.pdf"><strong>I-405 Express Toll Lanes: Usage, benefits, and equity</strong></a>.
-2019.
+<p><a href="https://blog.isi-web.org/react/2021/12/candy-cane-shortages/"><strong>Candy Cane Shortages and the Importance of Variation</strong></a> (December 21, 2021).
+International Statistical Institute: <em>Statisticians React to the News</em>.</p>
+<p><a href="https://blog.isi-web.org/react/2021/05/where-will-the-rocket-land/"><strong>Where Will the Rocket Land?</strong></a> (May 12, 2021).
+International Statistical Institute: <em>Statisticians React to the News</em>.</p>
+<p><a href="https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/"><strong>Who&rsquo;s the Most Electable Democrat? It Might Be Warren or Buttigieg, Not Biden</strong></a> (October 23, 2019).
+<em>The Washington Post</em>.</p>
+<p><a href="https://www.wsdot.wa.gov/publications/fulltext/design/ConsultantSrvs/I-405ExpressTollLanes.pdf"><strong>I-405 Express Toll Lanes: Usage, Benefits, and Equity</strong></a> (2019).
 Technical report for the Washington State Department of Transportation.
 <span class="coauthors">
 With Shirley Leung, C.J. Robinson, Kiana Roshan Zamir, Vaughn Iverson, and Mark Hallenbeck.
 </span>
-<a href="https://uwescience.github.io/hot-lane-equity/">Project website</a></p>
+<a href="https://uwescience.github.io/hot-lane-equity/">Project website</a><br /></p>
 <details>
 <summary>
-Project summary
+Summary
 </summary>
 <p>
-Congestion is increasing in cities around the country, and particularly in the
-Seattle region. Local governments are increasingly experimenting with
-congestion pricing schemes to manage congestion. The Washington State
+Congestion is increasing in cities around the country, and particularly
+in the Seattle region. Local governments are increasingly experimenting
+with congestion pricing schemes to manage congestion. The Washington State
 Department of Transportation (WSDOT) opened a congestion pricing facility in
 2015 on I-405, which runs through the eastern suburbs of Seattle. The facility
 operates by selling extra space in the high-occupancy vehicle (HOV) lanes to
 single-occupancy vehicles (SOVs), and dynamically changing the price of entry
-to manage demand and keep the lanes operating. These combined HOV and tolled
-SOV lanes are called High Occupancy Tolling (HOT) lanes.
+to manage demand and keep the lanes operating. These combined HOV and tolled SOV
+lanes are called High Occupancy Tolling (HOT) lanes.
 </p>
 <p>
 While the HOT lanes have been operative for over three years, there has been
 little research into the equity impacts of the lanes. Using data on each trip
 made on the I-405 HOT lanes in 2018, demographic data on census block groups,
 and lane speed, volume, and travel time data, we tried to answer this question.
-We studied how the express toll lanes are used, the benefits they provide to
-the region, and how these benefits are distributed among different groups of
-users.
+We studied how the express toll lanes are used, the benefits they provide to the
+region, and how these benefits are distributed among different groups of users.
 </p>
 </details>
 <h1 id="contact">Contact</h1>
+<div class="contactbox">
 <p>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="fa">
-<!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - 
-    https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-<path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 
-          322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 
-          64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 
-          448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/>
-</svg>&nbsp;
+<i class="bi-envelope-fill"></i>&nbsp;
 <a href="mailto:corymccartan@nyu.edu">
 corymccartan&#64;nyu.edu
 </a>
 </p>
 <p>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="fa">
-<!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - 
-    https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-<path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 
-0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832
--46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573
--48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781
--51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624
--7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 
-23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 
-60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
-</svg>&nbsp;
+<i class="bi-twitter"></i>&nbsp;
 <a href="https://twitter.com/CoryMcCartan">
 @CoryMcCartan
 </a>
 </p>
 <p>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="fa">
-<!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - 
-https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-<path d="M336 0C362.5 0 384 21.49 384 48V464C384 490.5 362.5 512 336 512H240V432C240
-405.5 218.5 384 192 384C165.5 384 144 405.5 144 432V512H48C21.49 512 0 490.5 0 464V48C0 
-21.49 21.49 0 48 0H336zM64 272C64 280.8 71.16 288 80 288H112C120.8 288 128 280.8 128 
-272V240C128 231.2 120.8 224 112 224H80C71.16 224 64 231.2 64 240V272zM176 224C167.2 224
-160 231.2 160 240V272C160 280.8 167.2 288 176 288H208C216.8 288 224 280.8 224 272V240C224 
-231.2 216.8 224 208 224H176zM256 272C256 280.8 263.2 288 272 288H304C312.8 288 320 280.8 
-320 272V240C320 231.2 312.8 224 304 224H272C263.2 224 256 231.2 256 240V272zM80 96C71.16 
-96 64 103.2 64 112V144C64 152.8 71.16 160 80 160H112C120.8 160 128 152.8 128 144V112C128 
-103.2 120.8 96 112 96H80zM160 144C160 152.8 167.2 160 176 160H208C216.8 160 224 152.8 224
-144V112C224 103.2 216.8 96 208 96H176C167.2 96 160 103.2 160 112V144zM272 96C263.2 96 256 
-103.2 256 112V144C256 152.8 263.2 160 272 160H304C312.8 160 320 152.8 320 144V112C320 
-103.2 312.8 96 304 96H272z"/>
-</svg>&nbsp;
+<i class="bi-github"></i>&nbsp;
+<a href="https://github.com/CoryMcCartan">
+CoryMcCartan
+</a>
+</p>
+<p>
+<i class="bi-building-fill"></i>&nbsp;
 Science Center, Ste. 400<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 1 Oxford St.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Cambridge MA 02138
 </p>
+</div>
 <script type="text/javascript">
 const expandElements = shouldExpand => {
     let detailsElements = document.querySelectorAll("details");
@@ -659,6 +661,8 @@ const expandElements = shouldExpand => {
     <div class="center">
         <small>
             <a href="/">HOMEPAGE</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="/frontpage">BLOG</a>
             &nbsp;&nbsp;&bull;&nbsp;&nbsp;
             <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
             <br />
