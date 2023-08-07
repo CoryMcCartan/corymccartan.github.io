@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,6 @@
 ">
     <meta name="theme-color" content="#f4f4f4">
     
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KH5JZ6JS1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-2KH5JZ6JS1');
-    </script>
 
     
     <meta property="og:title" content="Which Democratic candidates are most electable?" />
@@ -32,8 +22,14 @@
 
     <link rel="icon" href="/images/logo-64.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&amp;display=swap"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:400,900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:400,900&amp;display=swap"></noscript>
+
+
     
     <link rel="stylesheet" href="https://corymccartan.com/sass/main.min.css">
     
@@ -49,7 +45,7 @@
     <header>
     <div class="center flex-row">
         <a href="/">
-            <img src="/images/logo-128.png" id="logo">
+            <img src="/images/logo-128.png" id="logo" alt="Logo" height=32 width=32>
         </a>
         <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1>
         <span class="spacer"></span>
@@ -164,6 +160,15 @@ analysis.</p>
         Array.from(document.links)
             .filter(link => link.hostname != window.location.hostname)
             .forEach(link => link.target = "_blank");
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KH5JZ6JS1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2KH5JZ6JS1');
     </script>
 </body>
 </html>

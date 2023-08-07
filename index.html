@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta name="generator" content="Hugo 0.111.3">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -8,16 +8,6 @@
 ">
     <meta name="theme-color" content="#f4f4f4">
     
-
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KH5JZ6JS1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-2KH5JZ6JS1');
-    </script>
 
     
     <meta property="og:title" content="Homepage" />
@@ -33,14 +23,22 @@
 
     <link rel="icon" href="/images/logo-64.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&display=swap" rel="stylesheet">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:300,300i,400,700&amp;display=swap"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:400,900&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:400,900&amp;display=swap"></noscript>
+
+
     
     <link rel="stylesheet" href="https://corymccartan.com/sass/main.min.css">
     
         
         <link rel="stylesheet" href="https://corymccartan.com/sass/home.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript>
     
     
 
@@ -50,7 +48,7 @@
     <header>
     <div class="center flex-row">
         <a href="/">
-            <img src="/images/logo-128.png" id="logo">
+            <img src="/images/logo-128.png" id="logo" alt="Logo" height=32 width=32>
         </a>
         <h1 class="site-title"><a href="/">CORY McCARTAN</a></h1>
         <span class="spacer"></span>
@@ -76,7 +74,7 @@
 <div class="vspacer thin"></div>
 <div class="header-bar"></div>
 <div class="headshot-wrapper">
-    <img class="headshot" src="/images/headshot.jpg">
+    <img class="headshot" alt="Cory McCartan" src="/images/headshot.jpg">
 </div>
 
 <div class="blurb">
@@ -84,21 +82,22 @@ I'm a Data Science Assistant Professor / Faculty Fellow at the
 <a href="https://cds.nyu.edu/" target="_blank">Center for Data Science at New York University</a>.
 Starting in July 2024, I'll be an Assistant Professor in the Department of
 Statistics at the Pennsylvania State University.
+<br /><br />
 I work on methodological and applied problems in social sciences,
 with particular emphasis on Bayesian and computational methods and spatial
 or geographic data.
 Much of my research has developed or applied algorithmic tools to the
 problem of legislative redistricting; I helped start the Algorithm-Assisted
 Redistricting Methodology (ALARM) Project at Harvard University in 2021.
-I also develop and maintain a number of open-source R software for 
+I also develop and maintain a number of open-source R packages for 
 redistricting, statistical analysis, and visualization.
 </div>
 <div class="show-hide">
 <span style="flex-grow: 1"></span>
-<a href="mailto:corymccartan@nyu.edu"><i class="bi-envelope-fill"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://twitter.com/CoryMcCartan"><i class="bi-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/CoryMcCartan"><i class="bi-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://scholar.google.com/citations?user=2jbDYYUAAAAJ&hl=en"><i class="bi-mortarboard-fill"></i></a>
+<a href="mailto:corymccartan@nyu.edu" aria-label="Email"><i class="bi-envelope-fill"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/CoryMcCartan" aria-label="Twitter"><i class="bi-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CoryMcCartan" aria-label="GitHub"><i class="bi-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://scholar.google.com/citations?user=2jbDYYUAAAAJ&hl=en" aria-label="Google Scholar"><i class="bi-mortarboard-fill"></i></a>
 <span style="flex-grow: 1"></span>
 <button onclick="expandElements(true)">Show all detail</button>
 <button onclick="expandElements(false)">Collapse all detail</button>
@@ -220,6 +219,7 @@ relatively substantial for geographies with small total populations.
 </p>
 </details>
 <p><a href="https://arxiv.org/abs/2305.07208"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
+Under Review.
 <span class="coauthors">
 With Tyler Simko and Kosuke Imai.
 </span></p>
@@ -265,7 +265,7 @@ understand the tradeoffs inherent to the redistricting process.
 </p>
 </details>
 <h1 id="publications">Publications</h1>
-<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2020).
+<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2023).
 <em>Annals of Applied Statistics</em>, Forthcoming.
 <span class="coauthors">
 With Kosuke Imai.
@@ -474,7 +474,8 @@ some results on which have previously appeared in the literature.
 </p>
 </details>
 <h1 id="software">Software</h1>
-<img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png" onerror="this.style.display='none'">
+<p><img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png" width=80 height=92
+alt="redist package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://alarm-redist.org/redist/"><strong><code>redist</code>: Simulation Methods for Legislative Redistricting</strong></a>  <a href="https://CRAN.R-project.org/package=redist"><img src="https://www.r-pkg.org/badges/version/redist" alt="CRAN Status" height=17></a>
 <br />
 Enables researchers to sample redistricting plans from a pre-specified
@@ -488,7 +489,8 @@ Fifield, Imai, Kawahara, and Kenny (2020), the Flip MCMC algorithm of Fifield,
 Higgins, Imai and Tarr (2020), the Merge-split/Recombination algorithms of
 Carter et al. (2019) and DeFord et al. (2021), and the Short-burst optimization
 algorithm of Cannon et al. (2020).<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/redistmetrics/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/redistmetrics/main/man/figures/logo.png" width=80 height=92
+alt="redistmetrics package logo" onerror="this.style.display='none'"></p>
 <p><a href="http://alarm-redist.org/redistmetrics/"><strong><code>redistmetrics</code>: Redistricting Metrics</strong></a>  <a href="https://CRAN.R-project.org/package=redistmetrics"><img src="https://www.r-pkg.org/badges/version/redistmetrics" alt="CRAN Status" height=17></a>
 <br />
 Reliable and flexible tools for scoring redistricting plans using common
@@ -496,27 +498,31 @@ measures and metrics. These functions provide key direct access to tools useful
 for non-simulation analyses of redistricting plans, such as for measuring
 compactness or partisan fairness. Tools are designed to work with the <code>redist</code>
 package seamlessly.<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/birdie/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/birdie/main/man/figures/logo.png" width=80 height=92
+alt="birdie package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/birdie/"><strong><code>birdie</code>: Bayesian Instrumental Regression for Disparity Estimation</strong></a>
 <br />
 Bayesian models for accurately estimating conditional distributions by race,
 using Bayesian Improved Surname Geocoding (BISG) probability estimates of
 individual race. Implements the methods described in McCartan, Goldin, Ho and
 Imai (2023). <br /><br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/easycensus/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/easycensus/main/man/figures/logo.png" width=80 height=92
+alt="easycensus package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/easycensus/"><strong><code>easycensus</code>: Quickly Find, Extract, and Marginalize U.S. Census Tables</strong></a>  <a href="https://CRAN.R-project.org/package=easycensus"><img src="https://www.r-pkg.org/badges/version/easycensus" alt="CRAN Status" height=17></a>
 <br />
 Extracting desired data using the proper Census variable names can be
 time-consuming. This package takes the pain out of that process by providing
 functions to quickly locate variables and download labeled tables from the
 Census APIs (<a href="https://www.census.gov/data/developers/data-sets.html">https://www.census.gov/data/developers/data-sets.html</a>).<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/PL94171/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/PL94171/main/man/figures/logo.png" width=80 height=92
+alt="PL94171 package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/PL94171/"><strong><code>PL94171</code>: Tabulate P.L. 94-171 Redistricting Data Summary Files</strong></a>  <a href="https://CRAN.R-project.org/package=PL94171"><img src="https://www.r-pkg.org/badges/version/PL94171" alt="CRAN Status" height=17></a>
 <br />
 Tools to process legacy format summary redistricting data files produced by the
 United States Census Bureau pursuant to P.L. 94-171. These files are generally
 available earlier but are difficult to work with as-is. <br /><br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/adjustr/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/adjustr/main/man/figures/logo.png" width=80 height=92
+alt="adjustr package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.github.io/adjustr/"><strong><code>adjustr</code>: Stan Model Adjustments and Sensitivity Analyses using Importance Sampling</strong></a>
 <br />
 Functions to help assess the sensitivity of a Bayesian model (fitted using
@@ -524,14 +530,16 @@ the rstan package) to the specification of its likelihood and priors. Users
 provide a series of alternate sampling specifications, and the package uses
 Pareto-smoothed importance sampling to estimate posterior quantities of interest
 under each specification.<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/causaltbl/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/causaltbl/main/man/figures/logo.png" width=80 height=92
+alt="causaltbl package logo" onerror="this.style.display='none'"></p>
 <p><a href="http://corymccartan.com/causaltbl/"><strong><code>causaltbl</code>: Tidy Causal Data Frames and Tools</strong></a>
 <br />
 Provides a <code>causal_tbl</code> class for causal inference. A <code>causal_tbl</code> keeps
 track of information on the roles of variables like treatment and outcome, and
 provides functionality to store models and their fitted values as columns in a
 data frame. <br /><br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/conformalbayes/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/conformalbayes/main/man/figures/logo.png" width=80 height=92
+alt="conformalbayes package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/conformalbayes/"><strong><code>conformalbayes</code>: Jackknife(+) Predictive Intervals for Bayesian Models</strong></a>  <a href="https://CRAN.R-project.org/package=conformalbayes"><img src="https://www.r-pkg.org/badges/version/conformalbayes" alt="CRAN Status" height=17></a>
 <br />
 Provides functions to construct finite-sample calibrated predictive intervals
@@ -540,7 +548,8 @@ intervals are calculated efficiently using importance sampling for the
 leave-one-out residuals. By default, the intervals will also reflect the
 relative uncertainty in the Bayesian model, using the locally-weighted conformal
 methods of Lei et al. (2018) .<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/alarmdata/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/alarmdata/main/man/figures/logo.png" width=80 height=92
+alt="alarmdata package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://alarm-redist.org/alarmdata/"><strong><code>alarmdata</code>: Download, Merge, and Process Redistricting Data</strong></a>
 <br />
 Utility functions to download and process data produced by the ALARM Project,
@@ -549,27 +558,31 @@ Redistricting Simulations of McCartan, Kenny, Simko, Garcia, Wang, Wu, Kuriwaki,
 and Imai. The package extends the data introduced in McCartan, Kenny, Simko,
 Garcia, Wang, Wu, Kuriwaki, and Imai to also include states with only a single
 district.<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/blockpop/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/blockpop/main/man/figures/logo.png" width=80 height=92
+alt="blockpop package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.github.io/blockpop"><strong><code>blockpop</code>: Estimate Census Block Populations for 2020</strong></a>
 <br />
 Uses FCC block-level population estimates from 2010&ndash;2019, which are based on
 new roads and map data, along with decennial Census and ACS data, to estimate
 2020 block populations. <br /><br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/ggredist/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
-<p><a href="https://alarm-redist.org/ggredist/"><strong><code>ggredist</code>: Scales, Geometries, and Extensions of <code>ggplot2</code> for Election Mapping</strong></a>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/ggredist/main/man/figures/logo.png" width=80 height=92
+alt="ggredist package logo" onerror="this.style.display='none'"></p>
+<p><a href="https://alarm-redist.org/ggredist/"><strong><code>ggredist</code>: Scales, Geometries, and Extensions of <code>ggplot2</code> for Election Mapping</strong></a>  <a href="https://CRAN.R-project.org/package=ggredist"><img src="https://www.r-pkg.org/badges/version/ggredist" alt="CRAN Status" height=17></a>
 <br />
 Provides <code>ggplot2</code> extensions for political map making. Implements new
 geometries for groups of simple feature geometries. Adds palettes and scales for
 red to blue color mapping and for discrete maps. Implements tools for easy label
 generation and placement, automatic map coloring, and themes.<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/tinytiger/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/tinytiger/main/man/figures/logo.png" width=80 height=92
+alt="tinytiger package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://alarm-redist.org/tinytiger/"><strong><code>tinytiger</code>: Lightweight Interface to TIGER/Line Shapefiles</strong></a>  <a href="https://CRAN.R-project.org/package=tinytiger"><img src="https://www.r-pkg.org/badges/version/tinytiger" alt="CRAN Status" height=17></a>
 <br />
 Download geographic shapes from the United States Census Bureau TIGER/Line
 Shapefiles. Functions support downloading and reading in geographic boundary
 data. All downloads can be set up with a cache to avoid multiple downloads. Data
 is available back to 2000 for most geographies.<br>
-<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/wacolors/main/man/figures/logo.png" onerror="this.style.display='none'"></p>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/wacolors/main/man/figures/logo.png" width=80 height=92
+alt="wacolors package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://github.com/CoryMcCartan/wacolors"><strong><code>wacolors</code>: Colorblind-Friendly Palettes from Washington State</strong></a>  <a href="https://CRAN.R-project.org/package=wacolors"><img src="https://www.r-pkg.org/badges/version/wacolors" alt="CRAN Status" height=17></a>
 <br />
 Color palettes taken from the landscapes and cities of Washington state. Colors
@@ -681,6 +694,15 @@ const expandElements = shouldExpand => {
         Array.from(document.links)
             .filter(link => link.hostname != window.location.hostname)
             .forEach(link => link.target = "_blank");
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KH5JZ6JS1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2KH5JZ6JS1');
     </script>
 </body>
 </html>
