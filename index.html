@@ -164,35 +164,8 @@ of partisan gerrymandering in New Jersey, voting rights litigation in Alabama,
 and racial dynamics of Boston City Council elections.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2021).
-Under Review.
-<span class="coauthors">
-With Jacob R. Brown and Kosuke Imai.
-</span>
-<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
-<a href="/docs/poster_nbhd.pdf">Poster</a><br /></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-Granular geographic data present new opportunities to understand how
-neighborhoods are formed, and how they influence politics. At the same
-time, the inherent subjectivity of neighborhoods creates methodological
-challenges in measuring and modeling them. We develop a survey instrument that
-allows respondents to draw their neighborhoods on a map. We also propose a
-statistical model to analyze how the characteristics of respondents and local
-areas determine subjective neighborhoods. We conduct two surveys: collecting
-subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
-asking New York City residents to draw a community of interest for inclusion
-in their city council district. Our analysis shows that, holding other factors
-constant, White respondents include census blocks with more White residents
-in their neighborhoods. Similarly, Democrats and Republicans are more likely
-to include co-partisan areas. In addition, our model provides more accurate
-out-of-sample predictions than standard neighborhood measures.
-</p>
-</details>
 <p><a href="https://arxiv.org/abs/2306.07521"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2023).
+Under Review.
 <span class="coauthors">
 With Christopher T. Kenny, Shiro Kuriwaki, Tyler Simko, and Kosuke Imai.
 </span></p>
@@ -301,6 +274,34 @@ with fewer samples than a state-of-the-art MCMC algorithm. Open-source software
 is available for implementing the proposed methodology.
 </p>
 </details>
+<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2023).
+<em>American Political Science Review</em>, Conditionally Accepted.
+<span class="coauthors">
+With Jacob R. Brown and Kosuke Imai.
+</span>
+<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
+<a href="/docs/poster_nbhd.pdf">Poster</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+Granular geographic data present new opportunities to understand how
+neighborhoods are formed, and how they influence politics. At the same time,
+the inherent subjectivity of neighborhoods creates methodological challenges
+in measuring and modeling them. We develop an open-source survey instrument
+that allows respondents to draw their neighborhoods on a map. We also propose
+a statistical model to analyze how the characteristics of respondents and local
+areas determine subjective neighborhoods. We conduct two surveys: collecting
+subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
+asking New York City residents to draw a community of interest for inclusion
+in their city council district. Our analysis shows that, holding other factors
+constant, White respondents include census blocks with more White residents
+in their neighborhoods. Similarly, Democrats and Republicans are more likely
+to include co-partisan areas. Furthermore, our model provides more accurate
+out-of-sample predictions than standard neighborhood measures.
+</p>
+</details>
 <p><a href="https://doi.org/10.1073/pnas.2217322120"><strong>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</strong></a> (2023).
 <em>Proceedings of the National Academy of Sciences</em> 120:25, e2217322120.
 <span class="coauthors">
@@ -331,8 +332,8 @@ in the national vote.
 <span class="coauthors">
 With Tyler Simko and Kosuke Imai.
 </span></p>
-<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why Does it Work, and When Can it Be Expected to Work Well?</strong></a> (2023).
-<em>Political Analysis</em> 1:11.
+<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why Does it Work, and When Can it be Expected to Work Well?</strong></a> (2023).
+<em>Political Analysis</em> 31:4, 651-661.
 <span class="coauthors">
 With Evan T.R. Rosenman and Santiago Olivella.
 </span></p>
@@ -591,13 +592,24 @@ of continuous and discrete palettes. Continuous palettes were designed to be
 perceptually uniform, while discrete palettes were chosen to maximize contrast
 at several different levels of overall brightness and saturation. Each palette
 has been evaluated to ensure colors are distinguishable by colorblind people.<br>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/nbhdmodel/main/man/figures/logo.png" width=80 height=92
+alt="nbhdmodel package logo" onerror="this.style.display='none'"></p>
+<p><a href="https://corymccartan.github.io/nbhdmodel"><strong><code>nbhdmodel</code>: Neighborhood Modeling and Analysis</strong></a>
+<br />
+Functionality for fitting neighborhood models of McCartan, Brown, and Imai.
+The core methodology is described in the paper and can be implemented with
+any tool that can fit generalized linear mixed models (GLMMs). However, some
+of the preprocessing necessary to set up the GLMM can be onerous. In addition
+to providing a specialized GLMM routine, this package provides several
+preprocessing functions that, while not completely general, should be useful for
+others performing these kinds of analyses.<br>
 <br /></p>
 <h1 id="other-writing">Other Writing</h1>
 <p><a href="https://blog.isi-web.org/react/2021/12/candy-cane-shortages/"><strong>Candy Cane Shortages and the Importance of Variation</strong></a> (December 21, 2021).
 International Statistical Institute: <em>Statisticians React to the News</em>.</p>
 <p><a href="https://blog.isi-web.org/react/2021/05/where-will-the-rocket-land/"><strong>Where Will the Rocket Land?</strong></a> (May 12, 2021).
 International Statistical Institute: <em>Statisticians React to the News</em>.</p>
-<p><a href="https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/"><strong>Who&rsquo;s the Most Electable Democrat? It Might Be Warren or Buttigieg, Not Biden</strong></a> (October 23, 2019).
+<p><a href="https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/"><strong>Who&rsquo;s the Most Electable Democrat? It Might be Warren or Buttigieg, Not Biden</strong></a> (October 23, 2019).
 <em>The Washington Post</em>.</p>
 <p><a href="https://www.wsdot.wa.gov/publications/fulltext/design/ConsultantSrvs/I-405ExpressTollLanes.pdf"><strong>I-405 Express Toll Lanes: Usage, Benefits, and Equity</strong></a> (2019).
 Technical report for the Washington State Department of Transportation.
