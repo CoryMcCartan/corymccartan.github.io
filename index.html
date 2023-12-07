@@ -153,15 +153,15 @@ Social scientists have developed dozens of measures for assessing partisan bias
 in redistricting. But these measures cannot be easily adapted to other groups,
 including those defined by race, class, or geography. Nor are they applicable
 to single- or no-party contexts such as local redistricting. To overcome these
-limitations, we propose a unified framework of <i>harm</i> for evaluating the
-impacts of a districting plan on individual voters and the groups to which they
-belong. We consider a voter harmed if their chosen candidate is not elected
-under the current plan, but would be under a different plan. Harm improves
-on existing measures by both focusing on the choices of individual voters
-and directly incorporating counterfactual plans. We discuss strategies for
-estimating harm, and demonstrate the utility of our framework through analyses
-of partisan gerrymandering in New Jersey, voting rights litigation in Alabama,
-and racial dynamics of Boston City Council elections.
+limitations, we propose a unified framework of *harm* for evaluating the impacts
+of a districting plan on individual voters and the groups to which they belong.
+We consider a voter harmed if their chosen candidate is not elected under the
+current plan, but would be under a different plan. Harm improves on existing
+measures by both focusing on the choices of individual voters and directly
+incorporating counterfactual plans. We discuss strategies for estimating harm,
+and demonstrate the utility of our framework through analyses of partisan
+gerrymandering in New Jersey, voting rights litigation in Alabama, and racial
+dynamics of Boston City Council elections.
 </p>
 </details>
 <p><a href="https://arxiv.org/abs/2306.07521"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2023).
@@ -191,30 +191,6 @@ swapping are generally no larger than other sources of Census error, they can be
 relatively substantial for geographies with small total populations.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2305.07208"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
-Under Review.
-<span class="coauthors">
-With Tyler Simko and Kosuke Imai.
-</span></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-The U.S. Census Bureau collects and publishes detailed demographic data about
-Americans which are heavily used by researchers and policymakers. The Bureau
-has recently adopted the framework of differential privacy in an effort
-to improve confidentiality of individual census responses. A key output of
-this privacy protection system is the Noisy Measurement File (NMF), which is
-produced by adding random noise to tabulated statistics. The NMF is critical
-to understanding any biases in the data, and performing valid statistical
-inference on published census data. Unfortunately, the current release format
-of the NMF is difficult to access and work with. We describe the process we
-use to transform the NMF into a usable format, and provide recommendations to
-the Bureau for how to release future versions of the NMF. These changes are
-essential for ensuring transparency of privacy measures and reproducibility of
-</p>
-</details>
 <p><a href="https://arxiv.org/abs/2304.00427"><strong>Finding Pareto Efficient Redistricting Plans with Short Bursts</strong></a> (2023).
 <br />
 <a href="https://github.com/CoryMcCartan/redist-pareto">Replication code</a><br /></p>
@@ -238,8 +214,61 @@ understand the tradeoffs inherent to the redistricting process.
 </p>
 </details>
 <h1 id="publications">Publications</h1>
-<p><a href="https://arxiv.org/abs/2008.06131"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2023).
-<em>Annals of Applied Statistics</em>, Forthcoming.
+<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2023).
+<em>American Political Science Review</em>, Conditionally Accepted.
+<span class="coauthors">
+With Jacob R. Brown and Kosuke Imai.
+</span>
+<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
+<a href="https://doi.org/10.7910/DVN/SDSUQG">Replication code</a>;
+<a href="/docs/poster_nbhd.pdf">Poster</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+Granular geographic data present new opportunities to understand how
+neighborhoods are formed, and how they influence politics. At the same time,
+the inherent subjectivity of neighborhoods creates methodological challenges
+in measuring and modeling them. We develop an open-source survey instrument
+that allows respondents to draw their neighborhoods on a map. We also propose
+a statistical model to analyze how the characteristics of respondents and local
+areas determine subjective neighborhoods. We conduct two surveys: collecting
+subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
+asking New York City residents to draw a community of interest for inclusion
+in their city council district. Our analysis shows that, holding other factors
+constant, White respondents include census blocks with more White residents
+in their neighborhoods. Similarly, Democrats and Republicans are more likely
+to include co-partisan areas. Furthermore, our model provides more accurate
+out-of-sample predictions than standard neighborhood measures.
+</p>
+</details>
+<p><a href="https://doi.org/10.1162/99608f92.c3c87223"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
+<em>Harvard Data Science Review</em> 5:4.
+<span class="coauthors">
+With Tyler Simko and Kosuke Imai.
+</span></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+The U.S. Census Bureau collects and publishes detailed demographic data about
+Americans which are heavily used by researchers and policymakers. The Bureau
+has recently adopted the framework of differential privacy in an effort
+to improve confidentiality of individual census responses. A key output of
+this privacy protection system is the Noisy Measurement File (NMF), which is
+produced by adding random noise to tabulated statistics. The NMF is critical
+to understanding any biases in the data, and performing valid statistical
+inference on published census data. Unfortunately, the current release format
+of the NMF is difficult to access and work with. We describe the process we
+use to transform the NMF into a usable format, and provide recommendations to
+the Bureau for how to release future versions of the NMF. These changes are
+essential for ensuring transparency of privacy measures and reproducibility of
+</p>
+</details>
+<p><a href="http://dx.doi.org/10.1214/23-AOAS1763"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2023).
+<em>Annals of Applied Statistics</em> 17:4, 3300-3323.
 <span class="coauthors">
 With Kosuke Imai.
 </span>
@@ -272,34 +301,6 @@ in a recent high-profile redistricting case in the state of Pennsylvania. We
 find that the proposed algorithm converges to the target distribution faster and
 with fewer samples than a state-of-the-art MCMC algorithm. Open-source software
 is available for implementing the proposed methodology.
-</p>
-</details>
-<p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2023).
-<em>American Political Science Review</em>, Conditionally Accepted.
-<span class="coauthors">
-With Jacob R. Brown and Kosuke Imai.
-</span>
-<a href="https://github.com/CoryMcCartan/neighborhood-survey">Survey tool</a>;
-<a href="/docs/poster_nbhd.pdf">Poster</a><br /></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-Granular geographic data present new opportunities to understand how
-neighborhoods are formed, and how they influence politics. At the same time,
-the inherent subjectivity of neighborhoods creates methodological challenges
-in measuring and modeling them. We develop an open-source survey instrument
-that allows respondents to draw their neighborhoods on a map. We also propose
-a statistical model to analyze how the characteristics of respondents and local
-areas determine subjective neighborhoods. We conduct two surveys: collecting
-subjective neighborhoods from voters in Miami, New York City, and Phoenix, and
-asking New York City residents to draw a community of interest for inclusion
-in their city council district. Our analysis shows that, holding other factors
-constant, White respondents include census blocks with more White residents
-in their neighborhoods. Similarly, Democrats and Republicans are more likely
-to include co-partisan areas. Furthermore, our model provides more accurate
-out-of-sample predictions than standard neighborhood measures.
 </p>
 </details>
 <p><a href="https://doi.org/10.1073/pnas.2217322120"><strong>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</strong></a> (2023).
@@ -594,7 +595,7 @@ at several different levels of overall brightness and saturation. Each palette
 has been evaluated to ensure colors are distinguishable by colorblind people.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/nbhdmodel/main/man/figures/logo.png" width=80 height=92
 alt="nbhdmodel package logo" onerror="this.style.display='none'"></p>
-<p><a href="https://corymccartan.github.io/nbhdmodel"><strong><code>nbhdmodel</code>: Neighborhood Modeling and Analysis</strong></a>
+<p><a href="https://corymccartan.github.io/nbhdmodel"><strong><code>nbhdmodel</code>: Neighborhood Modeling and Analysis</strong></a>  <a href="https://CRAN.R-project.org/package=nbhdmodel"><img src="https://www.r-pkg.org/badges/version/nbhdmodel" alt="CRAN Status" height=17></a>
 <br />
 Functionality for fitting neighborhood models of McCartan, Brown, and Imai.
 The core methodology is described in the paper and can be implemented with
