@@ -139,7 +139,6 @@ methodology.
 </p>
 </details>
 <p><a href="https://osf.io/preprints/socarxiv/nc2x7/"><strong>Individual and Differential Harm in Redistricting</strong></a> (2022).
-Under Review.
 <span class="coauthors">
 With Christopher T. Kenny.
 </span>
@@ -191,6 +190,30 @@ swapping are generally no larger than other sources of Census error, they can be
 relatively substantial for geographies with small total populations.
 </p>
 </details>
+<p><a href="https://arxiv.org/abs/2401.06381"><strong>Projective Averages for Summarizing Redistricting Ensembles</strong></a> (2024).
+<br />
+<a href="https://github.com/CoryMcCartan/proj-avg">Replication code</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+A recurring challenge in the application of redistricting simulation algorithms
+lies in extracting useful summaries and comparisons from a large ensemble
+of districting plans. Researchers often compute summary statistics for each
+district in a plan, and then study their distribution across the plans in the
+ensemble. This approach discards rich geographic information that is inherent
+in districting plans. We introduce the projective average, an operation that
+projects a district-level summary statistic back to the underlying geography
+and then averages this statistic across plans in the ensemble. Compared to
+traditional district-level summaries, projective averages are a powerful tool
+for geographically granular, sub-district analysis of districting plans along
+a variety of dimensions. However, care must be taken to account for variation
+within redistricting ensembles, to avoid misleading conclusions. We propose and
+validate a multiple-testing procedure to control the probability of incorrectly
+identifying outlier plans or regions when using projective averages.
+</p>
+</details>
 <p><a href="https://arxiv.org/abs/2304.00427"><strong>Finding Pareto Efficient Redistricting Plans with Short Bursts</strong></a> (2023).
 <br />
 <a href="https://github.com/CoryMcCartan/redist-pareto">Replication code</a><br /></p>
@@ -215,7 +238,7 @@ understand the tradeoffs inherent to the redistricting process.
 </details>
 <h1 id="publications">Publications</h1>
 <p><a href="https://arxiv.org/abs/2110.14014"><strong>Measuring and Modeling Neighborhoods</strong></a> (2023).
-<em>American Political Science Review</em>, Conditionally Accepted.
+<em>American Political Science Review</em>, Forthcoming.
 <span class="coauthors">
 With Jacob R. Brown and Kosuke Imai.
 </span>
@@ -486,14 +509,14 @@ algorithms. The package allows for the implementation of various constraints
 in the redistricting process such as geographic compactness and population
 parity requirements. Tools for analysis such as computation of various summary
 statistics and plotting functionality are also included. The package implements
-the SMC algorithm of McCartan and Imai (2020), the enumeration algorithm of
+the SMC algorithm of McCartan and Imai (2023), the enumeration algorithm of
 Fifield, Imai, Kawahara, and Kenny (2020), the Flip MCMC algorithm of Fifield,
 Higgins, Imai and Tarr (2020), the Merge-split/Recombination algorithms of
 Carter et al. (2019) and DeFord et al. (2021), and the Short-burst optimization
 algorithm of Cannon et al. (2020).<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/redistmetrics/main/man/figures/logo.png" width=80 height=92
 alt="redistmetrics package logo" onerror="this.style.display='none'"></p>
-<p><a href="http://alarm-redist.org/redistmetrics/"><strong><code>redistmetrics</code>: Redistricting Metrics</strong></a>  <a href="https://CRAN.R-project.org/package=redistmetrics"><img src="https://www.r-pkg.org/badges/version/redistmetrics" alt="CRAN Status" height=17></a>
+<p><a href="https://alarm-redist.org/redistmetrics/"><strong><code>redistmetrics</code>: Redistricting Metrics</strong></a>  <a href="https://CRAN.R-project.org/package=redistmetrics"><img src="https://www.r-pkg.org/badges/version/redistmetrics" alt="CRAN Status" height=17></a>
 <br />
 Reliable and flexible tools for scoring redistricting plans using common
 measures and metrics. These functions provide key direct access to tools useful
@@ -595,7 +618,7 @@ at several different levels of overall brightness and saturation. Each palette
 has been evaluated to ensure colors are distinguishable by colorblind people.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/nbhdmodel/main/man/figures/logo.png" width=80 height=92
 alt="nbhdmodel package logo" onerror="this.style.display='none'"></p>
-<p><a href="https://corymccartan.github.io/nbhdmodel"><strong><code>nbhdmodel</code>: Neighborhood Modeling and Analysis</strong></a>  <a href="https://CRAN.R-project.org/package=nbhdmodel"><img src="https://www.r-pkg.org/badges/version/nbhdmodel" alt="CRAN Status" height=17></a>
+<p><a href="https://corymccartan.github.io/nbhdmodel"><strong><code>nbhdmodel</code>: Neighborhood Modeling and Analysis</strong></a>
 <br />
 Functionality for fitting neighborhood models of McCartan, Brown, and Imai.
 The core methodology is described in the paper and can be implemented with
@@ -696,7 +719,7 @@ const expandElements = shouldExpand => {
             <a href="mailto:cmccartan@g.harvard.edu">CONTACT</a>
             <br />
             <br />
-            &copy; 2023 Cory McCartan. All Rights Reserved.
+            &copy; 2024 Cory McCartan. All Rights Reserved.
         </small>
     </div>
 </footer>
