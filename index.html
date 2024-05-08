@@ -104,6 +104,7 @@ redistricting, statistical analysis, and visualization.
 </div>
 <h1 id="working-papers">Working Papers</h1>
 <p><a href="https://arxiv.org/abs/2303.02580"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2023).
+Under Review.
 <span class="coauthors">
 With Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
 </span>
@@ -163,33 +164,6 @@ gerrymandering in New Jersey, voting rights litigation in Alabama, and racial
 dynamics of Boston City Council elections.
 </p>
 </details>
-<p><a href="https://arxiv.org/abs/2306.07521"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2023).
-Under Review.
-<span class="coauthors">
-With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
-</span></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-The United States Census Bureau faces a difficult trade-off between the
-accuracy of Census statistics and the protection of individual information.
-We conduct the first independent evaluation of bias and noise induced by the
-Bureau's two main disclosure avoidance systems: the TopDown algorithm employed
-for the 2020 Census and the swapping algorithm implemented for the 1990, 2000,
-and 2010 Censuses. Our evaluation leverages the recent release of the Noisy
-Measure File (NMF) as well as the availability of two independent runs of the
-TopDown algorithm applied to the 2010 decennial Census. We find that the NMF
-contains too much noise to be directly useful alone, especially for Hispanic
-and multiracial populations. TopDown's post-processing dramatically reduces the
-NMF noise and produces similarly accurate data to swapping in terms of bias and
-noise. These patterns hold across census geographies with varying population
-sizes and racial diversity. While the estimated errors for both TopDown and
-swapping are generally no larger than other sources of Census error, they can be
-relatively substantial for geographies with small total populations.
-</p>
-</details>
 <p><a href="https://arxiv.org/abs/2401.06381"><strong>Projective Averages for Summarizing Redistricting Ensembles</strong></a> (2024).
 Under Review.
 <br />
@@ -238,6 +212,33 @@ understand the tradeoffs inherent to the redistricting process.
 </p>
 </details>
 <h1 id="publications">Publications</h1>
+<p><a href="https://doi.org/10.1126/sciadv.adl2524"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2024).
+<em>Science Advances</em> 10:18, eadl2524.
+<span class="coauthors">
+With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
+</span></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+The United States Census Bureau faces a difficult trade-off between the
+accuracy of Census statistics and the protection of individual information.
+We conduct the first independent evaluation of bias and noise induced by the
+Bureau's two main disclosure avoidance systems: the TopDown algorithm employed
+for the 2020 Census and the swapping algorithm implemented for the 1990, 2000,
+and 2010 Censuses. Our evaluation leverages the recent release of the Noisy
+Measure File (NMF) as well as the availability of two independent runs of the
+TopDown algorithm applied to the 2010 decennial Census. We find that the NMF
+contains too much noise to be directly useful alone, especially for Hispanic
+and multiracial populations. TopDown's post-processing dramatically reduces the
+NMF noise and produces similarly accurate data to swapping in terms of bias and
+noise. These patterns hold across census geographies with varying population
+sizes and racial diversity. While the estimated errors for both TopDown and
+swapping are generally no larger than other sources of Census error, they can be
+relatively substantial for geographies with small total populations.
+</p>
+</details>
 <p><a href="https://doi.org/10.1017/S0003055423001429"><strong>Measuring and Modeling Neighborhoods</strong></a> (2024).
 <em>American Political Science Review</em>, Online ahead of print.
 <span class="coauthors">
@@ -267,8 +268,8 @@ to include co-partisan areas. Furthermore, our model provides more accurate
 out-of-sample predictions than standard neighborhood measures.
 </p>
 </details>
-<p><a href="#"><strong>Census Officials Must Constructively Engage with Independent Evaluations</strong></a> (2024).
-<em>Proceedings of the National Academy of Sciences</em>, In press.
+<p><a href="https://doi.org/10.1073/pnas.2321196121"><strong>Census Officials Must Constructively Engage with Independent Evaluations</strong></a> (2024).
+<em>Proceedings of the National Academy of Sciences</em> 121:11, e2321196121.
 <span class="coauthors">
 With Christopher T. Kenny, Tyler Simko, and Kosuke Imai.
 </span>
@@ -277,7 +278,8 @@ Letter to the editor re: <a href="https://doi.org/10.1073/pnas.2220558120">Jarmi
 <em>Harvard Data Science Review</em> 5:4.
 <span class="coauthors">
 With Tyler Simko and Kosuke Imai.
-</span></p>
+</span>
+With <a href="https://doi.org/10.1162/99608f92.79d4660d">response</a> and <a href="https://doi.org/10.1162/99608f92.f9f4b9a4">rejoinder</a></p>
 <details>
 <summary>
 Abstract
@@ -295,6 +297,7 @@ of the NMF is difficult to access and work with. We describe the process we
 use to transform the NMF into a usable format, and provide recommendations to
 the Bureau for how to release future versions of the NMF. These changes are
 essential for ensuring transparency of privacy measures and reproducibility of
+scientific research built on census data.
 </p>
 </details>
 <p><a href="http://dx.doi.org/10.1214/23-AOAS1763"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2023).
@@ -582,14 +585,14 @@ relative uncertainty in the Bayesian model, using the locally-weighted conformal
 methods of Lei et al. (2018) .<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/alarmdata/main/man/figures/logo.png" width=80 height=92
 alt="alarmdata package logo" onerror="this.style.display='none'"></p>
-<p><a href="https://alarm-redist.org/alarmdata/"><strong><code>alarmdata</code>: Download, Merge, and Process Redistricting Data</strong></a>
+<p><a href="https://alarm-redist.org/alarmdata/"><strong><code>alarmdata</code>: Download, Merge, and Process Redistricting Data</strong></a>  <a href="https://CRAN.R-project.org/package=alarmdata"><img src="https://www.r-pkg.org/badges/version/alarmdata" alt="CRAN Status" height=17></a>
 <br />
 Utility functions to download and process data produced by the ALARM Project,
-including 2020 redistricting files Kenny and McCartan 2021 and the 50-State
+including 2020 redistricting files Kenny and McCartan (2021) and the 50-State
 Redistricting Simulations of McCartan, Kenny, Simko, Garcia, Wang, Wu, Kuriwaki,
-and Imai. The package extends the data introduced in McCartan, Kenny, Simko,
-Garcia, Wang, Wu, Kuriwaki, and Imai to also include states with only a single
-district.<br>
+and Imai (2022). The package extends the data introduced in McCartan, Kenny,
+Simko, Garcia, Wang, Wu, Kuriwaki, and Imai (2022) to also include states with
+only a single district.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/blockpop/main/man/figures/logo.png" width=80 height=92
 alt="blockpop package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.github.io/blockpop"><strong><code>blockpop</code>: Estimate Census Block Populations for 2020</strong></a>
