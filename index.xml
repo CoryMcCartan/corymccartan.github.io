@@ -6,7 +6,16 @@
     <description>Recent content in Homepage on Cory McCartan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond the Brier Score</title>
+      <link>https://corymccartan.com/2024/07/election-models/</link>
+      <pubDate>Sat, 06 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://corymccartan.com/2024/07/election-models/</guid>
+      <description>It&amp;rsquo;s that time again: presidential election forecasts are cropping up left and right. And they all point in the same direction, with varying degrees of confidence. Until the election, there will be arguments over which model is &amp;ldquo;best&amp;rdquo;&amp;mdash;arguments completely uninfluenced by the participant&amp;rsquo;s own political leanings, of course. After the election, assuming we still have a country, a much smaller group of people will want to look back and decide which model ultimately was closest to the actual results.</description>
+    </item>
+    
     <item>
       <title>Crossing the Continent by Train, Twice</title>
       <link>https://corymccartan.com/2021/08/usa-rail/</link>

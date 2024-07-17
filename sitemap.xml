@@ -8,15 +8,18 @@
     <url><loc>https://corymccartan.com/conformalbayes/</loc></url>
     <url><loc>https://corymccartan.com/cv/cv.pdf</loc></url>
     <url>
-        <loc>https://corymccartan.com/2021/08/usa-rail/</loc>
-        <lastmod>2021-08-25T00:00:00+00:00</lastmod>
+        <loc>https://corymccartan.com/2024/07/election-models/</loc>
+        <lastmod>2024-07-06T00:00:00+00:00</lastmod>
     </url><url>
         <loc>https://corymccartan.com/</loc>
-        <lastmod>2021-08-25T00:00:00+00:00</lastmod>
+        <lastmod>2024-07-06T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1</priority>
     </url><url>
         <loc>https://corymccartan.com/posts/</loc>
+        <lastmod>2024-07-06T00:00:00+00:00</lastmod>
+    </url><url>
+        <loc>https://corymccartan.com/2021/08/usa-rail/</loc>
         <lastmod>2021-08-25T00:00:00+00:00</lastmod>
     </url><url>
         <loc>https://corymccartan.com/2021/05/union-locals/</loc>
