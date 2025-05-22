@@ -4,131 +4,100 @@
     <title>Posts on Cory McCartan</title>
     <link>https://corymccartan.com/posts/</link>
     <description>Recent content in Posts on Cory McCartan</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://corymccartan.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crossing the Continent by Train, Twice</title>
       <link>https://corymccartan.com/2021/08/usa-rail/</link>
       <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2021/08/usa-rail/</guid>
       <description>Suppose—hypothetically—that you find yourself one evening, early in the  second summer of our pandemic, reading your email, when you open up an advertisement for discounted train tickets.</description>
     </item>
-    
     <item>
       <title>Union Local Size</title>
       <link>https://corymccartan.com/2021/05/union-locals/</link>
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2021/05/union-locals/</guid>
       <description>Some unions have relatively even local memberships, others have huge  disparities in size between their largest and smallest locals.  Why? And can we measure it?</description>
     </item>
-    
     <item>
       <title>Northern Irish Parliamentary Constituencies</title>
       <link>https://corymccartan.com/2021/02/northern-ireland/</link>
       <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2021/02/northern-ireland/</guid>
       <description>In a place where religious polarization is stronger than political  polarization (though they are intertwined), how does the redistricting  process look? Are the boundaries fair? Random simulations can provide an answer.</description>
     </item>
-    
     <item>
       <title>Conditional Forecasts</title>
       <link>https://corymccartan.com/2020/11/election-night/</link>
-      <pubDate>Tue, 03 Nov 2020 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://corymccartan.com/2020/11/election-night/</guid>
       <description>Use this tool to game out various scenarios, or to  make real-time election-night forecasts for the presidential race as the results roll in.</description>
     </item>
-    
     <item>
       <title>The Candidates are Rallying Their Bases</title>
       <link>https://corymccartan.com/2020/05/ads/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/05/ads/</guid>
       <description>Last week, Biden outspent Trump on Facebook by more than a 2-to-1 margin. But per-state spending has little to do with how competitive each state is, and everything to do with how many supportive voters live there.</description>
     </item>
-    
     <item>
       <title>Not Just Like the Flu</title>
       <link>https://corymccartan.com/2020/03/covid-deaths/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/03/covid-deaths/</guid>
       <description>All of the numbers floating around about the coronavirus can obscure the one  simple fact that we must all remember if we are to be disciplined enough in our social distancing: this pandemic is deadly serious, and if we don’t continue to take drastic action, at an individual and societal level, then someone you know will probably die.</description>
     </item>
-    
     <item>
       <title>The Other March Madness</title>
       <link>https://corymccartan.com/2020/03/dst/</link>
       <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/03/dst/</guid>
       <description>Should this be the last daylight savings? The time zone shift is an excellent opportunity to look at daylight patterns across the country.</description>
     </item>
-    
     <item>
       <title>The Nevada Caucuses</title>
       <link>https://corymccartan.com/2020/02/the-nevada-caucuses/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/02/the-nevada-caucuses/</guid>
       <description>Caucuses have a distinct advantage over primaries, which are conducted by ballot: after an initial tally of candidates’ support, voters can realign themselves into new groups before the final count. This realignment process can provide valuable insight into the preferences of voters, and help us understand how the race might change if more candidates start to drop out.</description>
     </item>
-    
     <item>
       <title>On a Streak?</title>
       <link>https://corymccartan.com/2020/02/weather/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/02/weather/</guid>
       <description>Streaks are an important part of how we experience a place&amp;rsquo;s weather: it matters not just how hot it gets, or how much it rains, but also how long these kinds of weather stick around. Mathematically, one way to understand these patterns is through Markov chains. Thinking of weather in this way can reveal some interesting patterns, and confirm some stereotypes.</description>
     </item>
-    
     <item>
       <title>The Geography of Political Differences</title>
       <link>https://corymccartan.com/2020/02/the-geography-of-political-differences/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2020/02/the-geography-of-political-differences/</guid>
       <description>While we’re all familiar with the usual red-blue map of state partisan preference, things get a little more interesting when we look at states&amp;rsquo; views on economic and social issues separately.</description>
     </item>
-    
     <item>
       <title>The Continental Divide</title>
       <link>https://corymccartan.com/2019/12/the-continental-divide/</link>
       <pubDate>Sun, 29 Dec 2019 16:15:17 -0800</pubDate>
-      
       <guid>https://corymccartan.com/2019/12/the-continental-divide/</guid>
-      <description>&lt;p&gt;The standard U.S. map shows states laid out in two dimensions, but doesn&amp;rsquo;t
-convey any information about the crucial third dimension: altitude.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The standard U.S. map shows states laid out in two dimensions, but doesn&amp;rsquo;t&#xA;convey any information about the crucial third dimension: altitude.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>37 Supreme Court Justices on a Plane</title>
       <link>https://corymccartan.com/2017/10/37-supreme-court-justices-on-a-plane/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2017/10/37-supreme-court-justices-on-a-plane/</guid>
-      <description>&lt;p&gt;The most common measure of Supreme Court justice ideology are the
-&lt;a href=&#34;https://mqscores.lsa.umich.edu/&#34;&gt;Martin&amp;ndash;Quinn scores&lt;/a&gt;, developed by the
-eponymous political scientists.  Since their &lt;a href=&#34;https://mqscores.lsa.umich.edu/media/pa02.pdf&#34;&gt;original publication in
-2002&lt;/a&gt;, the scores have been
-widely used, in political science and in the media, to place justices on
-a left&amp;ndash;right political spectrum.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The most common measure of Supreme Court justice ideology are the&#xA;&lt;a href=&#34;https://mqscores.lsa.umich.edu/&#34;&gt;Martin&amp;ndash;Quinn scores&lt;/a&gt;, developed by the&#xA;eponymous political scientists.  Since their &lt;a href=&#34;https://mqscores.lsa.umich.edu/media/pa02.pdf&#34;&gt;original publication in&#xA;2002&lt;/a&gt;, the scores have been&#xA;widely used, in political science and in the media, to place justices on&#xA;a left&amp;ndash;right political spectrum.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swirling Fractals</title>
       <link>https://corymccartan.com/2015/04/swirling-fractals/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/2015/04/swirling-fractals/</guid>
       <description>Corresponding to each point in and around the Mandelbrot set is a Julia set. If we start with a point near the origin, and move it in a circle around the main bulb of the Mandelbrot set, the series of corresponding Julia sets morph beautifully into one another.</description>
     </item>
-    
   </channel>
 </rss>

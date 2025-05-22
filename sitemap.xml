@@ -8,16 +8,19 @@
     <url><loc>https://corymccartan.com/conformalbayes/</loc></url>
     <url><loc>https://corymccartan.com/cv/cv.pdf</loc></url>
     <url>
-        <loc>https://corymccartan.com/2021/08/usa-rail/</loc>
-        <lastmod>2021-08-25T00:00:00+00:00</lastmod>
-    </url><url>
         <loc>https://corymccartan.com/</loc>
-        <lastmod>2021-08-25T00:00:00+00:00</lastmod>
+        <lastmod>2024-07-06T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1</priority>
     </url><url>
         <loc>https://corymccartan.com/posts/</loc>
+        <lastmod>2024-07-06T00:00:00+00:00</lastmod>
+    </url><url>
+        <loc>https://corymccartan.com/2021/08/usa-rail/</loc>
         <lastmod>2021-08-25T00:00:00+00:00</lastmod>
+    </url><url>
+        <loc>https://corymccartan.com/projects/</loc>
+        <lastmod>2021-05-09T00:00:00+00:00</lastmod>
     </url><url>
         <loc>https://corymccartan.com/2021/05/union-locals/</loc>
         <lastmod>2021-05-02T00:00:00+00:00</lastmod>
@@ -29,9 +32,6 @@
         <lastmod>2020-11-03T00:00:00+00:00</lastmod>
     </url><url>
         <loc>https://corymccartan.com/projects/senate-20/</loc>
-        <lastmod>2020-06-06T00:00:00+00:00</lastmod>
-    </url><url>
-        <loc>https://corymccartan.com/projects/</loc>
         <lastmod>2020-06-06T00:00:00+00:00</lastmod>
     </url><url>
         <loc>https://corymccartan.com/2020/05/ads/</loc>

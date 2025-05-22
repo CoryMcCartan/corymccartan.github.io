@@ -4,81 +4,58 @@
     <title>Projects on Cory McCartan</title>
     <link>https://corymccartan.com/projects/</link>
     <description>Recent content in Projects on Cory McCartan</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://corymccartan.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://corymccartan.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020 Senate Forecast</title>
       <link>https://corymccartan.com/projects/senate-20/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/senate-20/</guid>
-      <description>2020 FORECASTS President Senate House What does a chance feel like? There is a wide range of possible outcomes across all 35 races. Click the button above to randomly simulate one possible election result.
-Simulate an election How the odds have changed The model works by first building a structural forecast for the national race and the race in each state, based on economic indicators, the president’s approval rating, past election results, the home races of each of the candidates, and incumbency and regional effects.</description>
+      <description>&lt;div id=&#34;forecast-links&#34; class=&#34;tabs&#34;&gt;&#xA;&lt;span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/election-2020/&#34; class=&#34;mainlink&#34;&gt;2020 FORECASTS&lt;/a&gt;&#xA;&lt;img src=&#34;https://corymccartan.com/election-2020/flag.gif&#34; &#xA;    style=&#34;height: 32px; margin: -8px 0 -11px 6px;&#34;&gt;&#xA;&lt;/span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/president-20/&#34;&gt;President&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/senate-20/&#34; class=&#34;current&#34;&gt;Senate&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/us-house-20/&#34;&gt;House&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;section id=&#34;histogram&#34;&gt;&lt;/section&gt;&#xA;&lt;section class=&#34;banner&#34;&gt;&#xA;&lt;span class=&#34;text&#34;&gt;&lt;/span&gt;&#xA;&lt;span class=&#34;updated&#34;&gt;&lt;/span&gt;&#xA;&lt;/section&gt;&#xA;&lt;h1 id=&#34;what-does-a--chance-feel-like&#34;&gt;What does a &lt;span id=&#34;prob_win&#34;&gt;&lt;/span&gt; chance feel like?&lt;/h1&gt;&#xA;&lt;p&gt;There is a wide range of possible outcomes across all 35 races.  Click the&#xA;button above to randomly simulate one possible election result.&lt;/p&gt;&#xA;&lt;div style=&#34;display: flex; flex-wrap: wrap;&#34;&gt;&#xA;&lt;button id=&#34;sim_elec&#34;&gt;Simulate an election&lt;/button&gt;&#xA;&lt;div id=&#34;map_sim_result&#34; class=&#34;sim_result&#34;&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h1 id=&#34;how-the-odds-have-changed&#34;&gt;How the odds have changed&lt;/h1&gt;&#xA;&lt;p&gt;The model works by first building a &lt;a href=&#34;#prior-model&#34;&gt;structural forecast&lt;/a&gt; for the&#xA;national race and the race in each state, based on economic indicators, the&#xA;president’s approval rating, past election results, the home races of each of&#xA;the candidates, and incumbency and regional effects.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2020 Presidential Forecast</title>
       <link>https://corymccartan.com/projects/president-20/</link>
       <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/president-20/</guid>
-      <description>2020 FORECASTS President Senate House NEW Explore scenarios and track each candidate’s chances of claiming the presidency, depending on which states they win—and by how much. Conditional Forecasts &amp;raquo; The electoral map Hover over a state to see the chances each candidate has of winning it, and click on a state to see more detailed forecasts.
-Simulate an election Reset map has a chance of winning, but what does that really mean?</description>
+      <description>&lt;div id=&#34;forecast-links&#34; class=&#34;tabs&#34;&gt;&#xA;&lt;span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/election-2020/&#34; class=&#34;mainlink&#34;&gt;2020 FORECASTS&lt;/a&gt;&#xA;&lt;img src=&#34;https://corymccartan.com/election-2020/flag.gif&#34; &#xA;    style=&#34;height: 32px; margin: -8px 0 -11px 6px;&#34;&gt;&#xA;&lt;/span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/president-20/&#34; class=&#34;current&#34;&gt;President&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/senate-20/&#34;&gt;Senate&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/us-house-20/&#34;&gt;House&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;section id=&#34;categories&#34;&gt;&lt;/section&gt;&#xA;&lt;section class=&#34;banner&#34;&gt;&#xA;&lt;span class=&#34;text&#34;&gt;&lt;/span&gt;&#xA;&lt;span class=&#34;updated&#34;&gt;&lt;/span&gt;&#xA;&lt;/section&gt;&#xA;&lt;!-- &#xA;&lt;div class=&#34;editor-note&#34;&gt;&#xA;&lt;h2&gt;NOTE&lt;/h2&gt;&#xA;&lt;p&gt;&#xA;This model relies on second-quarter GDP growth to build a prior estimate of&#xA;the election day vote share.  On Thursday, July 30, advance Q2 GDP estimates&#xA;were released which were substantially below Federal Reserve forecasts, and&#xA;much worse than any GDP data since records have been kept.  Directly inputting&#xA;this GDP estimate into the model here would not provide an accurate picture of&#xA;the economic and political uncertainty resulting from the coronavirus pandemic.&#xA;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2020 House Forecast</title>
       <link>https://corymccartan.com/projects/us-house-20/</link>
       <pubDate>Wed, 11 Mar 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/us-house-20/</guid>
-      <description>2020 FORECASTS President Senate House What does a chance feel like? Click the button below to randomly simulate a hypothetical election. While the Democrats may be favored to win, there&#39;s a lot of variation in how many seats they may gain or lose. Simulate an election How the odds have changed The model works by using economic indicators, structural factors (like whether it is a midterm year, or the party that controls the White House), and national polling data to estimate what the nationwide popular vote (adding up all the votes for each party in all 435 districts) and the seat breakdown will be.</description>
+      <description>&lt;div id=&#34;forecast-links&#34; class=&#34;tabs&#34;&gt;&#xA;&lt;span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/election-2020/&#34; class=&#34;mainlink&#34;&gt;2020 FORECASTS&lt;/a&gt;&#xA;&lt;img src=&#34;https://corymccartan.com/election-2020/flag.gif&#34; &#xA;    style=&#34;height: 32px; margin: -8px 0 -11px 6px;&#34;&gt;&#xA;&lt;/span&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/president-20/&#34;&gt;President&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/senate-20/&#34;&gt;Senate&lt;/a&gt;&#xA;&lt;a href=&#34;https://corymccartan.com/projects/us-house-20/&#34; class=&#34;current&#34;&gt;House&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;div id=&#34;chart_hist&#34;&gt;&lt;/div&gt;&#xA;&lt;section id=&#34;histogram&#34; class=&#34;graphic&#34;&gt;&lt;/section&gt;&#xA;&lt;section class=&#34;banner&#34;&gt;&#xA;&lt;span class=&#34;text&#34;&gt;&lt;/span&gt;&#xA;&lt;span class=&#34;updated&#34;&gt;&lt;/span&gt;&#xA;&lt;/section&gt;&#xA;&lt;h1&gt;What does a &lt;span id=&#34;prob_win&#34;&gt;&lt;/span&gt; chance feel like?&lt;/h1&gt;&#xA;Click the button below to randomly simulate a hypothetical election. While&#xA;the Democrats may &lt;span id=&#34;dem_neg&#34;&gt;&lt;/span&gt;be favored to win, there&#39;s a lot of&#xA;variation in how many seats they may gain or lose.&#xA;&lt;p&gt;&lt;div style=&#34;display: flex; flex-wrap: wrap;&#34;&gt;&#xA;&lt;button id=&#34;sim_elec&#34;&gt;Simulate an election&lt;/button&gt;&#xA;&lt;div id=&#34;sim_result&#34;&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;how-the-odds-have-changed&#34;&gt;How the odds have changed&lt;/h1&gt;&#xA;&lt;p&gt;The model works by using economic indicators, structural factors (like whether&#xA;it is a midterm year, or the party that controls the White House), and&#xA;&lt;a href=&#34;#national-polling&#34;&gt;national polling data&lt;/a&gt; to estimate what the nationwide&#xA;popular vote (adding up all the votes for each party in all 435 districts) and&#xA;the seat breakdown will be.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Polarization and the American Electorate</title>
       <link>https://corymccartan.com/projects/electorate-2020/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/electorate-2020/</guid>
-      <description>It&amp;rsquo;s hard to watch the steadiness of Donald Trump&amp;rsquo;s job approval numbers&amp;mdash;43% of voters approving and 52% disapproving, for most of the last year&amp;mdash;and not be convinced that Americans are deeply polarized: one half watches Fox news, the other half watches MSNBC; one half hates immigrants, the other embraces them; one half thinks climate change is a hoax, the other wants to pass the Green New Deal. Neither half wants their children to marry a member of the other half.</description>
+      <description>&lt;p&gt;&#xA;&lt;span class=&#34;leadin&#34;&gt;It&amp;rsquo;s hard to watch the steadiness&lt;/span&gt; of Donald &#xA;Trump&amp;rsquo;s job approval numbers&amp;mdash;43% of voters approving and 52%&#xA;disapproving, &lt;a href=&#34;https://elections.huffingtonpost.com/pollster/trump-job-approval&#34;&gt;&#xA;for most of the last year&lt;/a&gt;&amp;mdash;and not be convinced that Americans are&#xA;deeply polarized: one half watches Fox news, the other half watches MSNBC; one&#xA;half hates immigrants, the other embraces them; one half thinks climate change&#xA;is a hoax, the other wants to pass the Green New Deal.  Neither half&#xA;&lt;a href=&#34;https://www.theatlantic.com/politics/archive/2012/09/really-would-you-let-your-daughter-marry-a-democrat/262959/&#34;&gt;&#xA;wants their children to marry a member of the other half&lt;/a&gt;.&#xA;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>One Industrial Union Grand?</title>
       <link>https://corymccartan.com/projects/unions-2019/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/unions-2019/</guid>
-      <description>AFL-CIO headquarters, Washington, D.C.
-There is power there is power in a band of workingmen,
-When they stand hand in hand,
-That&amp;rsquo;s a power, that&amp;rsquo;s a power
-That must rule in every land—
-One Industrial Union Grand.
-&amp;mdash; &amp;ldquo;There is Power in a Union,&amp;rdquo; Joe Hill “Big Labor’s Big Shrink,” gloated the headline of a Wall Street Journal editorial last year, using Joe Biden’s presidential campaign kickoff at a union hall as an opportunity to trot out its tried-and-true union-bashing lines.</description>
+      <description>&lt;figure class=&#34;w100&#34;&gt;&lt;img src=&#34;https://corymccartan.com/images/aflcio-hq.jpg&#34;&#xA;    alt=&#34;AFL-CIO headquarters, Washington, D.C.&#34;&gt;&lt;figcaption&gt;&#xA;      &lt;p&gt;AFL-CIO headquarters, Washington, D.C.&lt;/p&gt;&#xA;    &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;br /&gt;&#xA;&lt;div style=&#34;font-style: italic; max-width: 5in; width: 100%; margin: 0 auto;&#34;&gt;&#xA;&lt;div style=&#34;margin-left: 2em; text-indent: -2em&#34;&gt;&#xA;&lt;p style=&#34;margin: 0&#34;&gt;There is power there is power in a band of workingmen,&lt;/p&gt;&#xA;&lt;p style=&#34;margin: 0&#34;&gt;When they stand hand in hand,&lt;/p&gt;&#xA;&lt;p style=&#34;margin: 0&#34;&gt;That&amp;rsquo;s a power, that&amp;rsquo;s a power&lt;/p&gt;&#xA;&lt;p style=&#34;margin: 0&#34;&gt;That must rule in every land—&lt;/p&gt;&#xA;&lt;p style=&#34;margin: 0&#34;&gt;One Industrial Union Grand.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div style=&#34;text-align: right&#34;&gt;&#xA;&amp;mdash; &amp;ldquo;&lt;a href=&#34;https://youtu.be/mSDh_qVXkFk&#34; target=&#34;_blank&#34;&gt;There is&#xA;Power in a Union&lt;/a&gt;,&amp;rdquo; Joe Hill&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;br /&gt;&#xA;&lt;p&gt;&lt;span class=&#34;leadin&#34;&gt;“Big Labor’s Big Shrink,”&lt;/span&gt; gloated&#xA;the headline of a &lt;a href=&#34;https://www.wsj.com/articles/big-labors-big-shrink-11556580340&#34;&gt;&lt;em&gt;Wall Street Journal&lt;/em&gt;&#xA;editorial&lt;/a&gt;&#xA;last year, using Joe Biden’s presidential campaign kickoff at a union&#xA;hall as an opportunity to trot out its tried-and-true union-bashing lines.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Which Democratic candidates are most electable?</title>
       <link>https://corymccartan.com/projects/electability-2020/</link>
       <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/electability-2020/</guid>
-      <description>The interactive below accompanies this article I wrote for the Washington Post. The article has some other figures, explains the motivation, and provides a less-detailed overview of the methodology than that provided below.
-If the national popular vote were 50.0% Democratic and 50.0% Republican, we&#39;d expect the candidates to win these states: (Drag the vertical line)
-Why does this approach work? While head-to-head polls are generally not very predictive, the demographic patterns they reveal turn out to be much more durable, as the figure below illustrates.</description>
+      <description>&lt;p&gt;The interactive below accompanies&#xA;&lt;a href=&#34;https://www.washingtonpost.com/politics/2019/10/23/whos-most-electable-democrat-it-might-be-warren-or-buttigieg-not-biden/&#34;&gt;this article&lt;/a&gt;&#xA;I wrote for the Washington Post. The article has some other figures,&#xA;explains the motivation, and provides a less-detailed overview of the&#xA;methodology than that provided below.&lt;/p&gt;&#xA;&lt;div class=&#34;interactive&#34;&gt;&#xA;&lt;div id=&#34;controls&#34;&gt;&#xA;    &lt;span&gt;If the national popular vote were &lt;/span&gt;&#xA;    &lt;span style=&#34;font-weight: bold&#34; id=&#34;text_dem&#34;&gt;50.0% Democratic&lt;/span&gt;&#xA;    &lt;span&gt;and&lt;/span&gt;&#xA;    &lt;span style=&#34;font-weight: bold&#34; id=&#34;text_gop&#34;&gt;50.0% Republican&lt;/span&gt;,&#xA;    &lt;span&gt;we&#39;d expect the candidates to win these states:&lt;/span&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;&lt;span id=&#34;hint&#34;&gt;(Drag the vertical line)&lt;/span&gt;&lt;/p&gt;&#xA;&lt;div id=&#34;plots&#34;&gt;&#xA;    &lt;div id=&#34;line-chart&#34;&gt;&lt;/div&gt;&#xA;    &lt;div id=&#34;bar-chart&#34;&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;why-does-this-approach-work&#34;&gt;Why does this approach work?&lt;/h2&gt;&#xA;&lt;p&gt;While head-to-head polls are generally not very predictive, the demographic&#xA;patterns they reveal turn out to be much more durable, as the figure below&#xA;illustrates. Polled demographic patterns (a candidate&amp;rsquo;s support in a demographic&#xA;group, minus their overall support), on the horizontal axis, are compared to&#xA;actual election reults on the vertical. Polls are shown for presidential&#xA;elections since 2002, using available Quinnipiac demographic cross tabs, and&#xA;exit poll results.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2018 U.S. House Predictions</title>
       <link>https://corymccartan.com/projects/us-house-2018/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://corymccartan.com/projects/us-house-2018/</guid>
-      <description>How the odds have changed The model is continuously updated with new polling data and approval ratings. As new information comes in, the odds may shift towards one party or another. Additionally, as we get closer to the election, there is less uncertainty in the result, since there is less time for a large shift in public opinion. This also changes the odds over time. The chart below plots the changing odds of each party winning control.</description>
+      <description>&lt;script type=&#34;text/x-mathjax-config&#34;&gt;&#xA;    MathJax.Hub.Config({&#xA;        messageStyle: &#34;none&#34;,&#xA;        CommonHTML: { linebreaks: { automatic: true } },&#xA;        tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;]]}&#xA;    });&#xA;&lt;/script&gt;&#xA;&#xA;&lt;section&gt;&#xA;    &lt;div id=&#34;overview&#34; class=&#34;graphic&#34;&gt;&#xA;        &lt;img class=&#34;dummy&#34; src=&#34;https://corymccartan.com/images/us-house-2018-dummy-wheel.svg&#34;&gt;&#xA;    &lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&lt;section class=&#34;banner&#34;&gt;&#xA;    &lt;span class=&#34;text&#34;&gt;&lt;/span&gt;&#xA;    &lt;span class=&#34;updated&#34;&gt;&lt;/span&gt;&#xA;&lt;/section&gt;&#xA;&#xA;&lt;section class=&#34;content-block&#34;&gt;&#xA;    &lt;a class=&#34;anchor&#34; id=&#34;history-link&#34;&gt;&lt;/a&gt;&#xA;    &lt;h2&gt;How the odds have changed&lt;/h2&gt;&#xA;    &lt;p&gt;&#xA;    The model is continuously updated with new polling data and&#xA;    approval ratings. As new information comes in, the odds may shift&#xA;    towards one party or another. Additionally, as we get closer to the&#xA;    election, there is less uncertainty in the result, since there is&#xA;    less time for a large shift in public opinion. This also changes&#xA;    the odds over time.&#xA;    &lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
