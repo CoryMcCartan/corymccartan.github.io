@@ -137,42 +137,6 @@ but Michigan-style reforms would yield a much greater pro-Democratic effect than
 types of redistricting commissions adopted in Ohio and New York.
 </p>
 </details>
-<p><a href="https://www.nber.org/papers/w32373"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2024).
-<em>NBER working paper</em>, Under Review.
-<span class="coauthors">
-With Robin Fisher, Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
-</span>
-<a href="https://github.com/CoryMcCartan/birdie">Software</a>;
-<a href="./docs/poster_race.pdf">Poster</a><br /></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-The estimation of racial disparities in various fields is often hampered by the
-lack of individual-level racial information. In many cases, the law prohibits
-the collection of such information to prevent direct racial discrimination. As
-a result, analysts have frequently adopted Bayesian Improved Surname Geocoding
-(BISG) and its variants, which combine individual names and addresses with
-Census data to predict race. Unfortunately, the residuals of BISG are often
-correlated with the outcomes of interest, generally attenuating estimates
-of racial disparities. To correct this bias, we propose an alternative
-identification strategy under the assumption that surname is conditionally
-independent of the outcome given (unobserved) race, residence location, and
-other observed characteristics. We introduce a new class of models, Bayesian
-Instrumental Regression for Disparity Estimation (BIRDiE), that take BISG
-probabilities as inputs and produce racial disparity estimates by using surnames
-as an instrumental variable for race. Our estimation method is scalable, making
-it possible to analyze large-scale administrative data. We also show how to
-address potential violations of the key identification assumptions. A validation
-study based on the North Carolina voter file shows that BISG+BIRDiE reduces
-error by up to 84% when estimating racial differences in party registration.
-Finally, we apply the proposed methodology to estimate racial differences in who
-benefits from the home mortgage interest deduction using individual-level tax
-data from the U.S. Internal Revenue Service. Open-source software is available
-which implements the proposed methodology.
-</p>
-</details>
 <p><a href="https://osf.io/preprints/socarxiv/nc2x7/"><strong>Individual and Differential Harm in Redistricting</strong></a> (2022).
 Under Review.
 <span class="coauthors">
@@ -246,6 +210,42 @@ understand the tradeoffs inherent to the redistricting process.
 </p>
 </details>
 <h1 id="publications">Publications</h1>
+<p><a href="https://www.nber.org/papers/w32373"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2025).
+<em>Journal of the American Statistical Association</em>, Forthcoming.
+<span class="coauthors">
+With Robin Fisher, Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
+</span>
+<a href="https://github.com/CoryMcCartan/birdie">Software</a>;
+<a href="./docs/poster_race.pdf">Poster</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+The estimation of racial disparities in various fields is often hampered by the
+lack of individual-level racial information. In many cases, the law prohibits
+the collection of such information to prevent direct racial discrimination. As
+a result, analysts have frequently adopted Bayesian Improved Surname Geocoding
+(BISG) and its variants, which combine individual names and addresses with
+Census data to predict race. Unfortunately, the residuals of BISG are often
+correlated with the outcomes of interest, generally attenuating estimates
+of racial disparities. To correct this bias, we propose an alternative
+identification strategy under the assumption that surname is conditionally
+independent of the outcome given (unobserved) race, residence location, and
+other observed characteristics. We introduce a new class of models, Bayesian
+Instrumental Regression for Disparity Estimation (BIRDiE), that take BISG
+probabilities as inputs and produce racial disparity estimates by using surnames
+as an instrumental variable for race. Our estimation method is scalable, making
+it possible to analyze large-scale administrative data. We also show how to
+address potential violations of the key identification assumptions. A validation
+study based on the North Carolina voter file shows that BISG+BIRDiE reduces
+error by up to 84% when estimating racial differences in party registration.
+Finally, we apply the proposed methodology to estimate racial differences in who
+benefits from the home mortgage interest deduction using individual-level tax
+data from the U.S. Internal Revenue Service. Open-source software is available
+which implements the proposed methodology.
+</p>
+</details>
 <p><a href="https://doi.org/10.1126/sciadv.adl2524"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2024).
 <em>Science Advances</em> 10:18, eadl2524.
 <span class="coauthors">
@@ -568,10 +568,10 @@ individual race. Implements the methods described in McCartan, Fisher, Goldin,
 Ho and Imai (2024). <br /><br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/bases/main/man/figures/logo.png" width=80 height=92
 alt="bases package logo" onerror="this.style.display='none'"></p>
-<p><a href="https://corymccartan.com/bases/"><strong><code>bases</code>: Basis Expansions for Regression Modeling</strong></a>
+<p><a href="https://corymccartan.com/bases/"><strong><code>bases</code>: Basis Expansions for Regression Modeling</strong></a>  <a href="https://CRAN.R-project.org/package=bases"><img src="https://www.r-pkg.org/badges/version/bases" alt="CRAN Status" height=17></a>
 <br />
 Provides various basis expansions for flexible regression modeling, including
-random Fourier features (Rahimi &amp; Recht, 2007), exact kernel / Gaussian process
+random Fourier features (Rahimi &amp; Recht, 2007) , exact kernel / Gaussian process
 feature maps, Bayesian Additive Regression Trees (BART) (Chipman et al., 2010)
 prior features, and a helpful interface for n-way interactions. The provided
 functions may be used within any modeling formula, allowing the use of kernel
