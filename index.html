@@ -38,8 +38,8 @@
         
         <link rel="stylesheet" href="https://corymccartan.com/sass/home.min.css">
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"></noscript>
     
     
 
@@ -101,7 +101,7 @@ redistricting, statistical analysis, and visualization.
 <div class="show-hide">
 <span style="flex-grow: 1"></span>
 <a href="mailto:mccartan@psu.edu" aria-label="Email"><i class="bi-envelope-fill"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://bsky.app/profile/corymccartan.com" aria-label="Bluesky"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="display: block; width: 15pt; position: relative; top: 4px"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"></path></svg></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://bsky.app/profile/corymccartan.com" aria-label="Bluesky"><i class="bi-bluesky"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/CoryMcCartan" aria-label="GitHub"><i class="bi-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://scholar.google.com/citations?user=2jbDYYUAAAAJ&hl=en" aria-label="Google Scholar"><i class="bi-mortarboard-fill"></i></a>
 <span style="flex-grow: 1"></span>
@@ -210,12 +210,13 @@ understand the tradeoffs inherent to the redistricting process.
 </p>
 </details>
 <h1 id="publications">Publications</h1>
-<p><a href="https://www.nber.org/papers/w32373"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2025).
-<em>Journal of the American Statistical Association</em>, Forthcoming.
+<h3 id="statistical-methodology">Statistical methodology</h3>
+<p><a href="https://doi.org/10.1080/01621459.2025.2526695"><strong>Estimating Racial Disparities When Race is Not Observed</strong></a> (2025).
+<em>Journal of the American Statistical Association</em>.
 <span class="coauthors">
 With Robin Fisher, Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
 </span>
-<a href="https://github.com/CoryMcCartan/birdie">Software</a>;
+<a href="https://corymccartan.com/birdie">Software</a>;
 <a href="./docs/poster_race.pdf">Poster</a><br /></p>
 <details>
 <summary>
@@ -246,35 +247,40 @@ data from the U.S. Internal Revenue Service. Open-source software is available
 which implements the proposed methodology.
 </p>
 </details>
-<p><a href="https://doi.org/10.1126/sciadv.adl2524"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2024).
-<em>Science Advances</em> 10:18, eadl2524.
+<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why Does it Work, and When Can it be Expected to Work Well?</strong></a> (2023).
+<em>Political Analysis</em>.
 <span class="coauthors">
-With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
+With Evan T.R. Rosenman and Santiago Olivella.
 </span></p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
-The United States Census Bureau faces a difficult trade-off between the
-accuracy of Census statistics and the protection of individual information.
-We conduct the first independent evaluation of bias and noise induced by the
-Bureau's two main disclosure avoidance systems: the TopDown algorithm employed
-for the 2020 Census and the swapping algorithm implemented for the 1990, 2000,
-and 2010 Censuses. Our evaluation leverages the recent release of the Noisy
-Measure File (NMF) as well as the availability of two independent runs of the
-TopDown algorithm applied to the 2010 decennial Census. We find that the NMF
-contains too much noise to be directly useful alone, especially for Hispanic
-and multiracial populations. TopDown's post-processing dramatically reduces the
-NMF noise and produces similarly accurate data to swapping in terms of bias and
-noise. These patterns hold across census geographies with varying population
-sizes and racial diversity. While the estimated errors for both TopDown and
-swapping are generally no larger than other sources of Census error, they can be
-relatively substantial for geographies with small total populations.
+The output of predictive models is routinely recalibrated by reconciling
+low-level predictions with known quantities defined at higher levels of
+aggregation. For example, models predicting vote probabilities at the individual
+level in U.S. elections can be adjusted so that their aggregation matches
+the observed vote totals in each county, thus producing better calibrated
+predictions. In this research note, we provide theoretical grounding for one
+of the most commonly used recalibration strategies, known colloquially as
+the "logit shift." Typically cast as a heuristic adjustment strategy (whereby
+a constant correction on the logit scale is found, such that aggregated
+predictions match target totals), we show that the logit shift offers a fast
+and accurate approximation to a principled, but computationally impractical
+adjustment strategy: computing the posterior prediction probabilities,
+conditional on the observed totals. After deriving analytical bounds on the
+quality of the approximation, we illustrate its accuracy using Monte Carlo
+simulations. We also discuss scenarios in which the logit shift is less
+effective at recalibrating predictions: when the target totals are defined
+only for highly heterogeneous populations, and when the original predictions
+correctly capture the mean of true individual probabilities, but fail to capture
+the shape of their distribution.
 </p>
 </details>
+<h3 id="redistricting-and-geography">Redistricting and geography</h3>
 <p><a href="https://doi.org/10.1017/S0003055423001429"><strong>Measuring and Modeling Neighborhoods</strong></a> (2024).
-<em>American Political Science Review</em> 118:4, 1966-1985.
+<em>American Political Science Review</em>.
 <span class="coauthors">
 With Jacob R. Brown and Kosuke Imai.
 </span>
@@ -302,40 +308,8 @@ to include co-partisan areas. Furthermore, our model provides more accurate
 out-of-sample predictions than standard neighborhood measures.
 </p>
 </details>
-<p><a href="https://doi.org/10.1073/pnas.2321196121"><strong>Census Officials Must Constructively Engage with Independent Evaluations</strong></a> (2024).
-<em>Proceedings of the National Academy of Sciences</em> 121:11, e2321196121.
-<span class="coauthors">
-With Christopher T. Kenny, Tyler Simko, and Kosuke Imai.
-</span>
-Letter to the editor re: <a href="https://doi.org/10.1073/pnas.2220558120">Jarmin et al. (2023)</a>.</p>
-<p><a href="https://doi.org/10.1162/99608f92.c3c87223"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
-<em>Harvard Data Science Review</em> 5:4.
-<span class="coauthors">
-With Tyler Simko and Kosuke Imai.
-</span>
-With <a href="https://doi.org/10.1162/99608f92.79d4660d">response</a> and <a href="https://doi.org/10.1162/99608f92.f9f4b9a4">rejoinder</a>.</p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-The U.S. Census Bureau collects and publishes detailed demographic data about
-Americans which are heavily used by researchers and policymakers. The Bureau
-has recently adopted the framework of differential privacy in an effort
-to improve confidentiality of individual census responses. A key output of
-this privacy protection system is the Noisy Measurement File (NMF), which is
-produced by adding random noise to tabulated statistics. The NMF is critical
-to understanding any biases in the data, and performing valid statistical
-inference on published census data. Unfortunately, the current release format
-of the NMF is difficult to access and work with. We describe the process we
-use to transform the NMF into a usable format, and provide recommendations to
-the Bureau for how to release future versions of the NMF. These changes are
-essential for ensuring transparency of privacy measures and reproducibility of
-scientific research built on census data.
-</p>
-</details>
 <p><a href="http://dx.doi.org/10.1214/23-AOAS1763"><strong>Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</strong></a> (2023).
-<em>Annals of Applied Statistics</em> 17:4, 3300-3323.
+<em>Annals of Applied Statistics</em>.
 <span class="coauthors">
 With Kosuke Imai.
 </span>
@@ -371,7 +345,7 @@ is available for implementing the proposed methodology.
 </p>
 </details>
 <p><a href="https://doi.org/10.1073/pnas.2217322120"><strong>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</strong></a> (2023).
-<em>Proceedings of the National Academy of Sciences</em> 120:25, e2217322120.
+<em>Proceedings of the National Academy of Sciences</em>.
 <span class="coauthors">
 With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
 </span>
@@ -395,44 +369,102 @@ competition and makes the House's partisan composition less responsive to shifts
 in the national vote.
 </p>
 </details>
-<p><a href="https://doi.org/10.1126/science.adi7004"><strong>Researchers Need Better Access to U.S. Census Data</strong></a> (2023).
-<em>Science</em> 380:6648, 902-903.
+<p><a href="https://doi.org/10.1038/s41597-022-01808-2"><strong>Simulated Redistricting Plans for the Analysis and Evaluation of Redistricting in the United States</strong></a> (2022).
+<em>Nature: Scientific Data</em>.
 <span class="coauthors">
-With Tyler Simko and Kosuke Imai.
-</span></p>
-<p><a href="https://www.doi.org/10.1017/pan.2022.31"><strong>Recalibration of Predicted Probabilities Using the &ldquo;Logit Shift&rdquo;: Why Does it Work, and When Can it be Expected to Work Well?</strong></a> (2023).
-<em>Political Analysis</em> 31:4, 651-661.
+With Christopher T. Kenny, Tyler Simko, George Garcia III, Kevin Wang, Melissa Wu, Shiro Kuriwaki, and Kosuke Imai.
+</span>
+<a href="https://alarm-redist.org/fifty-states/">Project website</a>;
+<a href="https://github.com/alarm-redist/fifty-states">Replication code</a>;
+<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Data</a><br /></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+A collection of simulated congressional districting plans and underlying
+code developed by the Algorithm-Assisted Redistricting Methodology (ALARM)
+Project. The data allow for the evaluation of enacted and other congressional
+redistricting plans in the United States. While the use of redistricting
+simulation algorithms has become standard in academic research and court
+cases, any simulation analysis requires non-trivial efforts to combine multiple
+data sets, identify state-specific redistricting criteria, implement complex
+simulation algorithms, and summarize and visualize simulation outputs. We
+have developed a complete workflow that facilitates this entire process of
+simulation-based redistricting analysis for the congressional districts of all
+50 states. The resulting data include ensembles of simulated 2020 congressional
+redistricting plans and necessary replication data. We provide the underlying
+code, which serves as a template for customized analyses. All data and code are
+free and publicly available.
+</p>
+</details>
+<h3 id="differential-privacy-and-the-census">Differential privacy and the census</h3>
+<p><a href="https://doi.org/10.1126/sciadv.adl2524"><strong>Evaluating Bias and Noise Induced by the U.S. Census Bureau&rsquo;s Privacy Protection Methods</strong></a> (2024).
+<em>Science Advances</em>.
 <span class="coauthors">
-With Evan T.R. Rosenman and Santiago Olivella.
+With Christopher T. Kenny, Tyler Simko, Shiro Kuriwaki, and Kosuke Imai.
 </span></p>
 <details>
 <summary>
 Abstract
 </summary>
 <p>
-The output of predictive models is routinely recalibrated by reconciling
-low-level predictions with known quantities defined at higher levels of
-aggregation. For example, models predicting vote probabilities at the individual
-level in U.S. elections can be adjusted so that their aggregation matches
-the observed vote totals in each county, thus producing better calibrated
-predictions. In this research note, we provide theoretical grounding for one
-of the most commonly used recalibration strategies, known colloquially as
-the "logit shift." Typically cast as a heuristic adjustment strategy (whereby
-a constant correction on the logit scale is found, such that aggregated
-predictions match target totals), we show that the logit shift offers a fast
-and accurate approximation to a principled, but computationally impractical
-adjustment strategy: computing the posterior prediction probabilities,
-conditional on the observed totals. After deriving analytical bounds on the
-quality of the approximation, we illustrate its accuracy using Monte Carlo
-simulations. We also discuss scenarios in which the logit shift is less
-effective at recalibrating predictions: when the target totals are defined
-only for highly heterogeneous populations, and when the original predictions
-correctly capture the mean of true individual probabilities, but fail to capture
-the shape of their distribution.
+The United States Census Bureau faces a difficult trade-off between the
+accuracy of Census statistics and the protection of individual information.
+We conduct the first independent evaluation of bias and noise induced by the
+Bureau's two main disclosure avoidance systems: the TopDown algorithm employed
+for the 2020 Census and the swapping algorithm implemented for the 1990, 2000,
+and 2010 Censuses. Our evaluation leverages the recent release of the Noisy
+Measure File (NMF) as well as the availability of two independent runs of the
+TopDown algorithm applied to the 2010 decennial Census. We find that the NMF
+contains too much noise to be directly useful alone, especially for Hispanic
+and multiracial populations. TopDown's post-processing dramatically reduces the
+NMF noise and produces similarly accurate data to swapping in terms of bias and
+noise. These patterns hold across census geographies with varying population
+sizes and racial diversity. While the estimated errors for both TopDown and
+swapping are generally no larger than other sources of Census error, they can be
+relatively substantial for geographies with small total populations.
 </p>
 </details>
+<p><a href="https://doi.org/10.1073/pnas.2321196121"><strong>Census Officials Must Constructively Engage with Independent Evaluations</strong></a> (2024).
+<em>Proceedings of the National Academy of Sciences</em>.
+<span class="coauthors">
+With Christopher T. Kenny, Tyler Simko, and Kosuke Imai.
+</span>
+Letter to the editor re: <a href="https://doi.org/10.1073/pnas.2220558120">Jarmin et al. (2023)</a>.</p>
+<p><a href="https://doi.org/10.1162/99608f92.c3c87223"><strong>Making Differential Privacy Work for Census Data Users</strong></a> (2023).
+<em>Harvard Data Science Review</em>.
+<span class="coauthors">
+With Tyler Simko and Kosuke Imai.
+</span>
+With <a href="https://doi.org/10.1162/99608f92.79d4660d">response</a> and <a href="https://doi.org/10.1162/99608f92.f9f4b9a4">rejoinder</a>.</p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+The U.S. Census Bureau collects and publishes detailed demographic data about
+Americans which are heavily used by researchers and policymakers. The Bureau
+has recently adopted the framework of differential privacy in an effort
+to improve confidentiality of individual census responses. A key output of
+this privacy protection system is the Noisy Measurement File (NMF), which is
+produced by adding random noise to tabulated statistics. The NMF is critical
+to understanding any biases in the data, and performing valid statistical
+inference on published census data. Unfortunately, the current release format
+of the NMF is difficult to access and work with. We describe the process we
+use to transform the NMF into a usable format, and provide recommendations to
+the Bureau for how to release future versions of the NMF. These changes are
+essential for ensuring transparency of privacy measures and reproducibility of
+scientific research built on census data.
+</p>
+</details>
+<p><a href="https://doi.org/10.1126/science.adi7004"><strong>Researchers Need Better Access to U.S. Census Data</strong></a> (2023).
+<em>Science</em>.
+<span class="coauthors">
+With Tyler Simko and Kosuke Imai.
+</span></p>
 <p><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1"><strong>Comment: the Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</strong></a> (2023).
-<em>Harvard Data Science Review</em>, Special Issue 2.
+<em>Harvard Data Science Review</em>.
 <span class="coauthors">
 With Christopher T. Kenny, Shiro Kuriwaki, Evan T.R. Rosenman, Tyler Simko, and Kosuke Imai.
 </span>
@@ -461,37 +493,8 @@ and privacy protection, and an epistemic disconnect alone is insufficient to
 explain disagreements between policy choices.
 </p>
 </details>
-<p><a href="https://doi.org/10.1038/s41597-022-01808-2"><strong>Simulated Redistricting Plans for the Analysis and Evaluation of Redistricting in the United States</strong></a> (2022).
-<em>Nature: Scientific Data</em> 9:1, 689.
-<span class="coauthors">
-With Christopher T. Kenny, Tyler Simko, George Garcia III, Kevin Wang, Melissa Wu, Shiro Kuriwaki, and Kosuke Imai.
-</span>
-<a href="https://alarm-redist.org/fifty-states/">Project website</a>;
-<a href="https://github.com/alarm-redist/fifty-states">Replication code</a>;
-<a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Data</a><br /></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-A collection of simulated congressional districting plans and underlying
-code developed by the Algorithm-Assisted Redistricting Methodology (ALARM)
-Project. The data allow for the evaluation of enacted and other congressional
-redistricting plans in the United States. While the use of redistricting
-simulation algorithms has become standard in academic research and court
-cases, any simulation analysis requires non-trivial efforts to combine multiple
-data sets, identify state-specific redistricting criteria, implement complex
-simulation algorithms, and summarize and visualize simulation outputs. We
-have developed a complete workflow that facilitates this entire process of
-simulation-based redistricting analysis for the congressional districts of all
-50 states. The resulting data include ensembles of simulated 2020 congressional
-redistricting plans and necessary replication data. We provide the underlying
-code, which serves as a template for customized analyses. All data and code are
-free and publicly available.
-</p>
-</details>
 <p><a href="https://www.science.org/doi/10.1126/sciadv.abk3283"><strong>The Use of Differential Privacy for Census Data and Its Impact on Redistricting: the Case of the 2020 U.S. Census</strong></a> (2021).
-<em>Science Advances</em> 7:41, eabk3283.
+<em>Science Advances</em>.
 <span class="coauthors">
 With Christopher T. Kenny, Shiro Kuriwaki, Evan T.R. Rosenman, Tyler Simko, and Kosuke Imai.
 </span>
@@ -525,8 +528,9 @@ an individual's race and ethnicity. Our findings underscore the difficulty of
 balancing accuracy and respondent privacy in the Census.
 </p>
 </details>
+<h3 id="other">Other</h3>
 <p><a href="https://doi.org/10.4171/JFG/100"><strong>Geodesic Interpolation on Sierpinski Gaskets</strong></a> (2021).
-<em>Journal of Fractal Geometry</em> 8:2, 117-152.
+<em>Journal of Fractal Geometry</em>.
 <span class="coauthors">
 With Caitlin Davis, Laura LeGare, and Luke Rogers.
 </span></p>
@@ -558,6 +562,15 @@ Fifield, Imai, Kawahara, and Kenny (2020), the Flip MCMC algorithm of Fifield,
 Higgins, Imai and Tarr (2020), the Merge-split/Recombination algorithms of
 Carter et al. (2019) and DeFord et al. (2021), and the Short-burst optimization
 algorithm of Cannon et al. (2020).<br>
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/seine/main/man/figures/logo.png" width=80 height=92
+alt="seine package logo" onerror="this.style.display='none'"></p>
+<p><a href="https://corymccartan.com/seine/"><strong><code>seine</code>: Semiparametric Ecological Inference</strong></a>
+<br />
+Efficient and user-friendly routines for modern ecological inference. Implements
+the methods described in McCartan &amp; Kuriwaki (2025) , which generalize
+ecological regression as introduced by Goodman (1953). Includes routines for
+preprocessing, synthetic data generation, double/debiased machine learning (DML)
+estimation, and sensitivity analysis.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/birdie/main/man/figures/logo.png" width=80 height=92
 alt="birdie package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/birdie/"><strong><code>birdie</code>: Bayesian Instrumental Regression for Disparity Estimation</strong></a>  <a href="https://CRAN.R-project.org/package=birdie"><img src="https://www.r-pkg.org/badges/version/birdie" alt="CRAN Status" height=17></a>
@@ -565,20 +578,20 @@ alt="birdie package logo" onerror="this.style.display='none'"></p>
 Bayesian models for accurately estimating conditional distributions by race,
 using Bayesian Improved Surname Geocoding (BISG) probability estimates of
 individual race. Implements the methods described in McCartan, Fisher, Goldin,
-Ho and Imai (2024). <br /><br>
+Ho and Imai (2025). <br /><br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/bases/main/man/figures/logo.png" width=80 height=92
 alt="bases package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/bases/"><strong><code>bases</code>: Basis Expansions for Regression Modeling</strong></a>  <a href="https://CRAN.R-project.org/package=bases"><img src="https://www.r-pkg.org/badges/version/bases" alt="CRAN Status" height=17></a>
 <br />
 Provides various basis expansions for flexible regression modeling, including
-random Fourier features (Rahimi &amp; Recht, 2007) , exact kernel / Gaussian process
-feature maps, Bayesian Additive Regression Trees (BART) (Chipman et al., 2010)
-prior features, and a helpful interface for n-way interactions. The provided
-functions may be used within any modeling formula, allowing the use of kernel
-methods and other basis expansions in modeling functions that do not otherwise
-support them. Along with the basis expansions, a number of kernel functions are
-also provided, which support kernel arithmetic to form new kernels. Basic ridge
-regression functionality is included as well.<br>
+random Fourier features (Rahimi &amp; Recht, 2007) , exact kernel / Gaussian
+process feature maps, prior features for Bayesian Additive Regression Trees
+(BART) (Chipman et al., 2010), and a helpful interface for n-way interactions.
+The provided functions may be used within any modeling formula, allowing the
+use of kernel methods and other basis expansions in modeling functions that
+do not otherwise support them. Along with the basis expansions, a number of
+kernel functions are also provided, which support kernel arithmetic to form new
+kernels. Basic ridge regression functionality is included as well.<br>
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/easycensus/main/man/figures/logo.png" width=80 height=92
 alt="easycensus package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/easycensus/"><strong><code>easycensus</code>: Quickly Find, Extract, and Marginalize U.S. Census Tables</strong></a>  <a href="https://CRAN.R-project.org/package=easycensus"><img src="https://www.r-pkg.org/badges/version/easycensus" alt="CRAN Status" height=17></a>

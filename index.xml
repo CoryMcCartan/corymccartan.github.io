@@ -155,12 +155,5 @@
       <guid>https://corymccartan.com/2015/04/swirling-fractals/</guid>
       <description>Corresponding to each point in and around the Mandelbrot set is a Julia set. If we start with a point near the origin, and move it in a circle around the main bulb of the Mandelbrot set, the series of corresponding Julia sets morph beautifully into one another.</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://corymccartan.com/links/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://corymccartan.com/links/</guid>
-      <description>&lt;html&gt;&#xA;&lt;head&gt;&#xA;&lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; https://docs.google.com/spreadsheets/d/e/2PACX-1vReM5tlnB8U_QfYCAJpOwvRx4WYuMm7L8PT8SWPKKISi01ZLG8cSAvH97Mvb_ITSwPhAFucMGVlAmCG/pubhtml&#34; /&gt;&#xA;&lt;/head&gt;&#xA;&lt;/html&gt;</description>
-    </item>
   </channel>
 </rss>
