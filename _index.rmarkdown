@@ -1,0 +1,341 @@
+---
+title: Homepage
+description: >
+    Cory McCartan is an Assistant Professor of Statistics at Penn State University.
+    He works on methodological and applied problems in the social sciences,
+    including legislative redistricting, racial disparities, and missing data.
+format: hugo-md
+editor: source
+sitemap:
+    changefreq: monthly
+    priority: 1.0
+execute:
+  echo: false
+  message: false
+  warning: false
+  output: asis
+params:
+  cache: 4 # hour(s)
+---
+
+```{=html}
+<div class="blurb">
+<p>
+I am the Hoben and Patricia Thomas and Thomas and Ann Hettmansperger
+Early Career Professor of Statistics and
+a faculty affiliate in political science at
+<a href="https://science.psu.edu/stat" target="_blank">Penn State University</a>.
+My research focuses on methodological and applied problems in the social sciences,
+including elections, legislative redistricting, racial disparities, and missing data.
+</p>
+<p>
+I'm a Co-PI of the
+<a href="https://alarm-redist.org/">Algorithm-Assisted Redistricting Methodology (ALARM)
+Project</a> at Harvard University, which I helped start in 2021.
+I was previously a Faculty Fellow at the Center for Data Science at New York University.
+Before that, I received my Ph.D. in statistics from Harvard University, and a bachelor's in
+mathematics from Grinnell College.
+As part of my research, I also develop and maintain a number of open-source R packages for
+redistricting, statistical analysis, and visualization.
+</p>
+</div>
+
+<div class="show-hide">
+<span style="flex-grow: 1"></span>
+<a href="mailto:mccartan@psu.edu" aria-label="Email"><i class="bi-envelope-fill"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://bsky.app/profile/corymccartan.com" aria-label="Bluesky"><i class="bi-bluesky"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/CoryMcCartan" aria-label="GitHub"><i class="bi-github"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://scholar.google.com/citations?user=2jbDYYUAAAAJ&hl=en" aria-label="Google Scholar"><i class="bi-mortarboard-fill"></i></a>
+<span style="flex-grow: 1"></span>
+<button onclick="expandElements(true)">Show all detail</button>
+<button onclick="expandElements(false)">Collapse all detail</button>
+</div>
+```
+
+```{r setup}
+library(dplyr)
+library(purrr)
+library(readr)
+library(forcats)
+library(stringr)
+library(googlesheets4)
+ss_id <- "1nrdH03-iL065xkbxCggenA0BsqLv2jvBsgZPsTX5-xg"
+gs4_auth(email = "cory.mccartan@gmail.com")
+
+get_sheet <- function(sheet, types) {
+    fname = str_glue("cache/{str_to_lower(sheet)}.csv")
+    if (file.exists(fname)) {
+        if (as.double(Sys.time() - file.mtime(fname), "hours") < params$cache) {
+            return(read_csv(fname, col_types = types))
+        }
+    }
+
+    d = range_speedread(ss_id, sheet=sheet, col_types = types)
+    write_csv(d, fname)
+    d
+}
+
+d = get_sheet("Papers", cols(.default="c"))
+
+e = tools::bibstyle(tools::getBibstyle())
+make_auth <- function(authors) {
+    if (str_ends(authors, ";"))
+        authors = str_sub(authors, 1, -2)
+    str_squish(authors) |>
+        str_split_1(";\\s") |>
+        str_split(", ") |>
+        map(~ person(.[2], .[1])) |>
+        do.call(c, args=_)
+}
+bib_entry <- function(d, type="article") {
+    pmap(d, function(title, authors, journal, vol, num, pages, date, publisher,
+                     url, notes, abstract, materials, ...) {
+        entry = bibentry(type, title=title, author=make_auth(authors),
+                         journal=journal, publisher=publisher, volume=vol,
+                         number=num, pages=pages, url=url, note=notes, year=date)
+        attr(entry, "abstract") = abstract
+        attr(entry, "materials") = materials
+        entry
+    })
+}
+
+author_list_exc <- function(authors) {
+    authors = as.character(authors)[as.character(authors) !=  "Cory McCartan"]
+    if (length(authors) == 0) {
+        NULL
+    } else if (length(authors) == 1) {
+        str_c("With ", authors)
+    } else if (length(authors) == 2) {
+        str_c("With ", authors[1], " and ", authors[2])
+    } else if (length(authors) >= 3) {
+        str_c("With ", paste0(head(authors, -1), collapse=", "),
+              ", and ", tail(authors, 1))
+    }
+}
+add_comma <- function(str) sub("([^.?!])$", "\\1,", str)
+title_case <- function(txt) {
+    rgx_small = "(?<![.!?]) (And|The|For|In|Of|It|To|On|Or|Is|Be|But|So|Yet|With|By) "
+    str_to_title(txt) |>
+        str_replace_all(" (U.s.|U.k.|Uk) ", str_to_upper) |>
+        str_replace_all(rgx_small, str_to_lower) |>
+        str_replace_all(rgx_small, str_to_lower)
+}
+vol_num <- function(paper) {
+    if (length(paper$volume)) {
+        result = str_c(" ", paper$volume)
+        if (length(paper$number))
+            result <- str_c(result, ":", paper$number)
+        result
+    }
+}
+fmt_pages_c <- function(pages) if (length(pages)) e$collapse(str_c(", ", pages))
+
+fmt_article <- function(paper) {
+    s1 = if (!is.null(paper$url)) {
+        str_glue("\n[**{title_case(paper$title)}**]({paper$url}) {e$fmtYear(paper$year)}.")
+    } else {
+        str_glue("\n**{title_case(paper$title)}** {e$fmtYear(paper$year)}.")
+    }
+    s2 = if (str_detect(paper$journal, "preprint")) {
+        e$addPeriod(e$fmtPages(paper$pages))
+    } else {
+        e$sentence(
+            str_c("_", paper$journal, "_"),
+            # vol_num(paper), fmt_pages_c(paper$pages),
+            sep=""
+        )
+    }
+    alist = author_list_exc(paper$author)
+    s3 = if (is.null(alist)) "<br />" else
+        str_glue('<span class="coauthors">\n{e$sentence(alist)}\n</span>')
+    s4 = if (is.na(mat <- attr(paper, "materials"))) NULL else str_c(mat, "<br />")
+    s5 = str_replace_all(paper$note, "\n\n", "<br />\n")
+    s6 = if (is.na(abs <- attr(paper, "abstract"))) NULL else {
+        abs = str_split_1(abs, "\n\n") |>
+            str_wrap(80) |>
+            str_c(collapse="\n</p>\n<p>\n")
+        str_glue("<details>\n<summary>Abstract</summary>\n",
+                 "<p>\n{abs}\n</p>\n</details>\\")
+    }
+    e$collapse(c(s1, s2, s3, s4, s5, s6))
+}
+fmt_other <- function(paper) {
+    s1 = str_glue("\n[**{title_case(paper$title)}**]({paper$url}) {e$fmtYear(paper$year)}.")
+    s2 = if (is.null(paper$publisher)) {
+        e$addPeriod(str_c("_", paper$journal, "_"))
+    } else {
+        if (is.null(paper$journal)) {
+            e$addPeriod(paper$publisher)
+        } else {
+            e$addPeriod(str_c(paper$publisher, ": _", paper$journal, "_"))
+        }
+    }
+    alist = author_list_exc(paper$author)
+    s3 = str_glue('<span class="coauthors">\n{e$sentence(alist)}\n</span>')
+    alist = author_list_exc(paper$author)
+
+    s4 = if (is.na(mat <- attr(paper, "materials"))) NULL else str_c(mat, "<br />")
+    s5 = str_replace_all(paper$note, "\n\n", "<br />\n")
+    s6 = if (is.na(abs <- attr(paper, "abstract"))) NULL else {
+        abs = str_split_1(abs, "\n\n") |>
+            str_wrap(80) |>
+            str_c(collapse="\n</p>\n<p>\n")
+        str_glue("<details>\n<summary>Summary</summary>\n",
+                 "<p>\n{abs}\n</p>\n</details>\\")
+    }
+    e$collapse(c(s1, s2, s3, s4, s5, s6))
+}
+```
+
+# Working Papers
+
+```{r working}
+filter(d, type == "working paper") |>
+    bib_entry() |>
+    map(fmt_article) |>
+    list_c() |>
+    cat(sep="\n\n")
+```
+
+# Publications
+
+```{r publications}
+filter(d, type == "publication") |>
+    mutate(category = fct_relevel(category,
+            "Statistical methodology", "Redistricting and geography",
+            "Differential privacy and the census"
+        )) |>
+    split(~ category) |>
+    imap(function(articles, nm) {
+        bibs = bib_entry(articles) |>
+            map(fmt_article)
+        c(paste("###", nm), list_c(bibs))
+    }) |>
+    list_c() |>
+    cat(sep="\n\n")
+```
+
+# Software
+
+```{r software}
+d_soft = get_sheet("Software", "cclc")
+
+d_desc = str_glue_data(d_soft, "https://raw.githubusercontent.com/",
+                    "{repo_owner}/{package}/main/DESCRIPTION") |>
+    map(function(url) {
+        desc = curl::curl_fetch_memory(url)$content |>
+            rawToChar() |>
+            desc::desc(text = _)
+        urls = desc$get_urls()
+        gh = str_detect(urls, "github\\.com")
+        page = if (!all(gh)) urls[!gh][1] else urls[1]
+
+        data.frame(
+            desc = desc$get("Description") |>
+                str_remove_all(" <.+>") |>
+                str_replace_all("'(\\w+)'", "`\\1`") |>
+                str_squish(),
+            title = desc$get("Title") |>
+                str_replace("'(\\w+)'", "`\\1`"),
+            page = coalesce(page, "#")
+        )
+    }) |>
+    bind_rows() |>
+    as_tibble()
+
+res = bind_cols(d_soft, d_desc) |>
+    mutate(
+        logo = str_glue("https://raw.githubusercontent.com/",
+                        "{repo_owner}/{package}/main/man/figures/logo.{logo_ext}"),
+        badge = if_else(
+            cran,
+            str_glue('&nbsp;&nbsp;<a href="https://CRAN.R-project.org/package={package}">',
+                     '<img src="https://www.r-pkg.org/badges/version/{package}" ',
+                     'alt="CRAN Status" height=17></a>'),
+            ""
+        ),
+        desc = if_else(nchar(desc) >= 250, desc,
+                       str_c(desc, "\n<br />"))
+    )
+
+logo_html = if_else(
+    !is.na(res$logo_ext),
+    str_glue_data(res, '
+<img class="soft-logo" src="{logo}" width=80 height=92
+ alt="{package} package logo" onerror="this.style.display=\'none\'">'),
+    ""
+)
+
+cat(str_glue_data(res, '
+{logo_html}
+
+[**`{package}`: {title}**]({page}){badge}
+<br />
+{str_wrap(desc, 80)}
+<br />
+<br />
+'))
+```
+
+
+
+# Other Writing
+
+```{r other}
+filter(d, type == "other") |>
+    bib_entry("misc") |>
+    map(fmt_other) |>
+    list_c() |>
+    cat(sep="\n\n")
+```
+
+
+
+# Contact
+
+```{=html}
+<div class="contactbox">
+<p>
+<i class="bi-envelope-fill"></i>&nbsp;
+<a href="mailto:mccartan@psu.edu">
+mccartan&#64;psu.edu
+</a>
+</p>
+
+<p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width: 15pt; position: relative; top: 2px"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"></path></svg>&nbsp;
+<a href="https://bsky.app/profile/corymccartan.com">
+@corymccartan.com
+</a>
+</p>
+
+<p>
+<i class="bi-github"></i>&nbsp;
+<a href="https://github.com/CoryMcCartan">
+CoryMcCartan
+</a>
+</p>
+
+<p>
+<i class="bi-building-fill"></i>&nbsp;
+325 Thomas Building<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+461 Pollock Road<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+University Park, PA 16802
+</p>
+</div>
+
+<script type="text/javascript">
+const expandElements = shouldExpand => {
+    let detailsElements = document.querySelectorAll("details");
+
+    detailsElements = [...detailsElements];
+
+    if (shouldExpand) {
+        detailsElements.map(item => item.setAttribute("open", shouldExpand));
+    } else {
+        detailsElements.map(item => item.removeAttribute("open"));
+    }
+};
+</script>
+```
+
