@@ -109,6 +109,31 @@ redistricting, statistical analysis, and visualization.
 <button onclick="expandElements(false)">Collapse all detail</button>
 </div>
 <h1 id="working-papers">Working Papers</h1>
+<p><a href="https://arxiv.org/abs/2509.20194"><strong>Identification and Semiparametric Estimation of Conditional Means From Aggregate Data</strong></a> (2025).
+<span class="coauthors">
+With Shiro Kuriwaki.
+</span></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+We introduce a new method for estimating the mean of an outcome variable
+within groups when researchers only observe the average of the outcome and
+group indicators across a set of aggregation units, such as geographical
+areas. Existing methods for this problem, also known as ecological inference,
+implicitly make strong assumptions about the aggregation process. We first
+formalize weaker conditions for identification, which motivates estimators
+that can efficiently control for many covariates. We propose a debiased machine
+learning estimator that is based on nuisance functions restricted to a partially
+linear form. Our estimator also admits a semiparametric sensitivity analysis
+for violations of the key identifying assumption, as well as asymptotically
+valid confidence intervals for local, unit-level estimates under additional
+assumptions. Simulations and validation on real-world data where ground truth
+is available demonstrate the advantages of our approach over existing methods.
+Open-source software is available which implements the proposed methods.
+</p>
+</details>
 <p><a href="https://arxiv.org/abs/2507.23743"><strong>Relative Bias Under Imperfect Identification in Observational Causal Inference</strong></a> (2025).
 Under Review.
 <span class="coauthors">
@@ -138,6 +163,31 @@ approaches on a re-analysis of the impact of state surveillance on the incidence
 of protest in Communist Poland.
 </p>
 </details>
+<p><strong>The Role of Confounders and Linearity in Ecological Inference: A Reassessment</strong> (2025).
+<span class="coauthors">
+With Shiro Kuriwaki.
+</span></p>
+<details>
+<summary>
+Abstract
+</summary>
+<p>
+Estimating conditional means only with aggregate data is commonly known as
+the ecological inference problem (EI). We provide a reassessment of ecological
+inference: a formalization of the problem that differs from existing work,
+identification conditions, and an empirical characterization of how these
+conditions fail in common cases. In particular, the quantity of interest in EI
+is governed by a conditional expectation function, and identification requires
+estimating this function controlling for confounders. In this way, EI is similar
+to causal inference with observational data, but with aggregation contributing
+additional structure to assist in the estimation problem. Using this
+perspective, we clarify the differences between the EI methods commonly used in
+the literature, and explain when they lead to ecological fallacies. Illustrating
+with common EI problems in political science with datasets where true values are
+fortuitously observed, we find that methods are prone to overestimating racial
+polarization and underestimating ticket splitting, but covariates can help.
+</p>
+</details>
 <p><a href="https://arxiv.org/abs/2508.15885"><strong>Gerrymandering and Geographic Polarization Have Reduced Electoral Competition</strong></a> (2025).
 Under Review.
 <span class="coauthors">
@@ -163,31 +213,6 @@ efforts, reducing the GOP redistricting advantage by two seats. In total, the
 pro-Republican bias declined from 16 to 10 seats. Crucially, shifts in political
 geography and gerrymandering reduced the number of highly competitive districts
 by over 25%, with geographic polarization driving most of the decline.
-</p>
-</details>
-<p><strong>The Role of Confounders and Linearity in Ecological Inference: A Reassessment</strong> (2025).
-<span class="coauthors">
-With Shiro Kuriwaki.
-</span></p>
-<details>
-<summary>
-Abstract
-</summary>
-<p>
-Estimating conditional means only with aggregate data is commonly known as
-the ecological inference problem (EI). We provide a reassessment of ecological
-inference: a formalization of the problem that differs from existing work,
-identification conditions, and an empirical characterization of how these
-conditions fail in common cases. In particular, the quantity of interest in EI
-is governed by a conditional expectation function, and identification requires
-estimating this function controlling for confounders. In this way, EI is similar
-to causal inference with observational data, but with aggregation contributing
-additional structure to assist in the estimation problem. Using this
-perspective, we clarify the differences between the EI methods commonly used in
-the literature, and explain when they lead to ecological fallacies. Illustrating
-with common EI problems in political science with datasets where true values are
-fortuitously observed, we find that methods are prone to overestimating racial
-polarization and underestimating ticket splitting, but covariates can help.
 </p>
 </details>
 <p><a href="https://arxiv.org/abs/2407.11336"><strong>Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors</strong></a> (2024).
