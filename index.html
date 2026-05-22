@@ -110,6 +110,7 @@ redistricting, statistical analysis, and visualization.
 </div>
 <h1 id="working-papers">Working Papers</h1>
 <p><a href="https://arxiv.org/abs/2509.20194"><strong>Identification and Semiparametric Estimation of Conditional Means From Aggregate Data</strong></a> (2025).
+Under Review.
 <span class="coauthors">
 With Shiro Kuriwaki.
 </span></p>
@@ -511,7 +512,7 @@ With Christopher T. Kenny, Tyler Simko, George Garcia III, Kevin Wang, Melissa W
 <a href="https://alarm-redist.org/fifty-states/">Project website</a>;
 <a href="https://github.com/alarm-redist/fifty-states">Replication code</a>;
 <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Data</a><br />
-Covered by <a href="https://www.nytimes.com/interactive/2025/08/21/upshot/up-massachusetts-redistricting.html"><em>The New York Times</em></a>.</p>
+Covered by <em>The New York Times</em> in <a href="https://www.nytimes.com/interactive/2025/08/21/upshot/up-massachusetts-redistricting.html">2025</a> and <a href="https://www.nytimes.com/2026/05/17/upshot/redistricting-race-court-gerrymanders-elections.html">2026</a>.</p>
 <details>
 <summary>
 Abstract
@@ -753,13 +754,14 @@ package seamlessly.
 <br />
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/adjustr/main/man/figures/logo.png" width=80 height=92
 alt="adjustr package logo" onerror="this.style.display='none'"></p>
-<p><a href="https://corymccartan.github.io/adjustr/"><strong><code>adjustr</code>: Stan Model Adjustments and Sensitivity Analyses using Importance Sampling</strong></a>
+<p><a href="https://corymccartan.com/adjustr/"><strong><code>adjustr</code>: Stan Model Adjustments and Sensitivity Analyses using Importance Sampling</strong></a>
 <br />
-Functions to help assess the sensitivity of a Bayesian model (fitted using
-the rstan package) to the specification of its likelihood and priors. Users
+Assess the sensitivity of a Bayesian model (fitted using <code>Stan</code> via <code>rstan</code>,
+<code>brms</code>, or <code>cmdstanr</code>) to the specification of its likelihood and priors. Users
 provide a series of alternate sampling specifications, and the package uses
-Pareto-smoothed importance sampling to estimate posterior quantities of interest
-under each specification.
+Pareto-smoothed importance sampling (PSIS) to estimate posterior quantities of
+interest under each specification, without needing to refit the model. Methods
+are based on Vehtari, Simpson, Gelman, Yao, and Gabry (2024).
 <br />
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/PL94171/main/man/figures/logo.png" width=80 height=92
 alt="PL94171 package logo" onerror="this.style.display='none'"></p>
