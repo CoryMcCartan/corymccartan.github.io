@@ -318,7 +318,7 @@ understand the tradeoffs inherent to the redistricting process.
 </details>
 <h1 id="publications">Publications</h1>
 <h3 id="statistical-methodology">Statistical methodology</h3>
-<p><strong>Estimating Racial Disparities when Race is Not Observed</strong> (2025).
+<p><a href="https://doi.org/10.1080/01621459.2025.2526695"><strong>Estimating Racial Disparities when Race is Not Observed</strong></a> (2025).
 <em>Journal of the American Statistical Association</em>.
 <span class="coauthors">
 With Robin Fisher, Jacob Goldin, Daniel E. Ho, and Kosuke Imai.
@@ -388,12 +388,12 @@ the shape of their distribution.
 </p>
 </details>
 <h3 id="redistricting-and-geography">Redistricting and geography</h3>
-<p><a href="https://osf.io/preprints/socarxiv/nc2x7/"><strong>Individual and Differential Harm in Redistricting</strong></a> (2026).
-<em>Nature Human Behaviour</em>, Forthcoming.
+<p><a href="https://rdcu.be/fyd95"><strong>Individual and Differential Harm in Redistricting</strong></a> (2026).
+<em>Nature Human Behaviour</em>, Online ahead of print.
 <span class="coauthors">
 With Christopher T. Kenny.
 </span>
-<a href="https://github.com/CoryMcCartan/harm-redistricting">Replication code</a><br /></p>
+<a href="https://doi.org/10.5281/zenodo.18895840">Replication code</a><br /></p>
 <details>
 <summary>
 Abstract
@@ -414,7 +414,7 @@ gerrymandering in New Jersey, voting rights litigation in Alabama, and racial
 dynamics of Boston City Council elections.
 </p>
 </details>
-<p><a href="https://doi.org/10.1080/01621459.2025.2526695"><strong>Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors</strong></a> (2026).
+<p><a href="https://doi.org/10.1017/S0003055426101610"><strong>Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors</strong></a> (2026).
 <em>American Political Science Review</em>, Online ahead of print.
 <span class="coauthors">
 With Christopher T. Kenny, Tyler Simko, Emma Ebowe, Michael Y. Zhao, and Kosuke Imai.
@@ -478,6 +478,7 @@ out-of-sample predictions than standard neighborhood measures.
 With Kosuke Imai.
 </span>
 <a href="https://alarm-redist.org/redist/">Software</a><br />
+AoAS invited JSM session, 2024.<br />
 Covered by <a href="https://www.washingtonpost.com/politics/interactive/2022/algorithmic-redistricting/"><em>The Washington Post</em></a>, <a href="https://www.quantamagazine.org/how-math-has-changed-the-shape-of-gerrymandering-20230601/"><em>Quanta</em> magazine</a>.</p>
 <details>
 <summary>
@@ -753,9 +754,9 @@ alt="bases package logo" onerror="this.style.display='none'"></p>
 <p><a href="https://corymccartan.com/bases/"><strong><code>bases</code>: Basis Expansions for Regression Modeling</strong></a>  <a href="https://CRAN.R-project.org/package=bases"><img src="https://www.r-pkg.org/badges/version/bases" alt="CRAN Status" height=17></a>
 <br />
 Provides various basis expansions for flexible regression modeling, including
-random Fourier features (Rahimi &amp; Recht, 2007) , exact kernel / Gaussian
-process feature maps, prior features for Bayesian Additive Regression Trees
-(BART) (Chipman et al., 2010), and a helpful interface for n-way interactions.
+random Fourier features (Rahimi &amp; Recht, 2007) , exact kernel / Gaussian process
+feature maps, prior features for Bayesian Additive Regression Trees (BART)
+(McCartan &amp; Huang, 2026), and a helpful interface for n-way interactions.
 The provided functions may be used within any modeling formula, allowing the
 use of kernel methods and other basis expansions in modeling functions that
 do not otherwise support them. Along with the basis expansions, a number of
@@ -849,6 +850,15 @@ Download geographic shapes from the United States Census Bureau TIGER/Line
 Shapefiles. Functions support downloading and reading in geographic boundary
 data. All downloads can be set up with a cache to avoid multiple downloads. Data
 is available back to 2000 for most geographies.
+<br />
+<br /> <img class="soft-logo" src="https://raw.githubusercontent.com/alarm-redist/adj/main/man/figures/logo.svg" width=80 height=92
+alt="adj package logo" onerror="this.style.display='none'"></p>
+<p><a href="https://alarm-redist.org/adj/"><strong><code>adj</code>: Lightweight Adjacency Lists</strong></a>  <a href="https://CRAN.R-project.org/package=adj"><img src="https://www.r-pkg.org/badges/version/adj" alt="CRAN Status" height=17></a>
+<br />
+Provides an S3 class to represent graph adjacency lists using <code>vctrs</code>. Allows
+for creation, subsetting, combining, and pretty printing of these lists.
+Adjacency lists can be easily converted to zero-indexed lists, which allows for
+easy passing of objects to low-level languages for processing.
 <br />
 <br /> <img class="soft-logo" src="https://raw.githubusercontent.com/CoryMcCartan/schmear/main/man/figures/logo.png" width=80 height=92
 alt="schmear package logo" onerror="this.style.display='none'"></p>
