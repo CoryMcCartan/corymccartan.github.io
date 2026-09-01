@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basis Pursuit Expense Settlement</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/javascript-lp-solver@0.4.24/prod/solver.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-4" style="max-width: 680px;">
+  <h3 class="mb-3">Expense Splitting</h3>
+  <p class="text-secondary small">
+  Minimizes the <i>l</i><sub>1</sub> norm of payments using linear programming.
+  </p>
+
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="card-title m-0 fw-bold">Net balances</h6>
+        <h7 class="card-subtitle text-secondary small">
+          Positive values indicate a person is owed money.
+        </h7>
+      </div>
+
+      <div id="balance-rows"></div>
+
+      <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+        <button class="btn btn-sm btn-outline-primary" id="add-person-btn">+ Add person</button>
+        <div>
+          <small class="fw-bold me-1">Sum of balances:</small>
+          <span id="sum-badge" class="badge bg-success">$0.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-grid mb-3">
+    <button class="btn btn-primary" id="solve-btn">Solve LP</button>
+  </div>
+
+  <div id="alert-container"></div>
+
+  <div class="card shadow-sm d-none" id="results-card">
+    <div class="card-body">
+      <h6 class="card-title mb-3 fw-bold">Sparse settlement</h6>
+      <table class="table table-sm table-bordered mb-0">
+        <thead class="table-light">
+          <tr>
+            <th>Payer</th>
+            <th>Payee</th>
+            <th class="text-end">Amount</th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+/**
+ * Basis Pursuit LP Formulation matching R lpSolve:
+ * min sum(x^+ + x^-)
+ * s.t. A(x^+ - x^-) = b
+ *      x^+, x^- >= 0
+ */
+function solveLPSettlement(people) {
+  const n = people.length;
+  const model = {
+    optimize: "cost",
+    opType: "min",
+    constraints: {},
+    variables: {}
+  };
+
+  // Set constraint b_i for each person
+  people.forEach((p, i) => {
+    model.constraints[`p_${i}`] = { equal: p.balance };
+  });
+
+  // Construct incidence pairs A and -A for all n*(n-1)/2 edges
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      // x_pos: Payment from j -> i (increases i, decreases j)
+      model.variables[`x_pos_${i}_${j}`] = {
+        cost: 1,
+        [`p_${i}`]: 1,
+        [`p_${j}`]: -1
+      };
+
+      // x_neg: Payment from i -> j (decreases i, increases j)
+      model.variables[`x_neg_${i}_${j}`] = {
+        cost: 1,
+        [`p_${i}`]: -1,
+        [`p_${j}`]: 1
+      };
+    }
+  }
+
+  const res = solver.Solve(model);
+  const transactions = [];
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const valPos = res[`x_pos_${i}_${j}`] || 0;
+      if (valPos > 1e-4) {
+        transactions.push({
+          payer: people[j].name,
+          payee: people[i].name,
+          amount: valPos
+        });
+      }
+
+      const valNeg = res[`x_neg_${i}_${j}`] || 0;
+      if (valNeg > 1e-4) {
+        transactions.push({
+          payer: people[i].name,
+          payee: people[j].name,
+          amount: valNeg
+        });
+      }
+    }
+  }
+
+  transactions.sort((a, b) => a.payer.localeCompare(b.payer) || a.payee.localeCompare(b.payee));
+  return transactions;
+}
+
+
+const container = document.getElementById('balance-rows');
+const sumBadge = document.getElementById('sum-badge');
+const alertContainer = document.getElementById('alert-container');
+const resultsCard = document.getElementById('results-card');
+const resultsBody = document.getElementById('results-body');
+
+function renderRows(data) {
+  container.innerHTML = '';
+  data.forEach(item => addRow(item.name, item.balance));
+  updateSum();
+}
+
+function addRow(name = '', balance = 0) {
+  const row = document.createElement('div');
+  row.className = 'row g-2 mb-2 align-items-center balance-row';
+  row.innerHTML = `
+    <div class="col-6">
+      <input type="text" class="form-control form-control-sm person-name" placeholder="Name" value="${name}">
+    </div>
+    <div class="col-4">
+      <input type="number" step="any" class="form-control form-control-sm person-balance" placeholder="Balance" value="${balance}">
+    </div>
+    <div class="col-2 text-end">
+      <button class="btn btn-outline-danger btn-sm remove-btn">&times;</button>
+    </div>
+  `;
+  container.appendChild(row);
+
+  row.querySelector('.person-balance').addEventListener('input', updateSum);
+  row.querySelector('.remove-btn').addEventListener('click', () => {
+    row.remove();
+    updateSum();
+  });
+}
+
+function getPeople() {
+  const rows = container.querySelectorAll('.balance-row');
+  const people = [];
+  rows.forEach(row => {
+    const name = row.querySelector('.person-name').value.trim();
+    const balance = parseFloat(row.querySelector('.person-balance').value) || 0;
+    if (name) people.push({ name, balance });
+  });
+  return people;
+}
+
+function updateSum() {
+  const people = getPeople();
+  const sum = people.reduce((acc, p) => acc + p.balance, 0);
+  const roundedSum = Math.round(sum * 10000) / 10000;
+
+  sumBadge.textContent = `$${roundedSum}`;
+  sumBadge.className = Math.abs(roundedSum) < 1e-4 ? 'badge bg-success' : 'badge bg-danger';
+}
+
+document.getElementById('add-person-btn').addEventListener('click', () => addRow('', 0));
+
+document.getElementById('solve-btn').addEventListener('click', () => {
+  alertContainer.innerHTML = '';
+  resultsCard.classList.add('d-none');
+
+  const people = getPeople();
+  if (people.length < 2) return;
+
+  const sum = people.reduce((acc, p) => acc + p.balance, 0);
+  if (Math.abs(sum) >= 1e-4) {
+    alertContainer.innerHTML = `
+      <div class="alert alert-danger py-2">
+        Sum of balances must equal 0. Current sum is ${sum.toFixed(2)}.
+      </div>`;
+    return;
+  }
+
+  const transactions = solveLPSettlement(people);
+  resultsBody.innerHTML = '';
+
+  if (transactions.length === 0) {
+    resultsBody.innerHTML = '<tr><td colspan="3" class="text-center text-muted">No balances to settle.</td></tr>';
+  } else {
+    transactions.forEach(t => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${t.payer}</td>
+        <td>${t.payee}</td>
+        <td class="text-end">${t.amount.toFixed(2)}</td>
+      `;
+      resultsBody.appendChild(tr);
+    });
+  }
+
+  resultsCard.classList.remove('d-none');
+});
+</script>
+
+</body>
+</html>
